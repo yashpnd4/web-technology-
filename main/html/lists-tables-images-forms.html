@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Lists, Tables, Images, and Forms</title>
+</head>
+
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>HTML LISTS, TABLES, IMAGES &amp; FORMS</h1>
+        <p>
+            <a href="html.html">&larr; Back to HTML Overview</a> |
+            <a href="colors-and-hyperlinks.html">&larr; Previous: Colors &amp; Hyperlinks</a> |
+            <a href="html5-and-xml.html">Next: HTML5 &amp; XML &rarr;</a> |
+            <a href="../main.html">Main Menu</a>
+        </p>
+    </center>
+
+    <hr>
+    <h2>1. HTML Lists</h2>
+    <p>
+        HTML lists are used to group related items in a clean and organized way.
+    </p>
+
+    <h3>Unordered List (&lt;ul&gt;)</h3>
+    <p>
+        An unordered list shows items with bullet points. The order of the items does not matter.
+    </p>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+
+    <h3>Ordered List (&lt;ol&gt;)</h3>
+    <p>
+        An ordered list displays items numbered sequentially. The order of the items matters.
+    </p>
+    <ol>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ol>
+
+    <h3>Description List (&lt;dl&gt;)</h3>
+    <p>
+        A description list is a list of terms, with a description of each term.
+    </p>
+    <dl>
+        <dt><b>Coffee</b></dt>
+        <dd>Black hot drink</dd>
+        <dt><b>Milk</b></dt>
+        <dd>White cold drink</dd>
+    </dl>
+
+    <h3>HTML List Tags Summary</h3>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="25%">Tag</th>
+            <th width="75%">Use &amp; Description</th>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;ul&gt;</b></td>
+            <td>Creates an unordered (bulleted) list.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;ol&gt;</b></td>
+            <td>Creates an ordered (numbered) list.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;li&gt;</b></td>
+            <td>Defines a single list item inside <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;dl&gt;</b></td>
+            <td>Creates a description list container.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;dt&gt;</b></td>
+            <td>Defines a term/name in a description list.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;dd&gt;</b></td>
+            <td>Defines the description for each term in a description list.</td>
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+    <h2>2. HTML Tables</h2>
+    <p>
+        HTML tables allow web developers to arrange structured data (text, images, links) into rows and columns.
+    </p>
+
+    <h3>Basic Table Structure Tags</h3>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="25%">Tag</th>
+            <th width="75%">Use &amp; Description</th>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;table&gt;</b></td>
+            <td>Defines the complete HTML table container.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;tr&gt;</b></td>
+            <td>Defines a horizontal row of cells in a table.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;td&gt;</b></td>
+            <td>Defines a standard data cell (regular text, left-aligned by default).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;th&gt;</b></td>
+            <td>Defines a table header cell (bold text, centered by default).</td>
+        </tr>
+    </table>
+
+    <h3>Key Concepts of Tables:</h3>
+    <ul>
+        <li><b>Table Rows (&lt;tr&gt;):</b> Each row contains one or more data or header cells. A table can have any
+            number of rows.</li>
+        <li><b>Table Cells (&lt;td&gt;):</b> "td" stands for Table Data. Everything inside a table cell is treated as
+            content (text, links, images, or nested tables).</li>
+        <li><b>Table Headers (&lt;th&gt;):</b> "th" stands for Table Header. Header text is bold and centered by
+            default. Commonly placed in the first row or first column.</li>
+    </ul>
+
+    <h3>Example Table with Headers</h3>
+    <table border="1" cellpadding="8" cellspacing="0" width="50%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Person 1</th>
+            <th>Person 2</th>
+        </tr>
+        <tr align="center">
+            <td>Emil</td>
+            <td>Tobias</td>
+        </tr>
+    </table>
+
+    <h3>Complete HTML Table Tags Reference</h3>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="25%">Tag</th>
+            <th width="75%">Use &amp; Description</th>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;table&gt;</b></td>
+            <td>Defines a table container.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;tr&gt;</b></td>
+            <td>Defines a table row.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;th&gt;</b></td>
+            <td>Defines a header cell in a table.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;td&gt;</b></td>
+            <td>Defines a standard data cell in a table.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;caption&gt;</b></td>
+            <td>Defines a visible caption / title for the table.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;colgroup&gt;</b></td>
+            <td>Specifies a group of one or more columns in a table for formatting.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;col&gt;</b></td>
+            <td>Specifies column properties for each column inside a <code>&lt;colgroup&gt;</code>.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;thead&gt;</b></td>
+            <td>Groups the header content in a table.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;tbody&gt;</b></td>
+            <td>Groups the main body content in a table.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;tfoot&gt;</b></td>
+            <td>Groups the footer content in a table.</td>
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+    <h2>3. HTML Images</h2>
+    <p>
+        HTML images are used to embed pictures, diagrams, and visual illustrations into a web page to enhance design and
+        readability.
+    </p>
+
+    <h3>The &lt;img&gt; Element</h3>
+    <p>
+        The <code>&lt;img&gt;</code> tag is used to embed an image into an HTML page.
+        Images are not technically inserted into a webpage; images are linked to web pages.
+        The <code>&lt;img&gt;</code> tag is an <b>empty tag</b> (void element), meaning it has no closing tag.
+    </p>
+
+    <h3>Core Image Attributes</h3>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="20%">Attribute</th>
+            <th width="80%">Use &amp; Description</th>
+        </tr>
+        <tr>
+            <td align="center"><b>src</b></td>
+            <td>Specifies the path or URL of the image file (source address).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>alt</b></td>
+            <td>Provides alternative text shown if the image cannot load, and assists screen readers.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>width</b></td>
+            <td>Specifies the width of the image (in pixels or percentage).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>height</b></td>
+            <td>Specifies the height of the image (in pixels or percentage).</td>
+        </tr>
+    </table>
+
+    <h3>Important Image Guidelines:</h3>
+    <ul>
+        <li><b>src Attribute:</b> Specifies the exact location of the file. Keeping image files organized prevents
+            broken image links.</li>
+        <li><b>alt Attribute:</b> Shown when an image cannot load, helps visually impaired users with screen readers,
+            and assists search engines in indexing images.</li>
+        <li><b>width &amp; height:</b> Always specify width and height to reserve space on the page and prevent layout
+            shifting while the page loads.</li>
+        <li><b>Image as a Link:</b> Place the <code>&lt;img&gt;</code> tag inside an anchor
+            <code>&lt;a href="..."&gt;</code> element to turn the entire image into a clickable link.
+        </li>
+    </ul>
+
+    <h3>Common Web Image Formats</h3>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="20%">Format</th>
+            <th width="50%">Full Form</th>
+            <th width="30%">File Extension</th>
+        </tr>
+        <tr>
+            <td align="center"><b>APNG</b></td>
+            <td>Animated Portable Network Graphics</td>
+            <td align="center"><code>.apng</code></td>
+        </tr>
+        <tr>
+            <td align="center"><b>GIF</b></td>
+            <td>Graphics Interchange Format</td>
+            <td align="center"><code>.gif</code></td>
+        </tr>
+        <tr>
+            <td align="center"><b>ICO</b></td>
+            <td>Microsoft Icon Format</td>
+            <td align="center"><code>.ico, .cur</code></td>
+        </tr>
+        <tr>
+            <td align="center"><b>JPEG / JPG</b></td>
+            <td>Joint Photographic Experts Group</td>
+            <td align="center"><code>.jpg, .jpeg, .jfif, .pjp</code></td>
+        </tr>
+        <tr>
+            <td align="center"><b>PNG</b></td>
+            <td>Portable Network Graphics</td>
+            <td align="center"><code>.png</code></td>
+        </tr>
+        <tr>
+            <td align="center"><b>SVG</b></td>
+            <td>Scalable Vector Graphics</td>
+            <td align="center"><code>.svg</code></td>
+        </tr>
+    </table>
+
+    <h3>HTML Image Tags Reference</h3>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="25%">Tag</th>
+            <th width="75%">Use &amp; Description</th>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;img&gt;</b></td>
+            <td>Embeds an image into the document.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;map&gt;</b></td>
+            <td>Defines a client-side image map with clickable active areas.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;area&gt;</b></td>
+            <td>Defines a clickable region inside an image map.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;picture&gt;</b></td>
+            <td>Defines a responsive container holding multiple image sources for different screen sizes.</td>
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+    <h2>4. HTML Forms</h2>
+    <p>
+        An HTML form is used to collect user inputs such as text, selections, passwords, and choices.
+        The collected information is submitted to a web server for processing.
+    </p>
+
+    <h3>The &lt;form&gt; Element</h3>
+    <p>
+        The <code>&lt;form&gt;</code> element is the container that wraps different interactive form controls like input
+        fields, radio buttons, checkboxes, and buttons.
+    </p>
+
+    <h3>Common Form &lt;input&gt; Types</h3>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="25%">Input Type</th>
+            <th width="75%">Use &amp; Description</th>
+        </tr>
+        <tr>
+            <td align="center"><b>type="text"</b></td>
+            <td>Creates a single-line text input field for basic user text input.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>type="radio"</b></td>
+            <td>Creates a radio button allowing the user to select only ONE option from a group.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>type="checkbox"</b></td>
+            <td>Creates a checkbox allowing the user to select zero, one, or multiple options.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>type="submit"</b></td>
+            <td>Creates a submit button to send the form data to the server.</td>
+        </tr>
+    </table>
+
+    <h3>Detailed Form Controls:</h3>
+    <ul>
+        <li><b>Text Fields:</b> Defined by <code>&lt;input type="text"&gt;</code>. Default field width is usually 20
+            characters.</li>
+        <li><b>The &lt;label&gt; Element:</b> Gives a descriptive label to an input. Screen readers read labels when
+            inputs are focused. Clicking the label text focuses or toggles the associated input (using matching
+            <code>for</code> and <code>id</code> attributes).
+        </li>
+        <li><b>Radio Buttons:</b> Used when only one choice is allowed from a set. All radio buttons in the same group
+            must share the exact same <code>name</code> attribute.</li>
+        <li><b>Checkboxes:</b> Used when multiple options can be chosen independently. Selecting one checkbox does not
+            clear the others.</li>
+        <li><b>The Submit Button:</b> Defined by <code>&lt;input type="submit"&gt;</code>. When clicked, it bundles the
+            form values and sends them to the URL defined in the form's <code>action</code> attribute.</li>
+    </ul>
+
+    <hr>
+
+    <center>
+        <p>
+            <a href="html.html">&larr; Back to HTML Overview</a> |
+            <a href="colors-and-hyperlinks.html">&larr; Previous: Colors &amp; Hyperlinks</a> |
+            <a href="html5-and-xml.html">Next: HTML5 &amp; XML &rarr;</a> |
+            <a href="../main.html">Main Menu</a>
+        </p>
+    </center>
+
+</body>
+
+</html>

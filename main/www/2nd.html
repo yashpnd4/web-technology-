@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>HTTP Protocols and Concepts</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>HTTP Protocols and Concepts</h1>
+        <p><a href="www.html">&larr; Back to WWW Overview</a></p>
+    </center>
+    <hr>
+
+    <h2>Introduction to HTTP</h2>
+    <p>
+        HTTP is a protocol used to transfer data from one end to another over the internet.
+    </p>
+    <p>
+        <b>HTTP</b> stands for <u>Hyper Text Transfer Protocol</u>.
+    </p>
+    <p>
+        HTTP is an application layer protocol used by web browsers and web servers to communicate.
+    </p>
+
+    <hr>
+
+    <h2>HTTP Request Commands</h2>
+    <p>To transfer data we use commands such as <b>GET</b> and <b>POST</b>:</p>
+
+    <table border="1" cellpadding="8" cellspacing="0" width="80%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="30%">Command</th>
+            <th width="70%">Purpose</th>
+        </tr>
+        <tr>
+            <td><b>GET</b></td>
+            <td>Used to retrieve data from the server</td>
+        </tr>
+        <tr>
+            <td><b>POST</b></td>
+            <td>Used to send data to the server</td>
+        </tr>
+        <tr>
+            <td><b>PUT</b></td>
+            <td>Used to update existing data on the server</td>
+        </tr>
+        <tr>
+            <td><b>DELETE</b></td>
+            <td>Used to delete data from the server</td>
+        </tr>
+    </table>
+
+    <br>
+    <h3>URL Format Breakdown:</h3>
+    <p>Example: <b>www.websitename.com</b></p>
+    <ul>
+        <li><b>www:</b> World Wide Web (subdomain)</li>
+        <li><b>websitename:</b> The name of the website (domain)</li>
+        <li><b>.com:</b> The top-level domain extension</li>
+    </ul>
+    <p>Other common extensions: <b>.edu, .org, .net, .in, .uk, .us, .ca, .au, .jp, .cn</b></p>
+
+    <hr>
+
+    <h2>HTTP Response Structure</h2>
+    <ul>
+        <li><b>Status Line:</b> Contains HTTP status codes, e.g., 200 (OK), 404 (Not Found), 500 (Server Error), 503, 403</li>
+        <li><b>Headers:</b> Contains meta-information like Content-Type, Set-Cookie, and Cache-Control</li>
+        <li><b>Body:</b> Contains requested content such as HTML, CSS, JavaScript, images, or JSON data</li>
+    </ul>
+
+    <hr>
+
+    <h2>HTTP Request-Response Cycle</h2>
+    <ol>
+        <li>
+            <b>1. Domain Name Resolution (DNS):</b><br>
+            The browser resolves the domain name (e.g., http://example.com) to an IP address using DNS servers.
+        </li>
+        <br>
+        <li>
+            <b>2. TCP 3-Way Handshake:</b><br>
+            Client sends SYN, Server responds with SYN-ACK, Client sends ACK to establish a reliable connection on port 80 (HTTP) or 443 (HTTPS).
+        </li>
+        <br>
+        <li>
+            <b>3. HTTP Transmission:</b><br>
+            Client sends the HTTP Request. The server processes the request, performs any necessary database operations, and returns an HTTP Response.
+        </li>
+        <br>
+        <li>
+            <b>4. Connection Teardown / Keep-Alive:</b><br>
+            The connection closes or remains open (Keep-Alive) for subsequent requests.
+        </li>
+    </ol>
+
+    <hr>
+    <center>
+        <p><a href="www.html">&larr; Back to WWW Overview</a></p>
+    </center>
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Basics of HTML</title>
+</head>
+
+<body bgcolor="#f9f9f9">
+
+    <center>
+
+        <h1>BASICS OF HTML</h1>
+        <h3>Core Concepts, Elements, Attributes Document Structure</h3>
+    </center>
+
+    <hr>
+
+    <h2 id="formatting">1. What is an HTML Element?</h2>
+    <p>
+        An <b>HTML element</b> is defined by a starting tag, some content, and an ending tag:
+    </p>
+    <p>
+        <code>&lt;tagname&gt; Content goes here... &lt;/tagname&gt;</code>
+    </p>
+    <p>
+        <b>Example:</b> <code>&lt;p&gt;Welcome to my Website&lt;/p&gt;</code>
+    </p>
+
+    <h3>Common Element Examples:</h3>
+    <ul>
+        <li><code>&lt;h1&gt;Heading Text&lt;/h1&gt;</code> &mdash; Main heading</li>
+        <li><code>&lt;p&gt;Paragraph text&lt;/p&gt;</code> &mdash; Standard text paragraph</li>
+        <li><code>&lt;br&gt;</code> &mdash; Line break (empty tag, does not need a closing tag)</li>
+        <li><b>It is bold text</b> &mdash; <code>&lt;b&gt;bold text&lt;/b&gt;</code></li>
+        <li><i>This one is in italic text</i> &mdash; <code>&lt;i&gt;italic text&lt;/i&gt;</code></li>
+        <li><u>This one is underlined text</u> &mdash; <code>&lt;u&gt;underlined text&lt;/u&gt;</code></li>
+        <li><b><i><u>THIS ONE IS IN BOLD, ITALIC AND UNDERLINED TEXT.</u></i></b> &mdash;
+            <code>&lt;b&gt;&lt;i&gt;&lt;u&gt;combined formatting&lt;/u&gt;&lt;/i&gt;&lt;/b&gt;</code>
+        </li>
+        <li><em>I am emphasized text (a little bit stronger than normal)</em> &mdash;
+            <code>&lt;em&gt;emphasized text&lt;/em&gt;</code>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>2. Web Browser &amp; HTML Page Structure</h2>
+
+    <h3>Web Browser:</h3>
+    <ul>
+        <li><b>Core Purpose:</b> A web browser is a software application used to access, retrieve, and display content
+            on the World Wide Web.</li>
+        <li><b>Rendering Mechanism:</b> A browser does not display the raw HTML tags themselves; instead, it interprets
+            the tags as instructions to lay out and present the page content visually.</li>
+    </ul>
+
+    <h3>HTML Page Structure:</h3>
+    <ul>
+        <li><b><code>&lt;head&gt;</code>:</b> Contains page metadata, character encoding, title, scripts, and links to
+            stylesheets.</li>
+        <li><b><code>&lt;title&gt;</code>:</b> Defines the title of the webpage shown in the browser's tab or title bar.
+        </li>
+        <li><b><code>&lt;body&gt;</code>:</b> The visible portion of the document where all visible content is written
+            (text, images, tables, lists, audio, video, etc.).</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. Essential HTML Rules, Elements &amp; Attributes</h2>
+    <ol>
+        <li>
+            <b>HTML Documents:</b> All HTML documents must start with a document type declaration:
+            <code>&lt;!DOCTYPE html&gt;</code>.
+            The HTML document itself begins with <code>&lt;html&gt;</code> and ends with <code>&lt;/html&gt;</code>.
+            The <code>&lt;head&gt;</code> tag contains metadata and the <code>&lt;title&gt;</code> of the page.
+            The visible part of the webpage is placed between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>.
+        </li>
+        <br>
+        <li>
+            <b>DOCTYPE Declaration:</b> Represents the document type and helps web browsers render and display pages
+            correctly.
+            It must be written once at the very top of the page. It is not case-sensitive:
+            <code>&lt;!DOCTYPE html&gt;</code>.
+        </li>
+        <br>
+        <li>
+            <b>HTML Headings:</b> Headings range from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>:<br>
+            <code>&lt;h1&gt;Heading 1&lt;/h1&gt;</code>, <code>&lt;h2&gt;Heading 2&lt;/h2&gt;</code>,
+            <code>&lt;h3&gt;Heading 3&lt;/h3&gt;</code>,
+            <code>&lt;h4&gt;Heading 4&lt;/h4&gt;</code>, <code>&lt;h5&gt;Heading 5&lt;/h5&gt;</code>,
+            <code>&lt;h6&gt;Heading 6&lt;/h6&gt;</code>.
+        </li>
+        <br>
+        <li>
+            <b>HTML Paragraphs:</b> Defined with the <code>&lt;p&gt;</code> tag. Paragraphs automatically begin on a new
+            line and browsers add space before and after them.
+        </li>
+        <br>
+        <li>
+            <b>HTML Links:</b> Links are defined by the <code>&lt;a&gt;</code> tag and the destination URL is specified
+            in the <code>href</code> attribute:
+            <code>&lt;a href="https://example.com"&gt;Visit Site&lt;/a&gt;</code>. Attributes provide additional
+            information about HTML elements.
+        </li>
+        <br>
+        <li>
+            <b>HTML Images:</b> Images are defined by the <code>&lt;img&gt;</code> tag. Attributes like <code>src</code>
+            (source), <code>alt</code> (alternative text), <code>width</code>, and <code>height</code> configure image
+            properties.
+        </li>
+        <br>
+        <li>
+            <b>HTML Elements:</b> An HTML element includes everything from the start tag to the end tag. Syntax:
+            <code>&lt;tagname&gt;content&lt;/tagname&gt;</code>.
+            Some elements have no content and no end tag, like <code>&lt;br&gt;</code> and <code>&lt;hr&gt;</code>;
+            these are called <b>empty tags</b> (or void elements).
+        </li>
+        <br>
+        <li>
+            <b>Nested HTML Elements:</b> "Nested" means HTML elements that contain other elements inside them. All HTML
+            documents consist of nested elements that form the document tree.<br>
+            <i>Example:</i> The <code>&lt;html&gt;</code> element is the root element; it contains
+            <code>&lt;body&gt;</code>, which in turn contains headings, paragraphs, and lists.
+        </li>
+        <br>
+        <li>
+            <b>Never Skip the End Tag:</b> Some HTML elements may still display in browsers even if you forget the
+            closing tag because browsers attempt automatic error correction.
+            However, skipping end tags can cause unexpected layout bugs, broken formatting, and validation issues.
+            Always write closing tags!
+        </li>
+        <br>
+        <li>
+            <b>Empty Tags:</b> Elements with no content and no closing tag are called empty elements.
+            Examples: <code>&lt;br&gt;</code> (line break), <code>&lt;hr&gt;</code> (horizontal rule), and
+            <code>&lt;img&gt;</code> (image).
+        </li>
+        <br>
+        <li>
+            <b>HTML Is Case-Insensitive:</b> HTML tags are not case-sensitive: <code>&lt;P&gt;</code> and
+            <code>&lt;p&gt;</code> mean the same thing.
+            However, modern W3C standards and XHTML specifications strictly recommend using lowercase for clean,
+            professional code.
+        </li>
+        <br>
+        <li>
+            <b>HTML Attributes:</b> Attributes provide additional settings and info for HTML elements.
+            They are always specified in the opening tag, usually as <code>name="value"</code> pairs.<br>
+            <i>Example:</i> <code>&lt;img src="flower.jpg" alt="Flower Photo"&gt;</code>
+        </li>
+        <br>
+        <li>
+            <b>href Attribute:</b> Used with <code>&lt;a&gt;</code> tags to specify the hyperlink's destination address.
+        </li>
+        <br>
+        <li>
+            <b>align Attribute:</b> Used to align elements or text on the webpage (e.g.,
+            <code>&lt;h1 align="center"&gt;Welcome&lt;/h1&gt;</code>). In modern web design, CSS <code>text-align</code>
+            is preferred.
+        </li>
+        <br>
+        <li>
+            <b>width &amp; height Attributes:</b> Specify the dimensions (in pixels or percentages) of elements like
+            images or table cells.
+        </li>
+        <br>
+        <li>
+            <b>src Attribute:</b> Specifies the file path or web address of an image or media resource (e.g.,
+            <code>&lt;img src="img_girl.jpg"&gt;</code>).
+        </li>
+        <br>
+        <li>
+            <b>alt Attribute:</b> Provides alternative text for an image if it cannot be loaded, and assists visually
+            impaired users using screen readers (e.g.,
+            <code>&lt;img src="img_girl.jpg" alt="Girl in a dress"&gt;</code>).
+        </li>
+        <br>
+        <li>
+            <b>style Attribute:</b> Used to add inline CSS styling to any HTML element, defining colors, fonts, borders,
+            or sizes.
+        </li>
+        <br>
+        <li>
+            <b>lang Attribute:</b> Declares the language of the document or element. For example: <code>lang="en"</code>
+            for English, <code>lang="ar"</code> for Arabic, <code>lang="ur"</code> for Urdu.
+        </li>
+        <br>
+        <li>
+            <b>title Attribute:</b> Provides extra advisory information, usually displayed as a tooltip when hovering
+            over the element (e.g., <code>&lt;p title="Tooltip text"&gt;Hover me&lt;/p&gt;</code>).
+        </li>
+        <br>
+        <li>
+            <b>Always Quote Attributes:</b> Attribute values should always be enclosed inside quotes (e.g.,
+            <code>title="hello"</code>). While both single and double quotes are supported, double quotes are standard
+            practice.
+        </li>
+        <br>
+        <li>
+            <b>Heading Hierarchy:</b> Headings range from <code>&lt;h1&gt;</code> down to <code>&lt;h6&gt;</code>.
+            <code>&lt;h1&gt;</code> defines the most important primary topic, while <code>&lt;h6&gt;</code> defines the
+            least important sub-heading.
+        </li>
+    </ol>
+
+    <hr>
+
+    <h2>4. Importance of Headings</h2>
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="30%">Point</th>
+            <th width="70%">Explanation</th>
+        </tr>
+        <tr>
+            <td><b>Structure</b></td>
+            <td>Headings organize the page into clear, logical sections.</td>
+        </tr>
+        <tr>
+            <td><b>Readability</b></td>
+            <td>Users can easily scan and understand the content.</td>
+        </tr>
+        <tr>
+            <td><b>SEO</b></td>
+            <td>Search engines use headings to index the structure and topics of the webpage.</td>
+        </tr>
+        <tr>
+            <td><b>Hierarchy</b></td>
+            <td>Use <code>&lt;h1&gt;</code> for the main topic, <code>&lt;h2&gt;</code> for major sections, and
+                <code>&lt;h3&gt;</code> for sub-sections.
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <center>
+        <h3>Example Heading Hierarchy</h3>
+    </center>
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center" bgcolor="#ffffff">
+        <tr>
+            <td>
+                <pre>
+&lt;h1&gt;Travel Guide&lt;/h1&gt;
+  &lt;h2&gt;Europe&lt;/h2&gt;
+    &lt;h3&gt;France&lt;/h3&gt;
+    &lt;h3&gt;Italy&lt;/h3&gt;
+  &lt;h2&gt;Asia&lt;/h2&gt;
+    &lt;h3&gt;India&lt;/h3&gt;
+    &lt;h3&gt;Thailand&lt;/h3&gt;
+</pre>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>5. Bigger &amp; Custom Headings</h2>
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="30%">Property</th>
+            <th width="70%">Explanation</th>
+        </tr>
+        <tr>
+            <td><b>Default Size</b></td>
+            <td>Browsers assign default font sizes to each heading level (h1 to h6).</td>
+        </tr>
+        <tr>
+            <td><b>Custom Size</b></td>
+            <td>Heading size can be customized using the <code>style</code> attribute.</td>
+        </tr>
+        <tr>
+            <td><b>CSS Property</b></td>
+            <td><code>font-size</code> (e.g., <code>font-size: 60px;</code>)</td>
+        </tr>
+    </table>
+
+    <br>
+    <center>
+        <h3>Basic Example with Custom Size</h3>
+    </center>
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center" bgcolor="#ffffff">
+        <tr>
+            <td>
+                <pre>
+&lt;h1 style="font-size: 60px;"&gt;
+    Custom Large Heading
+&lt;/h1&gt;
+</pre>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>6. HTML Paragraphs</h2>
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="50%">Point</th>
+            <th width="50%">Explanation</th>
+        </tr>
+        <tr>
+            <td><b>Tag</b></td>
+            <td><code>&lt;p&gt; ... &lt;/p&gt;</code></td>
+        </tr>
+        <tr>
+            <td><b>Purpose</b></td>
+            <td>Defines a block paragraph of text.</td>
+        </tr>
+        <tr>
+            <td><b>Display</b></td>
+            <td>Paragraphs are block elements; they always start on a new line.</td>
+        </tr>
+        <tr>
+            <td><b>Spacing</b></td>
+            <td>Browsers automatically add margin/space before and after paragraphs.</td>
+        </tr>
+    </table>
+
+    <br>
+    <center>
+        <h3>Paragraph Example</h3>
+    </center>
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center" bgcolor="#ffffff">
+        <tr>
+            <td>
+                <pre>
+&lt;p&gt;This is the first paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+</pre>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <center>
+        <p>
+            <a href="html.html"> Back to HTML Overview</a> |
+            <a href="formatting-and-fonts.html">Next: Formatting & Fonts</a> |
+            <a href="../main.html">Main Menu</a>
+        </p>
+    </center>
+
+</body>
+
+</html>

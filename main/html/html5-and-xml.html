@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <title>HTML5 New Elements and XML</title>
+</head>
+
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>XML & HTML5 NEW ELEMENTS</h1>
+    </center>
+
+    <hr>
+    <h2>1. Introduction to XML</h2>
+    <p>
+        <b>XML</b> stands for <u>eXtensible Markup Language</u>.
+        It is a markup language created for storing and transporting data across different systems.
+        XML is designed to be both human-readable and machine-readable, providing a flexible and self-describing way to
+        structure data.
+    </p>
+
+    <h3>Example of XML Data Structure</h3>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center" bgcolor="#ffffff">
+        <tr>
+            <td>
+                <pre>
+&lt;note&gt;
+    &lt;to&gt;Tove&lt;/to&gt;
+    &lt;from&gt;Jani&lt;/from&gt;
+    &lt;heading&gt;Reminder&lt;/heading&gt;
+    &lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
+&lt;/note&gt;
+                </pre>
+            </td>
+        </tr>
+    </table>
+
+    <p>
+        <b>NOTE:</b> XML is strictly case-sensitive. All open tags must be closed properly.
+    </p>
+
+    <h3>The 7 Core Rules of XML</h3>
+    <ol>
+        <li><b>Root Element:</b> All XML documents must contain one single root element that encloses all other
+            elements.</li>
+        <li><b>Closing Tags:</b> In XML, every element must have a corresponding closing tag.</li>
+        <li><b>Case Sensitivity:</b> XML tags are strictly case-sensitive.</li>
+        <li><b>Quoted Attribute Values:</b> All attribute values must always be enclosed in quotes.</li>
+        <li><b>Element Attributes:</b> Elements can contain attributes to provide metadata.</li>
+        <li><b>Nested Elements:</b> Elements must be properly nested in a clean hierarchy.</li>
+        <li><b>Hierarchical Document Structure:</b> Documents must follow a well-formed tree structure.</li>
+    </ol>
+
+    <hr>
+    <h2>2. HTML5 Elements</h2>
+    <p>
+        HTML5 introduced semantic elements that clearly describe their purpose to both browsers and developers.
+        Before HTML5, developers commonly used generic <code>&lt;div&gt;</code> containers with custom IDs or classes.
+    </p>
+
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="25%">Element Tag</th>
+            <th width="75%">Use & Description</th>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;header&gt;</b></td>
+            <td>Defines introductory content or a container for navigational links (typically at the top of a
+                page/section).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;nav&gt;</b></td>
+            <td>Defines a set of major navigation links or menus.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;main&gt;</b></td>
+            <td>Specifies the primary, central content unique to the document (should only be used once per page).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;article&gt;</b></td>
+            <td>Defines an independent, self-contained piece of content (blog posts, news stories, forum comments).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;section&gt;</b></td>
+            <td>Defines a thematic grouping of content, typically with a heading (chapters, tabs, sections).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;aside&gt;</b></td>
+            <td>Defines content tangentially related to the main content (sidebars, pull quotes, callout boxes).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;footer&gt;</b></td>
+            <td>Defines a footer for a document or section (copyright, author info, back-to-top links).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;mark&gt;</b></td>
+            <td>Highlights or marks text for reference purposes.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;time&gt;</b></td>
+            <td>Defines a machine-readable date, time, or duration.</td>
+        </tr>
+    </table>
+
+    <h3>Benefits of Semantic Elements:</h3>
+    <ul>
+        <li><b>SEO (Search Engine Optimization):</b> Helps search engines index and rank the page by understanding its
+            layout and content.</li>
+        <li><b>Accessibility:</b> Screen readers can navigate directly through headers, navigation bars, and articles.
+        </li>
+        <li><b>Code Readability:</b> Makes HTML source code cleaner, standard, and easy to maintain.</li>
+    </ul>
+
+    <hr>
+    <h2>3. HTML5 Multimedia (Audio & Video)</h2>
+    <p>
+        HTML5 provides native, standardized support for multimedia playback directly inside web browsers without
+        requiring external plugins like Adobe Flash.
+    </p>
+
+    <h3>Multimedia Benefits:</h3>
+    <ul>
+        <li><b>Standardized Playback:</b> Media runs uniformly across all modern browsers and mobile devices.</li>
+        <li><b>No Third-Party Plugins:</b> Eliminates security and performance issues associated with browser plugins.
+        </li>
+        <li><b>Direct Page Embedding:</b> Media elements can be styled and scripted like any other HTML tag.</li>
+    </ul>
+
+    <h3>Media Elements:</h3>
+    <ul>
+        <li><b><code>&lt;video&gt;</code>:</b> Used to embed video clips directly on the webpage.</li>
+        <li><b><code>&lt;audio&gt;</code>:</b> Used to embed sound files (supports MP3, WAV, OGG formats).</li>
+    </ul>
+
+    <h3>Audio & Video Attributes</h3>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="25%">Attribute</th>
+            <th width="75%">Use & Description</th>
+        </tr>
+        <tr>
+            <td align="center"><b>controls</b></td>
+            <td>Displays standard playback controls (play, pause, volume, seeking, fullscreen).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>autoplay</b></td>
+            <td>Automatically starts playing the audio or video as soon as it is ready.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>loop</b></td>
+            <td>Automatically replays the media file from the beginning once finished.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>muted</b></td>
+            <td>Sets the audio output of the media to be muted by default.</td>
+        </tr>
+    </table>
+
+    <hr>
+    <h2>4. HTML5 Form Input Types</h2>
+    <p>
+        HTML5 introduced smart input types that provide native user interface controls (such as date pickers and color
+        pickers) as well as automatic form validation.
+    </p>
+
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="25%">Input Type</th>
+            <th width="75%">Use & Description</th>
+        </tr>
+        <tr>
+            <td align="center"><b>type="email"</b></td>
+            <td>Used for email addresses; automatically verifies the presence of an "@" symbol.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>type="date"</b></td>
+            <td>Opens a built-in calendar picker for date selection.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>type="color"</b></td>
+            <td>Opens a native color palette picker to select hex color values.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>type="range"</b></td>
+            <td>Creates a slider control to select an approximate numerical value within a range.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>type="number"</b></td>
+            <td>Restricts input to numbers only, offering step up/down arrow buttons.</td>
+        </tr>
+    </table>
+
+    <hr>
+    <h2>5. HTML5 Drag and Drop API</h2>
+    <p>
+        HTML5 allows users to grab elements on the screen and drag them to different drop zones directly in the browser.
+        By default, images, links, and highlighted text selections are draggable. Any other element can be made
+        draggable by adding <code>draggable="true"</code>.
+    </p>
+
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="25%">Drag Event</th>
+            <th width="75%">Use & Description</th>
+        </tr>
+        <tr>
+            <td align="center"><b>ondragstart</b></td>
+            <td>Fires when the user begins dragging an element.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>ondragover</b></td>
+            <td>Specifies where the dragged element is permitted to be dropped.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>ondrop</b></td>
+            <td>Fires when the dragged element is successfully released into a valid drop zone.</td>
+        </tr>
+    </table>
+
+    <hr>
+    <h2>6. XHTML & Meta Tags</h2>
+
+    <h3>XHTML (Extensible HyperText Markup Language)</h3>
+    <p>
+        XHTML is a stricter, cleaner, XML-based version of HTML. It combines HTML's syntax with XML's strict formatting
+        standards.
+    </p>
+
+    <h3>Core Rules of XHTML:</h3>
+    <ul>
+        <li><b>Lowercase Tags:</b> All tags and attributes must be written in lowercase letters.</li>
+        <li><b>Closed Elements:</b> All elements, including empty elements (like <code>&lt;br /&gt;</code> and
+            <code>&lt;hr /&gt;</code>), must be properly closed.
+        </li>
+        <li><b>Proper Nesting:</b> Elements must always be closed in the exact reverse order that they were opened.</li>
+        <li><b>Quoted Attributes:</b> All attribute values must be enclosed in double quotes.</li>
+    </ul>
+
+    <h3>HTML Meta Tags</h3>
+    <p>
+        Meta tags provide metadata (information about data) to web browsers, search engines, and web servers.
+        They are placed inside the <code>&lt;head&gt;</code> element and do not appear visually on the page.
+    </p>
+
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="25%">Meta Tag Attribute</th>
+            <th width="75%">Use & Description</th>
+        </tr>
+        <tr>
+            <td align="center"><b>charset</b></td>
+            <td>Defines the character encoding for the HTML document (typically <code>charset="UTF-8"</code>).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>viewport</b></td>
+            <td>Sets the initial view area to make pages responsive across mobile, tablet, and desktop screens.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>description</b></td>
+            <td>Provides a concise summary of the page displayed in search engine results (SEO snippet).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>author</b></td>
+            <td>Specifies the name of the author or organization who created the document.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>refresh</b></td>
+            <td>Automatically reloads the page or redirects the visitor after a set number of seconds.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <center>
+        <p>
+            <a href="html.html">Back to HTML Overview</a> |
+            <a href="lists-tables-images-forms.html">Previous: Lists, Tables, Images & Forms</a> |
+            <a href="../main.html">Main Menu</a>
+        </p>
+    </center>
+
+</body>
+
+</html>

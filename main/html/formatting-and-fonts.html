@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <title>Formats and Fonts of HTML</title>
+</head>
+
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>FORMATS AND FONTS OF HTML</h1>
+    </center>
+
+    <hr>
+
+    <h2>HTML DISPLAY</h2>
+    <p>
+        There is a common challenge when accessing a website in either full screen or half screen: we are not always
+        sure how the browser will display the texts, images, audio, and layout.
+    </p>
+    <ul>
+        <li><b>Space Collapsing:</b> Adding extra spaces in the HTML code is directly removed by the browser and shown
+            normally. Browsers automatically collapse multiple spaces into a single space.</li>
+        <li><b>Discarding Line Breaks:</b> The browser automatically ignores extra line breaks when rendering the
+            webpage.</li>
+        <li><b><code>&lt;hr&gt;</code> Tag:</b> Helps to create a thematic break in a page. It is a self-closing tag or
+            empty tag, meaning it has no companion end tag.</li>
+        <li><b><code>&lt;br&gt;</code> Tag:</b> With the help of the <code>&lt;br&gt;</code> tag, we can manually break
+            a paragraph and move to the next line.</li>
+        <li><b><code>&lt;pre&gt;</code> Tag:</b> By using the <code>&lt;pre&gt;</code> tag, we can preserve both the
+            spaces and manual line breaks exactly as they are written in the source code.</li>
+    </ul>
+
+    <hr>
+
+    <h2>HTML STYLES</h2>
+    <p>
+        The HTML <b>style</b> attribute allows us to apply CSS styling directly in the code to enhance visibility and
+        improve user experience on the webpage.
+    </p>
+    <ul>
+        <li><b>Background Color:</b> The CSS <code>background-color</code> property defines background color for HTML
+            elements. CSS background mainly targets elements inside the <code>&lt;body&gt;</code> tag like headings,
+            paragraphs, and tables.
+            <br><i>Example:</i> <code>style="background-color:powderblue;"</code> &mdash; This is the basic form to add
+            colors to the background.
+        </li>
+        <li><b>Text Color:</b> By using <code>style="color:red;"</code> on <code>&lt;h1&gt;</code> and
+            <code>&lt;p&gt;</code>, we can change the text color.
+        </li>
+        <li><b>Font Family:</b> <code>style="font-family:verdana;"</code> &mdash; This is how we can apply different
+            fonts to the text line (e.g.,
+            <code>&lt;h1 style="font-family:verdana;"&gt;This is a heading&lt;/h1&gt;</code>).
+        </li>
+        <li><b>Font Size:</b> <code>style="font-size:300%;"</code> &mdash; This is how we can change the sizes of the
+            text. 300% is three times bigger than the normal text.</li>
+        <li><b>Text Alignment:</b> <code>style="text-align:center;"</code> &mdash; This is how we can change the
+            alignment of the text (left, center, right).</li>
+        <li><b>Font Style:</b> <code>style="font-style:italic;"</code> &mdash; This is how we can change the font style
+            to italic.</li>
+    </ul>
+
+    <hr>
+
+    <h2>TEXT FORMATTING TAGS OVERVIEW</h2>
+    <ul>
+        <li><b><code>&lt;b&gt;</code>:</b> Used to make text bold.</li>
+        <li><b><code>&lt;strong&gt;</code>:</b> Used to indicate strong importance. It displays visually bold like
+            <code>&lt;b&gt;</code>, but indicates serious importance.
+        </li>
+        <li><b><code>&lt;i&gt;</code>:</b> Used for making text italic.</li>
+        <li><b><code>&lt;em&gt;</code>:</b> Used to emphasize text. It displays visually italic like
+            <code>&lt;i&gt;</code>, but indicates semantic emphasis and importance.
+        </li>
+        <li><b><code>&lt;mark&gt;</code>:</b> Used to mark or highlight text in a paragraph.</li>
+        <li><b><code>&lt;small&gt;</code>:</b> Used to make text smaller in the same paragraph.</li>
+        <li><b><code>&lt;del&gt;</code>:</b> Used to delete text, appearing as a single horizontal line through the
+            text.</li>
+        <li><b><code>&lt;ins&gt;</code>:</b> Used for inserted text, normally used alongside the
+            <code>&lt;del&gt;</code> tag. It underlines the words.
+        </li>
+        <li><b><code>&lt;sub&gt;</code>:</b> Used to make words or letters appear in subscript form (a bit lower).
+            <i>Example:</i> H<sub>2</sub>O
+        </li>
+        <li><b><code>&lt;sup&gt;</code>:</b> Used to make words or letters appear in superscript form (a bit higher).
+            <i>Example:</i> x<sup>2</sup>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>EASY TO REMEMBER THROUGH TABLE</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="20%">TAGS</th>
+            <th width="80%">Uses &amp; Description</th>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;b&gt;</b></td>
+            <td>Defines <b>bold</b> text.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;em&gt;</b></td>
+            <td>Defines <em>emphasized</em> text (renders with stress emphasis).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;i&gt;</b></td>
+            <td>Defines <i>italic</i> text in an alternate voice or mood.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;small&gt;</b></td>
+            <td>Defines <small>smaller</small> text.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;strong&gt;</b></td>
+            <td>Defines <strong>important</strong> text with strong importance.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;sub&gt;</b></td>
+            <td>Defines <sub>subscripted</sub> text (e.g., H<sub>2</sub>O).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;sup&gt;</b></td>
+            <td>Defines <sup>superscripted</sup> text (e.g., x<sup>2</sup>).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;ins&gt;</b></td>
+            <td>Defines <ins>inserted</ins> text (renders with an underline).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;del&gt;</b></td>
+            <td>Defines <del>deleted</del> text (renders with a strikethrough line).</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;mark&gt;</b></td>
+            <td>Defines <mark>marked / highlighted</mark> text.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;blockquote&gt;</b></td>
+            <td>Defines a section that is quoted from another source.
+                <br><i>Example:</i>
+                <blockquote cite="http://www.worldwildlife.org">For 60 years, WWF has worked to help...</blockquote>
+                Here <code>cite</code> is an attribute that specifies the URL of the source.
+            </td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;q&gt;</b></td>
+            <td>Defines a short inline quotation. It automatically adds quotation marks around the text. Both
+                <code>&lt;blockquote&gt;</code> and <code>&lt;q&gt;</code> are used for quotes.
+            </td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;abbr&gt;</b></td>
+            <td>Defines an abbreviation or acronym (short form). When the user hovers over the text, it displays the
+                full form: <abbr title="HyperText Markup Language">HTML</abbr></td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;address&gt;</b></td>
+            <td>Indicates contact information for the author or owner of the document:
+                <address>Written by John Doe, Doe's Farm, 123 Apple Lane, London, UK</address>
+            </td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;cite&gt;</b></td>
+            <td>Defines the title of a creative work (books, poems, songs, paintings, etc.). This tag is usually
+                rendered in italic.</td>
+        </tr>
+        <tr>
+            <td align="center"><b>&lt;bdo&gt;</b></td>
+            <td>Used for Bi-Directional Override to override the current text direction and display text in the opposite
+                direction (e.g., right-to-left).</td>
+        </tr>
+    </table>
+
+    <hr>
+    <center>
+        <p>
+            <a href="html.html">&larr; Back to HTML Overview</a> |
+            <a href="basics-of-html.html">&larr; Previous: Basics of HTML</a> |
+            <a href="colors-and-hyperlinks.html">Next: Colors &amp; Hyperlinks &rarr;</a> |
+            <a href="../main.html">Main Menu</a>
+        </p>
+    </center>
+
+</body>
+
+</html>

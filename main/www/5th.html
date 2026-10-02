@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>IP Addresses and Protection</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>IP Addresses and Protection</h1>
+        <p><a href="www.html">&larr; Back to WWW Overview</a></p>
+    </center>
+    <hr>
+
+    <h2>What is an IP Address?</h2>
+    <p>
+        An <b>IP (Internet Protocol) address</b> is a unique numerical label assigned to every device connected to a computer network that uses the Internet Protocol for communication.
+    </p>
+
+    <h3>Key Features:</h3>
+    <ul>
+        <li><b>Core Definition:</b> Unique numeric label enabling device location and tracking.</li>
+        <li><b>Device Connectivity:</b> Allows computers, smartphones, and servers to exchange data.</li>
+        <li><b>Global Identification:</b> Uniquely identifies devices across the worldwide web.</li>
+        <li><b>Routing:</b> Directs data packets through routers to reach their correct destination.</li>
+        <li><b>Network Services:</b> Essential for web browsing, email, and file transfers.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Types of IP Addresses</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="80%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="25%">IP Type</th>
+            <th width="75%">Description</th>
+        </tr>
+        <tr>
+            <td><b>Public IP</b></td>
+            <td>External address assigned by your ISP, visible to the wider internet.</td>
+        </tr>
+        <tr>
+            <td><b>Private IP</b></td>
+            <td>Internal address assigned by your router for local network devices.</td>
+        </tr>
+        <tr>
+            <td><b>Static IP</b></td>
+            <td>A fixed, permanent address that does not change; often used for web and mail servers.</td>
+        </tr>
+        <tr>
+            <td><b>Dynamic IP</b></td>
+            <td>A temporary address automatically assigned by a DHCP server; changes periodically.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>IPv4 vs IPv6 Overview</h2>
+    <ul>
+        <li><b>IPv4:</b> 32-bit address written in dotted-decimal format (e.g., 192.168.1.1). Provides ~4.3 billion unique addresses.</li>
+        <li><b>IPv6:</b> 128-bit address written in hexadecimal format (e.g., 2001:0db8::7334). Provides ~340 undecillion addresses.</li>
+    </ul>
+
+    <h3>Advantages of IPv6:</h3>
+    <ol>
+        <li><b>Vast Address Space:</b> Solves IPv4 address exhaustion.</li>
+        <li><b>Built-in Security:</b> Native support for IPsec encryption.</li>
+        <li><b>Efficient Routing:</b> Simplified header reduces packet processing time.</li>
+        <li><b>Better Mobility:</b> Optimized for mobile device roaming.</li>
+    </ol>
+
+    <hr>
+
+    <h2>Reserved IP Addresses</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="80%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th width="30%">Address</th>
+            <th width="70%">Special Purpose</th>
+        </tr>
+        <tr>
+            <td><b>0.0.0.0</b></td>
+            <td>Default route / non-routable meta-address</td>
+        </tr>
+        <tr>
+            <td><b>127.0.0.1</b></td>
+            <td>Loopback address (localhost) used to test network software on the local machine</td>
+        </tr>
+        <tr>
+            <td><b>169.254.0.1 - 169.254.0.254</b></td>
+            <td>APIPA (Automatic Private IP Addressing), used when DHCP fails</td>
+        </tr>
+        <tr>
+            <td><b>255.255.255.255</b></td>
+            <td>Broadcast address for the local subnet</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>IPv4 Address Classes</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="80%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Class</th>
+            <th>Address Range</th>
+            <th>Intended Use</th>
+        </tr>
+        <tr align="center">
+            <td><b>A</b></td>
+            <td>1.0.0.0 - 126.255.255.255</td>
+            <td align="left">Very large networks with millions of hosts</td>
+        </tr>
+        <tr align="center">
+            <td><b>B</b></td>
+            <td>128.0.0.0 - 191.255.255.255</td>
+            <td align="left">Medium to large sized networks</td>
+        </tr>
+        <tr align="center">
+            <td><b>C</b></td>
+            <td>192.0.0.0 - 223.255.255.255</td>
+            <td align="left">Small local area networks (LANs)</td>
+        </tr>
+        <tr align="center">
+            <td><b>D</b></td>
+            <td>224.0.0.0 - 239.255.255.255</td>
+            <td align="left">Reserved for Multicast groups</td>
+        </tr>
+        <tr align="center">
+            <td><b>E</b></td>
+            <td>240.0.0.0 - 255.255.255.254</td>
+            <td align="left">Reserved for experimental and research use</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>Security Threats &amp; Protection</h2>
+
+    <h3>Common Security Threats:</h3>
+    <ul>
+        <li>DDoS (Distributed Denial of Service) attacks targeting your IP</li>
+        <li>Location tracking and IP spoofing</li>
+        <li>Unauthorized remote access attempts</li>
+    </ul>
+
+    <h3>How to Protect Your IP Address:</h3>
+    <ul>
+        <li>Use a <b>VPN (Virtual Private Network)</b> to mask your real IP address.</li>
+        <li>Ensure websites use <b>HTTPS</b> encryption.</li>
+        <li>Enable a <b>NAT Firewall</b> on your router.</li>
+        <li>Use strong, unique passwords for network hardware.</li>
+        <li>Keep your operating system and router firmware updated.</li>
+    </ul>
+
+    <hr>
+    <center>
+        <p><a href="www.html">&larr; Back to WWW Overview</a></p>
+    </center>
+
+</body>
+</html>

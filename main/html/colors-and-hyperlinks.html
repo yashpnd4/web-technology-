@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Colors and Hyperlinks in HTML</title>
+</head>
+
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>HTML COLORS AND HYPERLINKS</h1>
+    </center>
+
+    <hr>
+    <p>HTML colors are specified with color name or RGB , HEX , HSL , RGBA , HSLA</p>
+    <P>It includes around 140 standered color name.</P>
+    <h3>Background color</h3>
+    <p>The most basic syntex to write the code for changing backgrounf color is <br>
+        style="background-color:DodgerBlue;"</p>
+    <p>For Text color the syntax is style="color:Tomato;"</p>
+    <p>You can also change the border colors by using border property. For example <br> style="border:2px solid red;".
+    </p>
+    <h1>Color Values in HTML</h1>
+
+    <p>
+        In HTML, colors can be specified using RGB, HEX, HSL, and translucent
+        RGBA or HSLA values.
+    </p>
+
+    <h2>HTML RGB and RGBA Colors</h2>
+
+    <h3>RGB Color Model</h3>
+
+    <p>
+        An RGB color value represents RED, GREEN, and BLUE light sources
+        combined to create various colors.
+    </p>
+
+    <p><b>RGB Color Values</b></p>
+
+    <p>
+        In HTML, colors are defined by combining Red, Green, and Blue light
+        intensities.
+    </p>
+
+    <p><b>Formula:</b> rgb(red, green, blue)</p>
+
+    <ul>
+        <li>Each parameter defines the light intensity as a value between 0 and 255.</li>
+        <li>256 values per channel</li>
+        <li>256 x 256 x 256 combinations</li>
+        <li>16,777,216 possible colors</li>
+    </ul>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>Color</th>
+            <th>RGB Value</th>
+        </tr>
+        <tr>
+            <td>Red</td>
+            <td>rgb(255, 0, 0)</td>
+        </tr>
+        <tr>
+            <td>Green</td>
+            <td>rgb(0, 255, 0)</td>
+        </tr>
+        <tr>
+            <td>Black</td>
+            <td>rgb(0, 0, 0)</td>
+        </tr>
+        <tr>
+            <td>White</td>
+            <td>rgb(255, 255, 255)</td>
+        </tr>
+    </table>
+
+    <p><b>Examples of RGB colors:</b></p>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>RGB Value</th>
+        </tr>
+        <tr>
+            <td>rgb(255, 0, 0)</td>
+        </tr>
+        <tr>
+            <td>rgb(0, 0, 255)</td>
+        </tr>
+        <tr>
+            <td>rgb(60, 179, 113)</td>
+        </tr>
+        <tr>
+            <td>rgb(238, 130, 238)</td>
+        </tr>
+        <tr>
+            <td>rgb(255, 165, 0)</td>
+        </tr>
+        <tr>
+            <td>rgb(106, 90, 205)</td>
+        </tr>
+    </table>
+
+    <h3>Shades of Gray</h3>
+
+    <p>
+        Shades of gray are defined using equal values for all three RGB
+        parameters.
+    </p>
+
+    <p><b>The Gray Rule:</b> rgb(X, X, X)</p>
+
+    <p>
+        When red, green, and blue values are completely equal, the color
+        saturations cancel out, resulting in a neutral gray.
+    </p>
+
+    <ul>
+        <li>Values closer to 0 create darker shades</li>
+        <li>Values closer to 255 create lighter shades</li>
+        <li>Total of 256 unique gray levels</li>
+    </ul>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>RGB Value</th>
+        </tr>
+        <tr>
+            <td>rgb(60, 60, 60)</td>
+        </tr>
+        <tr>
+            <td>rgb(100, 100, 100)</td>
+        </tr>
+        <tr>
+            <td>rgb(140, 140, 140)</td>
+        </tr>
+        <tr>
+            <td>rgb(180, 180, 180)</td>
+        </tr>
+        <tr>
+            <td>rgb(200, 200, 200)</td>
+        </tr>
+        <tr>
+            <td>rgb(240, 240, 240)</td>
+        </tr>
+    </table>
+
+    <h3>RGBA Color Values</h3>
+
+    <p>
+        An RGBA color value is an extension of RGB with an Alpha channel
+        which specifies the opacity of the color.
+    </p>
+
+    <p><b>The Alpha Parameter:</b> rgba(R, G, B, alpha)</p>
+
+    <ul>
+        <li>0.0 - Completely invisible (transparent)</li>
+        <li>0.5 - Semi-transparent</li>
+        <li>1.0 - Fully opaque (solid color)</li>
+    </ul>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>RGBA Value</th>
+            <th>Alpha</th>
+        </tr>
+        <tr>
+            <td>rgba(255,99,71,0)</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>rgba(255,99,71,0.2)</td>
+            <td>0.2</td>
+        </tr>
+        <tr>
+            <td>rgba(255,99,71,0.4)</td>
+            <td>0.4</td>
+        </tr>
+        <tr>
+            <td>rgba(255,99,71,0.6)</td>
+            <td>0.6</td>
+        </tr>
+        <tr>
+            <td>rgba(255,99,71,0.8)</td>
+            <td>0.8</td>
+        </tr>
+        <tr>
+            <td>rgba(255,99,71,1)</td>
+            <td>1.0</td>
+        </tr>
+    </table>
+
+    <h2>HTML HEX Colors</h2>
+
+    <p>
+        A hexadecimal representation of RGB values used to specify colors
+        in HTML.
+    </p>
+
+    <p><b>The HEX Rule:</b> #RRGGBB</p>
+
+    <p>
+        A hexadecimal color is specified with six hexadecimal digits,
+        where RR (red), GG (green), and BB (blue) specify the components.
+    </p>
+
+    <ul>
+        <li>RR (Red): Specifies red intensity (00 to FF)</li>
+        <li>GG (Green): Specifies green intensity (00 to FF)</li>
+        <li>BB (Blue): Specifies blue intensity (00 to FF)</li>
+    </ul>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>Color</th>
+            <th>HEX Value</th>
+        </tr>
+        <tr>
+            <td>Red</td>
+            <td>#FF0000</td>
+        </tr>
+        <tr>
+            <td>Green</td>
+            <td>#00FF00</td>
+        </tr>
+        <tr>
+            <td>Blue</td>
+            <td>#0000FF</td>
+        </tr>
+        <tr>
+            <td>Yellow</td>
+            <td>#FFFF00</td>
+        </tr>
+        <tr>
+            <td>White</td>
+            <td>#FFFFFF</td>
+        </tr>
+        <tr>
+            <td>Black</td>
+            <td>#000000</td>
+        </tr>
+    </table>
+
+    <p>
+        Examples of using HTML inline styles to define heading background colors.
+    </p>
+
+    <p><b>RENDERED OUTPUT</b></p>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>HEX Value</th>
+        </tr>
+        <tr>
+            <td>#ff0000</td>
+        </tr>
+        <tr>
+            <td>#0000ff</td>
+        </tr>
+        <tr>
+            <td>#3cb371</td>
+        </tr>
+        <tr>
+            <td>#ee82ee</td>
+        </tr>
+        <tr>
+            <td>#ffa500</td>
+        </tr>
+        <tr>
+            <td>#6a5acd</td>
+        </tr>
+    </table>
+
+    <h3>Shades of Gray</h3>
+
+    <p>
+        Shades of gray are defined by using equal values for red, green,
+        and blue parameters.
+    </p>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>HEX Value</th>
+        </tr>
+        <tr>
+            <td>#404040</td>
+        </tr>
+        <tr>
+            <td>#686868</td>
+        </tr>
+        <tr>
+            <td>#a0a0a0</td>
+        </tr>
+        <tr>
+            <td>#bebebe</td>
+        </tr>
+        <tr>
+            <td>#dcdcdc</td>
+        </tr>
+        <tr>
+            <td>#f8f8f8</td>
+        </tr>
+    </table>
+
+    <h2>HTML HSL and HSLA Colors</h2>
+
+    <p>
+        Intuitive color models in modern web development offering precision
+        control over lighting and opacity.
+    </p>
+
+    <h3>HSL Color Model</h3>
+
+    <p>
+        Represents color values based on three primary visual dimensions:
+    </p>
+
+    <ul>
+        <li>
+            <b>Hue:</b> Positioned on a 360° color wheel from red,
+            through green and blue, and back to red.
+        </li>
+        <li>
+            <b>Saturation:</b> Intensity value from 0% (grayscale shadow)
+            up to 100% (full vibrant color).
+        </li>
+        <li>
+            <b>Lightness:</b> Brightness level from 0% (pure black)
+            up to 100% (pure white).
+        </li>
+    </ul>
+
+    <h3>HSLA Color Model</h3>
+
+    <p>
+        Extends the standard HSL color model by introducing opacity control.
+    </p>
+
+    <ul>
+        <li>
+            <b>Alpha Channel:</b> Specifies the level of transparency
+            for rendering the element.
+        </li>
+        <li>
+            <b>Numeric Range:</b> Expressed as a decimal between
+            0.0 (fully transparent) and 1.0 (completely opaque).
+        </li>
+        <li>
+            <b>UI Design:</b> Ideal for overlay filters, glassmorphism
+            designs, and smooth backdrop blending layers.
+        </li>
+    </ul>
+
+    <p><b>HSL Color Values</b></p>
+
+    <p>
+        An intuitive way to specify colors in HTML using Hue, Saturation,
+        and Lightness.
+    </p>
+
+    <p><b>Syntax:</b> hsl(hue, saturation, lightness)</p>
+
+    <h3>Hue</h3>
+
+    <p>
+        A degree on the color wheel from 0 to 360.
+    </p>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>Value</th>
+            <th>Color</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>Red</td>
+        </tr>
+        <tr>
+            <td>120</td>
+            <td>Green</td>
+        </tr>
+        <tr>
+            <td>240</td>
+            <td>Blue</td>
+        </tr>
+    </table>
+
+    <h3>Saturation</h3>
+
+    <p>
+        A percentage value that represents the color intensity.
+    </p>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>Value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>0%</td>
+            <td>Shade of Gray</td>
+        </tr>
+        <tr>
+            <td>100%</td>
+            <td>Full Color</td>
+        </tr>
+    </table>
+
+    <p>
+        Saturation can be described as the intensity of a color.
+    </p>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>Level</th>
+            <th>Value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>LEVEL 1</td>
+            <td>100%</td>
+            <td>Pure color, no shades of gray.</td>
+        </tr>
+        <tr>
+            <td>LEVEL 2</td>
+            <td>50%</td>
+            <td>50% gray, but you can still see the color.</td>
+        </tr>
+        <tr>
+            <td>LEVEL 3</td>
+            <td>0%</td>
+            <td>Completely gray; you can no longer see the color.</td>
+        </tr>
+    </table>
+
+    <p>
+        Examples of varying saturation levels of the color red and their
+        rendered results.
+    </p>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>HSL Value</th>
+        </tr>
+        <tr>
+            <td>hsl(0, 100%, 50%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 80%, 50%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 60%, 50%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 40%, 50%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 20%, 50%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 0%, 50%)</td>
+        </tr>
+    </table>
+
+    <h3>Lightness</h3>
+
+    <p>
+        A percentage value that controls the overall brightness.
+    </p>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>Value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>0%</td>
+            <td>Pure Black</td>
+        </tr>
+        <tr>
+            <td>100%</td>
+            <td>Pure White</td>
+        </tr>
+    </table>
+
+    <p>
+        The lightness of a color can be described as how much light you want
+        to give the color.
+    </p>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>Level</th>
+            <th>Value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>LEVEL 1</td>
+            <td>100%</td>
+            <td>Full lightness (white).</td>
+        </tr>
+        <tr>
+            <td>LEVEL 2</td>
+            <td>50%</td>
+            <td>50% light (neither dark nor light).</td>
+        </tr>
+        <tr>
+            <td>LEVEL 3</td>
+            <td>0%</td>
+            <td>No light (black).</td>
+        </tr>
+    </table>
+
+    <p>
+        Examples of varying lightness levels of the color red and their
+        rendered results.
+    </p>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>HSL Value</th>
+        </tr>
+        <tr>
+            <td>hsl(0, 100%, 0%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 100%, 25%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 100%, 50%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 100%, 75%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 100%, 90%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 100%, 100%)</td>
+        </tr>
+    </table>
+
+    <h3>Shades of Gray</h3>
+
+    <p>
+        Shades of gray are defined by setting the hue and saturation to 0,
+        and adjusting the lightness from 0% to 100%.
+    </p>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>HSL Value</th>
+        </tr>
+        <tr>
+            <td>hsl(0, 0%, 20%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 0%, 30%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 0%, 40%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 0%, 60%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 0%, 70%)</td>
+        </tr>
+        <tr>
+            <td>hsl(0, 0%, 90%)</td>
+        </tr>
+    </table>
+
+    <h3>HSLA Color Values</h3>
+
+    <p>
+        An extension of standard HSL color values, introducing an Alpha
+        channel to specify color opacity.
+    </p>
+
+    <p><b>Syntax:</b> hsla(hue, saturation, lightness, alpha)</p>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>Parameter</th>
+            <th>Range</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Hue</td>
+            <td>0 to 360</td>
+            <td>
+                Represents a degree on the color wheel from 0 to 360.
+                0 is red, 120 is green, and 240 is blue.
+            </td>
+        </tr>
+        <tr>
+            <td>Saturation</td>
+            <td>0% to 100%</td>
+            <td>
+                A percentage value. 0% means a shade of gray, and 100%
+                is the full, vibrant color.
+            </td>
+        </tr>
+        <tr>
+            <td>Lightness</td>
+            <td>0% to 100%</td>
+            <td>
+                A percentage value. 0% is completely black, 50% is normal
+                (neither dark nor light), and 100% is white.
+            </td>
+        </tr>
+        <tr>
+            <td>Alpha</td>
+            <td>0.0 to 1.0</td>
+            <td>
+                A number specifying opacity. 0.0 is fully transparent,
+                and 1.0 is not transparent at all.
+            </td>
+        </tr>
+    </table>
+
+    <p>
+        Experiment by mixing the HSLA values below to adjust the alpha
+        (transparency) channel:
+    </p>
+
+    <table border="1" cellpadding="20" cellspacing="0" width="80%" align="center">
+        <tr>
+            <th>HSLA Value</th>
+        </tr>
+        <tr>
+            <td>hsla(9, 100%, 64%, 0)</td>
+        </tr>
+        <tr>
+            <td>hsla(9, 100%, 64%, 0.2)</td>
+        </tr>
+        <tr>
+            <td>hsla(9, 100%, 64%, 0.4)</td>
+        </tr>
+        <tr>
+            <td>hsla(9, 100%, 64%, 0.6)</td>
+        </tr>
+        <tr>
+            <td>hsla(9, 100%, 64%, 0.8)</td>
+        </tr>
+        <tr>
+            <td>hsla(9, 100%, 64%, 1)</td>
+        </tr>
+    </table>
+
+
+    <h3 align="center">HYPERLINKS </h3>
+    <p>HTML links are called as the hyperlinks.Hypertext is text used to link other parts of the text.A hyperlink is a
+        piece of HTML text</p>
+    <p>[RED COLORED]href attribute specifies the destination url for links.without it ,the anchor tag will not function
+        as hyperlink.
+        <br>[GREEN COLORED]links text specifies the visible content displays on screen.It consist of plain
+        text,images,or other inline elements.
+        <br>[WHITE COLORED]Wwe can give the name to that link like, click here.
+    </p>
+    <p>Unvisited links looks like in light blue color , visited links looks like in purple color and active links looks
+        like in red color.</p>
+    <p><u><i>TYPES OF HTML LINKS</i></u>
+        <br>1.self link = opening same page
+        <br>2.blank link = opening new tab
+        <br>3.parent link = opening parent page,which is the main page.
+        <br>4.top link = opening top of the page in same website.
+    </p>
+    <p>to use image we can use the
+        <br>img src="" alt=""
+    </p>
+    <p>to provide email in link tag we can use,mailto tag</p>
+    <p>To use the button we can use as , button onclick="document.location='default.asp'".</p>
+    <p>To specify if we have clicked the right link or not , we can use link title so it show the redirection name on
+        it.
+        <br> as example, [a href="html_tutorial.asp"title="Go to W3Schools"],here title is written .
+    </p>
+    <hr>
+    <center>
+        <p>
+            <a href="html.html"> Back to HTML Overview</a> |
+            <a href="formatting-and-fonts.html"> Previous: Formatting & Fonts</a> |
+            <a href="lists-tables-images-forms.html">Next: Lists, Tables, Images & Forms</a> |
+            <a href="../main.html">Main Menu</a>
+        </p>
+    </center>
+
+</body>
+
+</html>
