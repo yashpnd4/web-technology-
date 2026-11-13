@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Syntax and Selectors | CSS Unit 3</title>
+  <style>
+
+:root {
+  --ink: #183247;
+  --muted: #536777;
+  --navy: #12364d;
+  --blue: #1c6388;
+  --pale: #edf4f8;
+  --line: #d5e0e7;
+  --gold: #e4b34f;
+  --green: #2c7864;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #edf2f5;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+}
+a { color: #155e85; }
+a:hover { color: #0b3e5a; }
+.site-header {
+  background: var(--navy);
+  color: var(--white);
+  border-bottom: 5px solid var(--gold);
+}
+.header-inner, main, .site-footer {
+  width: min(1040px, calc(100% - 32px));
+  margin: 0 auto;
+}
+.header-inner { padding: 22px 0 20px; }
+.eyebrow {
+  margin: 0 0 6px;
+  color: #f4d58e;
+  font-size: 0.76rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+h1 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.65rem); line-height: 1.15; }
+.subtitle { max-width: 760px; color: #dbe8ef; margin: 10px 0 0; }
+.top-links { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 16px; }
+.top-links a { color: #fff; font-weight: bold; font-size: 0.92rem; }
+main { padding: 26px 0 38px; }
+section, .panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px;
+  margin: 0 0 18px;
+  box-shadow: 0 3px 12px rgba(18, 54, 77, 0.045);
+}
+h2 { color: var(--navy); margin: 0 0 12px; font-size: 1.45rem; }
+h3 { color: #205b78; margin: 20px 0 8px; font-size: 1.08rem; }
+p { margin: 8px 0 12px; }
+.lead { color: var(--muted); font-size: 1.06rem; }
+.callout {
+  border-left: 5px solid var(--gold);
+  background: #fff8e8;
+  padding: 12px 15px;
+  margin: 14px 0;
+}
+.tip {
+  border-left: 5px solid var(--green);
+  background: #eef8f4;
+  padding: 12px 15px;
+  margin: 14px 0;
+}
+pre {
+  background: #17242e;
+  color: #f2f6f8;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  line-height: 1.55;
+  font-size: 0.9rem;
+  border-left: 4px solid var(--gold);
+}
+code { font-family: Consolas, "Courier New", monospace; }
+:not(pre) > code {
+  background: #edf2f5;
+  color: #174d6a;
+  padding: 2px 5px;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 18px;
+  font-size: 0.94rem;
+}
+th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+th { background: var(--navy); color: white; }
+tr:nth-child(even) td { background: #f6f9fb; }
+.demo {
+  border: 1px dashed #9cb3c2;
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+}
+.demo-label {
+  display: block;
+  color: var(--muted);
+  font-weight: bold;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.grid-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.topic-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.topic-link {
+  display: block;
+  background: #f6f9fb;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  text-decoration: none;
+}
+.topic-link strong { display: block; color: var(--navy); }
+.topic-link span { color: var(--muted); font-size: 0.9rem; }
+.lesson-number { color: #9a6b12; font-weight: bold; font-size: 0.78rem; letter-spacing: 0.1em; }
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.lesson-nav a {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.site-footer {
+  color: var(--muted);
+  padding: 0 0 28px;
+  font-size: 0.9rem;
+}
+.small { color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 680px) {
+  .grid-two, .topic-list { grid-template-columns: 1fr; }
+  section, .panel { padding: 16px; }
+  th, td { padding: 8px; }
+}
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">Web Technologies | Unit 3 | CSS</p>
+      <h1>CSS Syntax and Selectors</h1>
+      <p class="subtitle">Learn the structure of a CSS rule, selector types, common values and units, custom properties, the cascade, and inheritance.</p>
+      <nav class="top-links" aria-label="Main navigation">
+        <a href="css.html">CSS Overview</a>
+        <a href="../main.html">Main Menu</a>
+        <a href="../html/html.html">HTML Unit</a>
+        <a href="../www/www.html">WWW Unit</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <p class="lesson-number">LESSON 02</p>
+
+    <section>
+      <h2>1. CSS Rule Syntax</h2>
+      <p>A CSS rule has a <strong>selector</strong> followed by a <strong>declaration block</strong>. Each declaration pairs a property with a value.</p>
+      <pre><code>p.notice {
+    color: #153c5b;
+    background-color: #e8f2f8;
+    border-left: 5px solid #2196f3;
+    padding: 14px;
+}</code></pre>
+      <div class="demo">
+        <span class="demo-label">Rendered example</span>
+        <p style="color:#153c5b;background-color:#e8f2f8;border-left:5px solid #2196f3;padding:14px;">CSS applies this rule to a paragraph whose class includes <code>notice</code>.</p>
+      </div>
+      <ul>
+        <li><strong>Selector:</strong> chooses the element or elements to style.</li>
+        <li><strong>Property:</strong> identifies what is being changed, such as <code>color</code>.</li>
+        <li><strong>Value:</strong> specifies the setting, such as <code>#153c5b</code>.</li>
+        <li><strong>Declaration:</strong> a property and value written together, ending with a semicolon.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>2. Common CSS Selectors</h2>
+      <table>
+        <tr><th>Selector</th><th>What it matches</th><th>Example</th></tr>
+        <tr><td>Element: <code>p</code></td><td>Every paragraph element.</td><td><code>p { line-height: 1.6; }</code></td></tr>
+        <tr><td>Class: <code>.notice</code></td><td>Every element with <code>class="notice"</code>.</td><td><code>.notice { padding: 1rem; }</code></td></tr>
+        <tr><td>ID: <code>#main-title</code></td><td>The element with that ID.</td><td><code>#main-title { color: navy; }</code></td></tr>
+        <tr><td>Universal: <code>*</code></td><td>All elements.</td><td><code>* { box-sizing: border-box; }</code></td></tr>
+        <tr><td>Grouping: <code>h1, h2</code></td><td>Both heading types.</td><td><code>h1, h2 { color: navy; }</code></td></tr>
+        <tr><td>Descendant: <code>nav a</code></td><td>Links anywhere inside a navigation element.</td><td><code>nav a { text-decoration: none; }</code></td></tr>
+        <tr><td>Child: <code>ul &gt; li</code></td><td>List items that are direct children of a list.</td><td><code>ul &gt; li { margin-block: .5rem; }</code></td></tr>
+        <tr><td>Pseudo-class: <code>a:hover</code></td><td>A link while the pointer is over it.</td><td><code>a:hover { color: green; }</code></td></tr>
+        <tr><td>Pseudo-element: <code>p::first-line</code></td><td>A specific part of an element.</td><td><code>p::first-line { font-weight: bold; }</code></td></tr>
+        <tr><td>Attribute: <code>input[type="email"]</code></td><td>Email inputs.</td><td><code>input[type="email"] { border-color: teal; }</code></td></tr>
+      </table>
+    </section>
+    <section>
+      <h2>3. CSS Values and Units</h2>
+      <p>A property only has an effect when it receives a valid value. Values may be keywords, colors, numbers, lengths, percentages, or functions.</p>
+      <table>
+        <tr><th>Unit</th><th>Relative to</th><th>Common use</th></tr>
+        <tr><td><code>px</code></td><td>A CSS pixel, a reference unit rather than necessarily one physical screen pixel.</td><td>Fine borders and small fixed details.</td></tr>
+        <tr><td><code>rem</code></td><td>The root element's font size.</td><td>Consistent, scalable typography and spacing.</td></tr>
+        <tr><td><code>em</code></td><td>The computed font size of the element; for <code>font-size</code>, it is relative to the parent.</td><td>Spacing that scales with text.</td></tr>
+        <tr><td><code>%</code></td><td>A context determined by the property, often a parent dimension.</td><td>Flexible widths and proportional sizing.</td></tr>
+        <tr><td><code>vw</code> / <code>vh</code></td><td>One percent of viewport width or height.</td><td>Sizing related to the visible browser area.</td></tr>
+      </table>
+      <pre><code>.page-title {
+    font-size: 2rem;
+    max-width: 80%;
+}
+
+.hero {
+    min-height: 60vh;
+    padding: 2em;
+}</code></pre>
+    </section>
+    <section>
+      <h2>4. Custom Properties (CSS Variables)</h2>
+      <p>Custom properties store reusable values. Their names begin with two hyphens and values are read with <code>var()</code>. Defining shared values on <code>:root</code> makes them available throughout the document.</p>
+      <pre><code>:root {
+    --brand-color: #174f78;
+    --space-medium: 1rem;
+}
+
+.notice {
+    color: var(--brand-color);
+    padding: var(--space-medium);
+}</code></pre>
+    </section>
+    <section>
+      <h2>5. How the Cascade Chooses a Value</h2>
+      <p>If several rules set the same property, the browser resolves the cascade by importance and origin, selector specificity, and then source order. A later rule wins only when the earlier comparisons are tied.</p>
+      <pre><code>p {
+    color: #333;          /* element selector */
+}
+
+.notice {
+    color: #174f78;       /* class selector: more specific */
+}
+
+#warning {
+    color: #a34b00;       /* ID selector: more specific still */
+}</code></pre>
+      <p>Inline styles commonly outrank normal stylesheet rules, but they are not an unconditional highest priority.</p>
+    </section>
+    <section>
+      <h2>6. Inheritance and Debugging</h2>
+      <p>Some properties, especially text-related properties such as <code>color</code> and <code>font-family</code>, are inherited. A child can use the computed value of its parent when it has no value of its own.</p>
+      <p>Many layout and box properties, such as <code>margin</code>, <code>padding</code>, and <code>border</code>, do not inherit by default. Inheritance is separate from specificity.</p>
+      <pre><code>.article {
+    color: #24313d;
+    border: 1px solid #d7e0e5;
+}
+
+.article p {
+    /* The paragraph inherits color, but not the border. */
+    font-family: Georgia, serif;
+}</code></pre>
+      <div class="callout"><strong>Debugging tip:</strong> Browsers generally ignore an invalid declaration and continue parsing. Check spelling, values, braces, and semicolons when a style does not appear.</div>
+    </section>
+  
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <a href="1st.html">&larr; Lesson 01: Why CSS Is Needed</a>
+      <a href="3rd.html">Lesson 03: Colors and Backgrounds &rarr;</a>
+    </nav>
+  </main>
+  <footer class="site-footer">
+    <p>Web Technologies - Unit 3: Cascading Style Sheets. Study notes and examples are based on the supplied CSS Complete Study Guide.</p>
+  </footer>
+</body>
+</html>

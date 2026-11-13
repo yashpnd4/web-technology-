@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text, Fonts, Borders, and the Box Model | CSS Unit 3</title>
+  <style>
+
+:root {
+  --ink: #183247;
+  --muted: #536777;
+  --navy: #12364d;
+  --blue: #1c6388;
+  --pale: #edf4f8;
+  --line: #d5e0e7;
+  --gold: #e4b34f;
+  --green: #2c7864;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #edf2f5;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+}
+a { color: #155e85; }
+a:hover { color: #0b3e5a; }
+.site-header {
+  background: var(--navy);
+  color: var(--white);
+  border-bottom: 5px solid var(--gold);
+}
+.header-inner, main, .site-footer {
+  width: min(1040px, calc(100% - 32px));
+  margin: 0 auto;
+}
+.header-inner { padding: 22px 0 20px; }
+.eyebrow {
+  margin: 0 0 6px;
+  color: #f4d58e;
+  font-size: 0.76rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+h1 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.65rem); line-height: 1.15; }
+.subtitle { max-width: 760px; color: #dbe8ef; margin: 10px 0 0; }
+.top-links { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 16px; }
+.top-links a { color: #fff; font-weight: bold; font-size: 0.92rem; }
+main { padding: 26px 0 38px; }
+section, .panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px;
+  margin: 0 0 18px;
+  box-shadow: 0 3px 12px rgba(18, 54, 77, 0.045);
+}
+h2 { color: var(--navy); margin: 0 0 12px; font-size: 1.45rem; }
+h3 { color: #205b78; margin: 20px 0 8px; font-size: 1.08rem; }
+p { margin: 8px 0 12px; }
+.lead { color: var(--muted); font-size: 1.06rem; }
+.callout {
+  border-left: 5px solid var(--gold);
+  background: #fff8e8;
+  padding: 12px 15px;
+  margin: 14px 0;
+}
+.tip {
+  border-left: 5px solid var(--green);
+  background: #eef8f4;
+  padding: 12px 15px;
+  margin: 14px 0;
+}
+pre {
+  background: #17242e;
+  color: #f2f6f8;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  line-height: 1.55;
+  font-size: 0.9rem;
+  border-left: 4px solid var(--gold);
+}
+code { font-family: Consolas, "Courier New", monospace; }
+:not(pre) > code {
+  background: #edf2f5;
+  color: #174d6a;
+  padding: 2px 5px;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 18px;
+  font-size: 0.94rem;
+}
+th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+th { background: var(--navy); color: white; }
+tr:nth-child(even) td { background: #f6f9fb; }
+.demo {
+  border: 1px dashed #9cb3c2;
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+}
+.demo-label {
+  display: block;
+  color: var(--muted);
+  font-weight: bold;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.grid-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.topic-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.topic-link {
+  display: block;
+  background: #f6f9fb;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  text-decoration: none;
+}
+.topic-link strong { display: block; color: var(--navy); }
+.topic-link span { color: var(--muted); font-size: 0.9rem; }
+.lesson-number { color: #9a6b12; font-weight: bold; font-size: 0.78rem; letter-spacing: 0.1em; }
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.lesson-nav a {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.site-footer {
+  color: var(--muted);
+  padding: 0 0 28px;
+  font-size: 0.9rem;
+}
+.small { color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 680px) {
+  .grid-two, .topic-list { grid-template-columns: 1fr; }
+  section, .panel { padding: 16px; }
+  th, td { padding: 8px; }
+}
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">Web Technologies | Unit 3 | CSS</p>
+      <h1>Text, Fonts, Borders, and the Box Model</h1>
+      <p class="subtitle">Learn how CSS controls typography and text, how borders are drawn, and how the box model determines element size and spacing.</p>
+      <nav class="top-links" aria-label="Main navigation">
+        <a href="css.html">CSS Overview</a>
+        <a href="../main.html">Main Menu</a>
+        <a href="../html/html.html">HTML Unit</a>
+        <a href="../www/www.html">WWW Unit</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <p class="lesson-number">LESSON 04</p>
+
+    <section>
+      <h2>1. Typography and Text</h2>
+      <p>Font properties set the typeface, size, and weight. Text properties handle alignment and decoration. Relative sizes such as <code>rem</code> scale with the root font size; unitless <code>line-height</code> scales naturally with text.</p>
+      <table>
+        <tr><th>Property</th><th>Example</th><th>Effect</th></tr>
+        <tr><td><code>font-family</code></td><td><code>Georgia, serif</code></td><td>Typeface with fallback families.</td></tr>
+        <tr><td><code>font-size</code></td><td><code>1.1rem</code></td><td>Text size.</td></tr>
+        <tr><td><code>font-weight</code></td><td><code>700</code> or <code>bold</code></td><td>Stroke weight.</td></tr>
+        <tr><td><code>text-align</code></td><td><code>center</code></td><td>Horizontal text alignment.</td></tr>
+        <tr><td><code>line-height</code></td><td><code>1.6</code></td><td>Vertical room for each line of text.</td></tr>
+        <tr><td><code>text-decoration</code></td><td><code>underline</code></td><td>Underline, overline, or line-through.</td></tr>
+        <tr><td><code>text-transform</code></td><td><code>uppercase</code></td><td>Visual letter case without changing source text.</td></tr>
+      </table>
+      <pre><code>.article-text {
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.6;
+    text-decoration: underline;
+    text-transform: uppercase;
+}</code></pre>
+      <div class="grid-two">
+        <div class="demo"><span class="demo-label">Default text</span><p>CSS makes long passages easier to read.</p></div>
+        <div class="demo"><span class="demo-label">Styled text</span><p style="font-family:Georgia,serif;font-size:1.1rem;font-weight:bold;text-align:center;line-height:1.6;text-decoration:underline;">CSS makes long passages easier to read.</p></div>
+      </div>
+    </section>
+    <section>
+      <h2>2. Borders</h2>
+      <p>A border needs a style such as <code>solid</code> or <code>dashed</code> to be visible. The shorthand <code>border: 3px solid #174f78;</code> sets width, style, and color together. One to four values can specify top, right, bottom, and left in that order.</p>
+      <pre><code>.box {
+    border: 3px solid #174f78;
+}
+
+.dotted { border: 3px dotted #174f78; }
+.dashed { border: 3px dashed #174f78; }
+.double { border: 5px double #174f78; }
+.rounded { border: 2px solid #174f78; border-radius: 12px; }</code></pre>
+      <div class="grid-two">
+        <div class="demo" style="border:3px dotted #174f78;">Dotted border</div>
+        <div class="demo" style="border:3px dashed #31765e;">Dashed border</div>
+        <div class="demo" style="border:5px double #174f78;">Double border</div>
+        <div class="demo" style="border:2px solid #174f78;border-radius:12px;">Rounded border</div>
+      </div>
+    </section>
+    <section>
+      <h2>3. The CSS Box Model</h2>
+      <p>From the inside outward, an element consists of <strong>content, padding, border, and margin</strong>. Padding is inside the border. Margin separates the outside of one element from its neighbors.</p>
+      <div class="demo" style="background:#e4edf3;text-align:center;padding:16px;">
+        <strong>Margin (outside the border)</strong>
+        <div style="background:#f5dfa9;padding:14px;margin-top:10px;">
+          <strong>Border</strong>
+          <div style="background:#b6d8c5;border:5px solid #a85a1d;padding:13px;margin-top:10px;">
+            <strong>Padding</strong>
+            <div style="background:#fff;border:1px solid #9cb3c2;padding:18px;margin-top:10px;">
+              <strong>Content</strong><br>Text and images live here
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Content:</strong> text, images, and other page content.</li>
+        <li><strong>Padding:</strong> space between the content and the border.</li>
+        <li><strong>Border:</strong> the edge surrounding the padding and content.</li>
+        <li><strong>Margin:</strong> space outside the border, separating neighboring elements.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>4. content-box and border-box</h2>
+      <p>With the default <code>content-box</code> sizing, a declared width applies only to the content. Padding and border increase the rendered size. With <code>border-box</code>, the declared width includes content, padding, and border.</p>
+      <div class="grid-two">
+        <div class="demo"><strong>Default: content-box</strong><p>For a 300px width, 20px horizontal padding, and 5px borders, the rendered width is 300px + 40px + 10px = <strong>350px</strong>. Margins add outside that measurement.</p></div>
+        <div class="demo"><strong>Predictable sizing: border-box</strong><p><code>box-sizing: border-box;</code> includes padding and borders in the declared width. This makes layout sizing easier to calculate.</p></div>
+      </div>
+      <pre><code>*, *::before, *::after {
+    box-sizing: border-box;
+}</code></pre>
+      <p>In normal block flow, vertical margins of adjacent blocks can collapse into one margin rather than add together.</p>
+    </section>
+  
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <a href="3rd.html">&larr; Lesson 03: Colors and Backgrounds</a>
+      <a href="5th.html">Lesson 05: CSS Positioning &rarr;</a>
+    </nav>
+  </main>
+  <footer class="site-footer">
+    <p>Web Technologies - Unit 3: Cascading Style Sheets. Study notes and examples are based on the supplied CSS Complete Study Guide.</p>
+  </footer>
+</body>
+</html>
