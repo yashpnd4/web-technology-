@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Objects and the DOM</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>JavaScript Objects and the DOM</h1>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a></p>
+    </center>
+
+    <hr>
+
+
+    <h2>1. What is an Object?</h2>
+    <p>
+        An object is a collection of related data and behavior. It stores
+        information using properties and can contain functions called methods.
+        For example, a student object can contain a name, unit, and a method
+        to display information.
+    </p>
+    <pre>
+const learner = {
+    name: "Asha",
+    unit: 4,
+    introduce() {
+        return this.name + " is studying Unit " + this.unit;
+    }
+};
+
+console.log(learner.name);
+console.log(learner.introduce());
+</pre>
+    <ul>
+        <li><b>Property:</b> A value stored in an object, such as name or unit.</li>
+        <li><b>Method:</b> A function stored in or associated with an object.</li>
+        <li><b>this:</b> Refers to the object in a method call such as learner.introduce().</li>
+    </ul>
+
+    <hr>
+
+    <h2>2. What is the DOM?</h2>
+    <p>
+        DOM stands for <b>Document Object Model</b>. It represents an HTML
+        document as a tree of nodes. The browser creates the DOM when it reads
+        the HTML document. JavaScript can use the DOM to find elements, read
+        their content, change attributes and classes, and create new elements.
+    </p>
+    <p>
+        The DOM allows a webpage to change without reloading the whole document.
+        For example, JavaScript can change a heading, update a button label,
+        add an item to a list, or highlight a card.
+    </p>
+
+    <hr>
+
+    <h2>3. Common DOM Operations</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Operation</th>
+            <th>Example</th>
+            <th>Use</th>
+        </tr>
+        <tr>
+            <td>Select an element</td>
+            <td><code>document.querySelector(".notice")</code></td>
+            <td>Finds the first element matching a CSS selector.</td>
+        </tr>
+        <tr>
+            <td>Read or set text</td>
+            <td><code>element.textContent = "Updated"</code></td>
+            <td>Changes the text inside an element.</td>
+        </tr>
+        <tr>
+            <td>Change a class</td>
+            <td><code>element.classList.toggle("active")</code></td>
+            <td>Adds or removes a class.</td>
+        </tr>
+        <tr>
+            <td>Create and add an element</td>
+            <td><code>list.append(newItem)</code></td>
+            <td>Creates or adds content to the page.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>4. Selecting an HTML Element</h2>
+    <p>
+        JavaScript can select an element using its ID, class, tag name,
+        or another CSS selector.
+    </p>
+    <pre>
+const message = document.querySelector("#message");
+message.textContent = "Welcome to JavaScript!";
+</pre>
+    <p>
+        <code>document.querySelector()</code> returns the first matching
+        element. If no element matches, it returns null.
+    </p>
+
+    <hr>
+
+    <h2>5. Changing Text and Classes</h2>
+    <p>
+        The <code>textContent</code> property changes the text inside an
+        element. The <code>classList</code> methods can add, remove, or
+        toggle CSS classes.
+    </p>
+    <pre>
+const message = document.querySelector("#message");
+message.textContent = "The text has been changed.";
+
+const card = document.querySelector(".card");
+card.classList.add("active");
+card.classList.remove("active");
+card.classList.toggle("active");
+</pre>
+
+    <hr>
+
+    <h2>6. Creating and Adding Elements</h2>
+    <p>
+        JavaScript can create a new HTML element and add it to an existing
+        element in the DOM.
+    </p>
+    <pre>
+const newItem = document.createElement("li");
+newItem.textContent = "JavaScript";
+
+const subjectList = document.querySelector("#subjects");
+subjectList.append(newItem);
+</pre>
+
+    <hr>
+
+    <h2>7. Important Points</h2>
+    <ul>
+        <li>Objects group related properties and methods.</li>
+        <li>The DOM represents an HTML page as a tree of nodes.</li>
+        <li>JavaScript can select HTML elements and change their content.</li>
+        <li>textContent changes text without parsing it as HTML.</li>
+        <li>classList can add, remove, or toggle CSS classes.</li>
+        <li>JavaScript can create and append new elements.</li>
+    </ul>
+
+
+    <hr>
+    <center>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a> | <a href="1st.html">&larr; Previous: Client-Side Scripting and JavaScript Basics</a> | <a href="3rd.html">Next: Forms and Validation &rarr;</a> | <a href="../main.html">Main Menu</a></p>
+    </center>
+
+</body>
+</html>
