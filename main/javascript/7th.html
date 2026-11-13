@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Introduction to jQuery</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>Introduction to jQuery</h1>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a></p>
+    </center>
+
+    <hr>
+
+
+    <h2>1. What is jQuery?</h2>
+    <p>
+        jQuery is a JavaScript library that provides shorter methods for
+        selecting HTML elements, handling events, changing the DOM,
+        creating effects, and making AJAX requests.
+    </p>
+    <p>
+        jQuery was especially useful when browser differences required extra
+        compatibility work. Modern browsers provide many equivalent features
+        directly through JavaScript, but jQuery is still found in existing
+        and older projects.
+    </p>
+
+    <hr>
+
+    <h2>2. Advantages of jQuery</h2>
+    <ul>
+        <li>Uses CSS-style selectors to select HTML elements.</li>
+        <li>Provides short methods for changing content and classes.</li>
+        <li>Makes event handling easier to write.</li>
+        <li>Provides methods for effects and AJAX requests.</li>
+        <li>Uses method chaining to perform multiple operations on selected elements.</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. Common jQuery Methods</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Method</th>
+            <th>Purpose</th>
+        </tr>
+        <tr><td><code>$()</code></td><td>Selects elements using CSS-style selectors.</td></tr>
+        <tr><td><code>$(function(){ ... })</code></td><td>Runs code when the document is ready.</td></tr>
+        <tr><td><code>.on()</code></td><td>Attaches an event handler.</td></tr>
+        <tr><td><code>.text()</code></td><td>Reads or changes text content.</td></tr>
+        <tr><td><code>.addClass()</code></td><td>Adds a CSS class.</td></tr>
+        <tr><td><code>.removeClass()</code></td><td>Removes a CSS class.</td></tr>
+        <tr><td><code>.toggleClass()</code></td><td>Adds a class if absent or removes it if present.</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>4. JavaScript and jQuery Comparison</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="90%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Task</th>
+            <th>Vanilla JavaScript</th>
+            <th>jQuery</th>
+        </tr>
+        <tr>
+            <td>Select an element</td>
+            <td><code>document.querySelector("#message")</code></td>
+            <td><code>$("#message")</code></td>
+        </tr>
+        <tr>
+            <td>Listen for a click</td>
+            <td><code>element.addEventListener("click", handler)</code></td>
+            <td><code>$(element).on("click", handler)</code></td>
+        </tr>
+        <tr>
+            <td>Set text</td>
+            <td><code>element.textContent = "Hello"</code></td>
+            <td><code>$(element).text("Hello")</code></td>
+        </tr>
+        <tr>
+            <td>Toggle a class</td>
+            <td><code>element.classList.toggle("active")</code></td>
+            <td><code>$(element).toggleClass("active")</code></td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>5. jQuery Example</h2>
+    <p>
+        In this example, jQuery waits for the document to be ready, listens
+        for a button click, changes the message text, and toggles a CSS class.
+    </p>
+    <pre>
+$(function () {
+    $("#jquery-button").on("click", function () {
+        $("#jquery-message")
+            .text("Updated by a jQuery event handler.")
+            .toggleClass("is-highlighted");
+    });
+});
+</pre>
+
+    <hr>
+
+    <h2>6. jQuery Dependency</h2>
+    <p>
+        jQuery is a library, so it must be included in a project before its
+        methods can run. The examples in these notes explain the syntax;
+        they do not load jQuery automatically.
+    </p>
+    <p>
+        A student should learn JavaScript and the DOM first. jQuery becomes
+        easier to understand after the browser object model is familiar.
+    </p>
+
+    <hr>
+
+    <h2>7. Important Points</h2>
+    <ul>
+        <li>jQuery is a JavaScript library, not a separate programming language.</li>
+        <li>It uses CSS-style selectors such as $("#message").</li>
+        <li>The on() method attaches event handlers.</li>
+        <li>The text() method changes text content.</li>
+        <li>addClass(), removeClass(), and toggleClass() change CSS classes.</li>
+        <li>jQuery must be included before its methods can be used.</li>
+        <li>Modern JavaScript has native alternatives for many jQuery tasks.</li>
+    </ul>
+
+    <hr>
+
+    <h2>8. Unit 4 Revision Questions</h2>
+    <ol>
+        <li>What is JavaScript and how is it different from HTML and CSS?</li>
+        <li>Explain JavaScript data types and variables.</li>
+        <li>Explain conditions, loops, and functions with examples.</li>
+        <li>What are JavaScript popup boxes?</li>
+        <li>What are objects and the DOM?</li>
+        <li>Explain common DOM operations.</li>
+        <li>What is form validation? Explain HTML and JavaScript validation.</li>
+        <li>What is DHTML and how do HTML, CSS, and JavaScript work together?</li>
+        <li>What are events and addEventListener()?</li>
+        <li>What is AJAX and how does its request-response cycle work?</li>
+        <li>Explain Fetch, Promise, async, await, and error handling.</li>
+        <li>What is CORS?</li>
+        <li>What is jQuery? Explain common jQuery methods.</li>
+    </ol>
+
+
+    <hr>
+    <center>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a> | <a href="6th.html">&larr; Previous: AJAX and Asynchronous Web Applications</a> | <a href="../main.html">Main Menu</a></p>
+    </center>
+
+</body>
+</html>
