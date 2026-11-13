@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript and jQuery Questions and Answers</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>JavaScript and jQuery Questions and Answers</h1>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a></p>
+    </center>
+
+    <hr>
+
+    <h2>Basic JavaScript and jQuery Questions and Answers</h2>
+    <p>
+        These questions are based on Unit 4: JavaScript and jQuery. They cover
+        JavaScript basics, data types, objects, the DOM, forms, DHTML, events,
+        AJAX, Fetch, and jQuery.
+    </p>
+
+    <hr>
+
+    <h3>1. What is JavaScript? How is it different from HTML and CSS?</h3>
+    <p><b>Answer:</b> JavaScript is a high-level, dynamic scripting language used to control the behavior of a webpage.</p>
+    <ul>
+        <li><b>HTML:</b> Provides webpage structure and content.</li>
+        <li><b>CSS:</b> Controls webpage appearance.</li>
+        <li><b>JavaScript:</b> Adds behavior and interactivity.</li>
+    </ul>
+
+    <h3>2. What are variables in JavaScript? Explain let and const.</h3>
+    <p><b>Answer:</b> Variables store data for later use. Use let when a value may be reassigned and const when the variable binding should not be reassigned.</p>
+    <pre>
+const studentName = "Asha";
+let marks = 78;
+marks = marks + 7;
+
+console.log(studentName);
+console.log(marks);
+</pre>
+
+    <h3>3. What are the data types in JavaScript?</h3>
+    <p><b>Answer:</b> Primitive data types are String, Number, BigInt, Boolean, Undefined, Null, and Symbol. Object is a non-primitive type. Arrays and functions are also object types.</p>
+    <pre>
+const name = "Asha";
+const score = 85;
+const passed = true;
+let selectedCourse;
+const missingValue = null;
+const subjects = ["HTML", "CSS"];
+const student = { name: "Asha" };
+
+console.log(typeof name);
+console.log(Array.isArray(subjects));
+</pre>
+
+    <h3>4. What are operators and conditional statements?</h3>
+    <p><b>Answer:</b> Operators perform calculations and comparisons. Arithmetic operators include +, -, *, and /. Comparison operators include &gt;, &lt;, ===, and !==. Logical operators include &amp;&amp; (AND), || (OR), and ! (NOT).</p>
+    <p>Conditional statements such as if, else if, and else make decisions based on conditions.</p>
+    <pre>
+const age = 20;
+
+if (age >= 18) {
+    console.log("Adult");
+} else {
+    console.log("Minor");
+}
+</pre>
+
+    <h3>5. What are loops in JavaScript? Name their types.</h3>
+    <p><b>Answer:</b> Loops repeat instructions. Common types in the unit are for, while, and for...of.</p>
+    <pre>
+const subjects = ["HTML", "CSS", "JavaScript"];
+
+for (const subject of subjects) {
+    console.log(subject);
+}
+</pre>
+
+    <h3>6. What is a function? Explain parameters and return values.</h3>
+    <p><b>Answer:</b> A function is a reusable block of code. Parameters receive values, and return sends a result back.</p>
+    <pre>
+function calculateTotal(price, quantity) {
+    return price * quantity;
+}
+
+console.log(calculateTotal(120, 3));
+</pre>
+
+    <h3>7. What are JavaScript popup boxes?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><b>alert():</b> Displays a message.</li>
+        <li><b>confirm():</b> Asks the user to choose OK or Cancel and returns true or false.</li>
+        <li><b>prompt():</b> Asks the user to enter a short text value.</li>
+    </ul>
+
+    <h3>8. What is a JavaScript object? What is an array?</h3>
+    <p><b>Answer:</b> An object stores related properties and methods. An array stores multiple values in an ordered list.</p>
+    <pre>
+const learner = {
+    name: "Asha",
+    unit: 4
+};
+
+const subjects = ["HTML", "CSS"];
+
+console.log(learner.name);
+console.log(subjects[0]);
+</pre>
+
+    <h3>9. What is the DOM? Explain common DOM operations.</h3>
+    <p><b>Answer:</b> DOM stands for Document Object Model. It represents an HTML document as a tree of nodes and allows JavaScript to select and update page elements.</p>
+    <ul>
+        <li><code>document.querySelector()</code> - Selects an element.</li>
+        <li><code>textContent</code> - Reads or changes text.</li>
+        <li><code>classList.toggle()</code> - Adds or removes a class.</li>
+        <li><code>document.createElement()</code> - Creates a new element.</li>
+        <li><code>append()</code> - Adds content to an element.</li>
+    </ul>
+
+    <h3>10. What is form validation? Name common validation attributes and methods.</h3>
+    <p><b>Answer:</b> Form validation checks user input before it is accepted or submitted.</p>
+    <ul>
+        <li>HTML attributes: required, type, minlength, maxlength, min, max, step, and pattern.</li>
+        <li>JavaScript methods: checkValidity(), reportValidity(), validity, and setCustomValidity().</li>
+    </ul>
+    <p>Client-side validation improves user feedback, but submitted data must also be checked on the server.</p>
+
+    <h3>11. What is DHTML?</h3>
+    <p><b>Answer:</b> DHTML stands for Dynamic HTML. It describes the use of HTML, CSS, and JavaScript together to make webpages respond to user actions. It is not a separate programming language.</p>
+    <ul>
+        <li>HTML provides structure.</li>
+        <li>CSS provides presentation.</li>
+        <li>JavaScript provides behavior and updates the DOM.</li>
+    </ul>
+
+    <h3>12. What are JavaScript events? What is addEventListener()?</h3>
+    <p><b>Answer:</b> Events are browser occurrences such as clicks, input changes, and form submissions. addEventListener() connects an event to a function.</p>
+    <pre>
+const button = document.querySelector("#myButton");
+
+button.addEventListener("click", (event) => {
+    console.log("Button clicked");
+    console.log(event.currentTarget);
+});
+</pre>
+
+    <h3>13. What is AJAX? Explain its request-response cycle.</h3>
+    <p><b>Answer:</b> AJAX stands for Asynchronous JavaScript and XML. It sends HTTP requests using JavaScript and updates part of a webpage without loading a new document. JSON is a common response format today.</p>
+    <ol>
+        <li>A user action starts a request.</li>
+        <li>The browser sends a GET or POST request.</li>
+        <li>The server sends a response.</li>
+        <li>JavaScript reads the response and updates the DOM.</li>
+    </ol>
+
+    <h3>14. What is Fetch API? Explain Promise, async, await, and CORS.</h3>
+    <p><b>Answer:</b> Fetch is a browser API for making HTTP requests. It returns a Promise. async and await make asynchronous code easier to write. CORS stands for Cross-Origin Resource Sharing and controls whether a page can read a response from a different origin.</p>
+    <pre>
+async function loadData() {
+    try {
+        const response = await fetch("/api/courses");
+
+        if (!response.ok) {
+            throw new Error("HTTP error: " + response.status);
+        }
+
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+</pre>
+
+    <h3>15. What is jQuery? Name some common jQuery methods.</h3>
+    <p><b>Answer:</b> jQuery is a JavaScript library that simplifies selecting elements, handling events, changing the DOM, effects, and AJAX.</p>
+    <ul>
+        <li><code>$()</code> - Selects elements.</li>
+        <li><code>.on()</code> - Attaches an event handler.</li>
+        <li><code>.text()</code> - Reads or changes text.</li>
+        <li><code>.addClass()</code> - Adds a CSS class.</li>
+        <li><code>.removeClass()</code> - Removes a CSS class.</li>
+        <li><code>.toggleClass()</code> - Adds or removes a CSS class.</li>
+    </ul>
+    <pre>
+$(function () {
+    $("#myButton").on("click", function () {
+        $("#message").text("Updated by jQuery.");
+    });
+});
+</pre>
+
+    <hr>
+
+    <h2>Quick Revision</h2>
+    <ul>
+        <li>Variables, data types, operators, conditions, and loops.</li>
+        <li>Functions, objects, and arrays.</li>
+        <li>Popup boxes and browser console.</li>
+        <li>DOM selection and manipulation.</li>
+        <li>Form validation and validation methods.</li>
+        <li>DHTML, events, and addEventListener().</li>
+        <li>AJAX, Fetch, Promise, async, await, and CORS.</li>
+        <li>jQuery selectors, events, and methods.</li>
+    </ul>
+
+    <hr>
+    <center>
+        <p>
+            <a href="javascript.html">&larr; Back to JavaScript Overview</a> |
+            <a href="1st.html">JavaScript Notes</a> |
+            <a href="../main.html">Main Menu</a>
+        </p>
+    </center>
+
+</body>
+</html>
