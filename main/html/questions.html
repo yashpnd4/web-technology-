@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Questions and Answers</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>HTML Questions and Answers</h1>
+        <p><a href="html.html">&larr; Back to HTML Overview</a></p>
+    </center>
+
+    <hr>
+
+    <h2>Basic HTML Questions and Answers</h2>
+    <p>
+        These questions cover HTML basics, elements, attributes, formatting,
+        colors, hyperlinks, lists, tables, images, forms, HTML5, and XML.
+    </p>
+
+    <hr>
+
+    <h3>1. What is HTML?</h3>
+    <p>
+        <b>Answer:</b> HTML stands for <b>HyperText Markup Language</b>.
+        It is the standard markup language used to create and structure
+        webpages. It tells the browser what content to display, such as
+        headings, paragraphs, images, links, lists, and forms.
+    </p>
+
+    <h3>2. What is the basic structure of an HTML document?</h3>
+    <p><b>Answer:</b> A basic HTML document contains the DOCTYPE declaration, html, head, title, and body elements.</p>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to HTML&lt;/h1&gt;
+    &lt;p&gt;This is my first webpage.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+    <ul>
+        <li><b>DOCTYPE:</b> Declares the document type.</li>
+        <li><b>html:</b> The root element of the document.</li>
+        <li><b>head:</b> Contains metadata and the page title.</li>
+        <li><b>title:</b> Defines the title shown in the browser tab.</li>
+        <li><b>body:</b> Contains the visible webpage content.</li>
+    </ul>
+
+    <h3>3. What is an HTML element? Explain empty and nested elements.</h3>
+    <p>
+        <b>Answer:</b> An HTML element normally contains a starting tag,
+        content, and an ending tag.
+    </p>
+    <pre>
+&lt;p&gt;Welcome to my website&lt;/p&gt;
+</pre>
+    <p>
+        An <b>empty element</b> does not have content or a closing tag.
+        Examples include <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>,
+        and <code>&lt;img&gt;</code>.
+    </p>
+    <p>
+        <b>Nested elements</b> are elements placed inside other elements.
+        For example, a paragraph can contain bold text.
+    </p>
+    <pre>
+&lt;p&gt;This is &lt;b&gt;bold&lt;/b&gt; text.&lt;/p&gt;
+</pre>
+
+    <h3>4. What are HTML attributes? Give common examples.</h3>
+    <p>
+        <b>Answer:</b> Attributes provide extra information or settings for
+        HTML elements. They are written in the opening tag as name and value
+        pairs.
+    </p>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Attribute</th>
+            <th>Use</th>
+        </tr>
+        <tr><td>href</td><td>Specifies the destination of a hyperlink.</td></tr>
+        <tr><td>src</td><td>Specifies the path or URL of an image or media file.</td></tr>
+        <tr><td>alt</td><td>Provides alternative text for an image.</td></tr>
+        <tr><td>width and height</td><td>Set the dimensions of elements such as images.</td></tr>
+        <tr><td>lang</td><td>Declares the language of the document or element.</td></tr>
+        <tr><td>title</td><td>Provides extra information, often shown as a tooltip.</td></tr>
+        <tr><td>style</td><td>Applies inline CSS to an element.</td></tr>
+    </table>
+
+    <h3>5. What are HTML headings and paragraphs?</h3>
+    <p>
+        <b>Answer:</b> HTML provides six heading levels, from
+        <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>. The h1 element
+        is the main heading and h6 is the lowest heading level.
+    </p>
+    <p>
+        The <code>&lt;p&gt;</code> tag is used to define a paragraph.
+        Browsers normally display paragraphs on a new line with space
+        before and after them.
+    </p>
+    <pre>
+&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Sub Heading&lt;/h2&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+</pre>
+
+    <h3>6. Name some HTML text formatting tags.</h3>
+    <p><b>Answer:</b></p>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Tag</th>
+            <th>Purpose</th>
+        </tr>
+        <tr><td>&lt;b&gt;</td><td>Makes text bold.</td></tr>
+        <tr><td>&lt;strong&gt;</td><td>Shows strong importance.</td></tr>
+        <tr><td>&lt;i&gt;</td><td>Displays italic text.</td></tr>
+        <tr><td>&lt;em&gt;</td><td>Emphasizes text.</td></tr>
+        <tr><td>&lt;mark&gt;</td><td>Highlights text.</td></tr>
+        <tr><td>&lt;small&gt;</td><td>Displays smaller text.</td></tr>
+        <tr><td>&lt;del&gt;</td><td>Displays deleted text with a line through it.</td></tr>
+        <tr><td>&lt;ins&gt;</td><td>Displays inserted text, usually underlined.</td></tr>
+        <tr><td>&lt;sub&gt; and &lt;sup&gt;</td><td>Display subscript and superscript text.</td></tr>
+    </table>
+
+    <h3>7. What are the uses of br, hr, and pre tags?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><code>&lt;br&gt;</code> - Inserts a line break.</li>
+        <li><code>&lt;hr&gt;</code> - Creates a thematic break or horizontal rule.</li>
+        <li><code>&lt;pre&gt;</code> - Preserves spaces and line breaks as written in the source code.</li>
+    </ul>
+
+    <h3>8. How can styles and colors be applied in HTML?</h3>
+    <p>
+        <b>Answer:</b> The HTML <code>style</code> attribute can apply CSS
+        directly to an element. Common properties in the notes include
+        background-color, color, font-family, font-size, text-align,
+        and font-style.
+    </p>
+    <pre>
+&lt;h1 style="color:Tomato;"&gt;Heading&lt;/h1&gt;
+&lt;p style="background-color:PowderBlue;"&gt;Paragraph&lt;/p&gt;
+&lt;p style="font-family:Verdana; font-size:20px;"&gt;Text&lt;/p&gt;
+</pre>
+
+    <h3>9. What are RGB, RGBA, HEX, HSL, and HSLA color values?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><b>RGB:</b> Uses Red, Green, and Blue values from 0 to 255.</li>
+        <li><b>RGBA:</b> RGB with an Alpha value for transparency, from 0 to 1.</li>
+        <li><b>HEX:</b> Uses a hexadecimal value in the form #RRGGBB.</li>
+        <li><b>HSL:</b> Uses Hue, Saturation, and Lightness.</li>
+        <li><b>HSLA:</b> HSL with an Alpha value for transparency.</li>
+    </ul>
+    <pre>
+color: rgb(255, 0, 0);
+color: rgba(255, 0, 0, 0.5);
+color: #FF0000;
+color: hsl(0, 100%, 50%);
+color: hsla(0, 100%, 50%, 0.5);
+</pre>
+
+    <h3>10. What is a hyperlink? Explain common types of HTML links.</h3>
+    <p>
+        <b>Answer:</b> A hyperlink is a clickable text or image that takes
+        the user to another page, resource, or location. The
+        <code>&lt;a&gt;</code> tag creates a hyperlink and the
+        <code>href</code> attribute gives its destination.
+    </p>
+    <pre>
+&lt;a href="https://example.com"&gt;Visit Website&lt;/a&gt;
+</pre>
+    <p>The HTML notes describe these link types:</p>
+    <ul>
+        <li><b>Self link:</b> Opens the same page.</li>
+        <li><b>Blank link:</b> Opens the link in a new tab.</li>
+        <li><b>Parent link:</b> Opens the parent page.</li>
+        <li><b>Top link:</b> Moves to the top of the same page or website.</li>
+        <li><b>Email link:</b> Uses an email address as the link destination.</li>
+    </ul>
+
+    <h3>11. What are the three types of HTML lists?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><b>Unordered List (&lt;ul&gt;):</b> Displays items with bullet points.</li>
+        <li><b>Ordered List (&lt;ol&gt;):</b> Displays items in a numbered sequence.</li>
+        <li><b>Description List (&lt;dl&gt;):</b> Displays terms and their descriptions using dt and dd.</li>
+    </ul>
+    <pre>
+&lt;ul&gt;
+    &lt;li&gt;Tea&lt;/li&gt;
+    &lt;li&gt;Coffee&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;First&lt;/li&gt;
+    &lt;li&gt;Second&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+
+    <h3>12. Explain the basic HTML table tags.</h3>
+    <p><b>Answer:</b> HTML tables are used to arrange data in rows and columns.</p>
+    <ul>
+        <li><code>&lt;table&gt;</code> - Defines the table.</li>
+        <li><code>&lt;tr&gt;</code> - Defines a row.</li>
+        <li><code>&lt;th&gt;</code> - Defines a header cell.</li>
+        <li><code>&lt;td&gt;</code> - Defines a normal data cell.</li>
+        <li><code>&lt;caption&gt;</code> - Defines the table title.</li>
+        <li><code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code> - Group the table's header, body, and footer rows.</li>
+    </ul>
+
+    <h3>13. How are images added in HTML? Explain the image attributes.</h3>
+    <p>
+        <b>Answer:</b> The <code>&lt;img&gt;</code> tag is used to display
+        an image. It is an empty element and does not need a closing tag.
+    </p>
+    <pre>
+&lt;img src="flower.jpg" alt="Flower" width="300" height="200"&gt;
+</pre>
+    <ul>
+        <li><b>src:</b> Specifies the path or URL of the image.</li>
+        <li><b>alt:</b> Provides alternative text if the image cannot load and helps screen readers.</li>
+        <li><b>width:</b> Sets the image width.</li>
+        <li><b>height:</b> Sets the image height.</li>
+    </ul>
+
+    <h3>14. What is an HTML form? Name common form controls and HTML5 input types.</h3>
+    <p>
+        <b>Answer:</b> An HTML form collects user input such as text,
+        passwords, selections, and choices. The <code>&lt;form&gt;</code>
+        element contains the form controls.
+    </p>
+    <ul>
+        <li><code>type="text"</code> - Creates a single-line text field.</li>
+        <li><code>type="radio"</code> - Allows one option to be selected from a group.</li>
+        <li><code>type="checkbox"</code> - Allows zero, one, or multiple options to be selected.</li>
+        <li><code>type="submit"</code> - Creates a button to submit form data.</li>
+        <li><code>type="email"</code> - Provides an email input with browser validation.</li>
+        <li><code>type="date"</code> - Provides a date picker.</li>
+        <li><code>type="color"</code> - Provides a color picker.</li>
+        <li><code>type="range"</code> - Provides a slider.</li>
+        <li><code>type="number"</code> - Provides a numerical input.</li>
+    </ul>
+    <p>
+        The <code>&lt;label&gt;</code> element describes an input. Its
+        <code>for</code> attribute should match the input's <code>id</code>.
+        Radio buttons in the same group share the same <code>name</code>.
+        The form's <code>action</code> attribute specifies where the data is sent.
+    </p>
+    <pre>
+&lt;form action="submit.php"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+</pre>
+
+    <h3>15. What are HTML5, XML, and XHTML?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><b>HTML5:</b> Introduced semantic elements such as header, nav, main, article, section, aside, and footer.</li>
+        <li><b>Multimedia:</b> HTML5 uses audio and video tags to play media in the browser. Common attributes include controls, autoplay, loop, and muted.</li>
+        <li><b>Drag and Drop:</b> HTML5 allows elements to be dragged using draggable="true" and events such as ondragstart, ondragover, and ondrop.</li>
+        <li><b>XML:</b> Extensible Markup Language, used to store and transport structured data. XML is case-sensitive and requires properly closed and nested tags, one root element, and quoted attribute values.</li>
+        <li><b>XHTML:</b> A stricter, XML-based version of HTML. It requires lowercase tags, proper nesting, closed elements, and quoted attribute values.</li>
+        <li><b>Meta Tags:</b> Provide document information inside the head section, such as charset, viewport, description, author, and refresh.</li>
+    </ul>
+    <pre>
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</pre>
+
+    <hr>
+
+    <h2>Quick Revision</h2>
+    <p>
+        Revise HTML document structure, elements, attributes, formatting tags,
+        colors, hyperlinks, lists, tables, images, forms, HTML5 elements,
+        multimedia, XML, XHTML, and meta tags before your examination.
+    </p>
+
+    <hr>
+    <center>
+        <p>
+            <a href="html.html">&larr; Back to HTML Overview</a> |
+            <a href="basics-of-html.html">HTML Notes</a> |
+            <a href="../main.html">Main Menu</a>
+        </p>
+    </center>
+
+</body>
+</html>
