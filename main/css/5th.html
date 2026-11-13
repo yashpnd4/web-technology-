@@ -82,8 +82,9 @@ div {
     <h3>E. Sticky Positioning</h3>
     <p>
         Sticky positioning works like relative positioning until the element
-        reaches a specified scroll position. It then stays fixed within its
-        scrolling area.
+        reaches a specified scroll position. It then sticks within its scrolling
+        container. A top, right, bottom, or left offset is normally needed to
+        tell the browser where it should stick.
     </p>
     <pre>
 h2 {
@@ -106,6 +107,29 @@ h2 {
         <tr><td>Fixed</td><td>Stays at a position relative to the browser window.</td></tr>
         <tr><td>Sticky</td><td>Moves normally and sticks after reaching a scroll point.</td></tr>
     </table>
+
+    <h3>Positioning Example</h3>
+    <p>
+        In this example, the parent element is positioned relatively. The
+        child element is positioned absolutely, so the child uses the parent
+        as its reference point.
+    </p>
+    <pre>
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+</pre>
+
+    <p>
+        A fixed element is positioned relative to the viewport. A sticky
+        element stays within its scrolling container after reaching its offset.
+    </p>
 
     <hr>
 
