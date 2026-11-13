@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX and Asynchronous Web Applications</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>AJAX and Asynchronous Web Applications</h1>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a></p>
+    </center>
+
+    <hr>
+
+
+    <h2>1. What is AJAX?</h2>
+    <p>
+        AJAX stands for <b>Asynchronous JavaScript and XML</b>. It describes
+        a technique in which JavaScript sends an HTTP request to a server
+        and updates part of a webpage with the response without loading
+        a completely new document.
+    </p>
+    <p>
+        JSON is common in modern applications, although the response can
+        also contain text, HTML, XML, or another resource type. AJAX is a
+        communication technique, not a server or database by itself.
+    </p>
+
+    <hr>
+
+    <h2>2. Uses of AJAX</h2>
+    <ul>
+        <li>Searching a product or course list without reloading the page.</li>
+        <li>Refreshing messages or notifications.</li>
+        <li>Checking whether a username is available.</li>
+        <li>Submitting a form and showing the result on the same page.</li>
+        <li>Updating only the part of a page that needs new information.</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. AJAX Request and Response Cycle</h2>
+    <ol>
+        <li>A user action or another event starts a request to a server URL, often called an endpoint.</li>
+        <li>The browser sends the request, usually with GET to retrieve data or POST to send data.</li>
+        <li>The server returns a response with a status and, when appropriate, a response body such as JSON or text.</li>
+        <li>JavaScript checks the response, reads the body, and updates the required DOM elements.</li>
+        <li>The rest of the document stays in place, and the page can show loading, success, or error feedback.</li>
+    </ol>
+
+    <hr>
+
+    <h2>4. What Does Asynchronous Mean?</h2>
+    <p>
+        A synchronous operation makes the next step wait for the current
+        operation to finish. Network requests can take time, so browser APIs
+        such as <code>fetch()</code> work asynchronously and return a
+        <b>Promise</b> representing work that will finish later.
+    </p>
+    <p>
+        The browser can continue responding to user events while the network
+        request is being handled. An <code>async</code> function and
+        <code>await</code> make asynchronous code easier to read.
+        Await pauses that function until its Promise settles, not the
+        whole browser interface.
+    </p>
+
+    <hr>
+
+    <h2>5. Fetch API</h2>
+    <p>
+        Fetch is a modern browser API used to make HTTP requests. It returns
+        a Promise that provides a Response object. The response body can
+        then be read as JSON or text.
+    </p>
+    <pre>
+async function loadCourses() {
+    try {
+        const response = await fetch("/api/courses");
+
+        if (!response.ok) {
+            throw new Error("HTTP error: " + response.status);
+        }
+
+        const courses = await response.json();
+        console.log(courses);
+    } catch (error) {
+        console.error("Could not load courses:", error);
+    }
+}
+
+loadCourses();
+</pre>
+    <p>
+        The example endpoint <code>/api/courses</code> is a placeholder.
+        It must exist and return JSON for the example to work with real data.
+    </p>
+
+    <hr>
+
+    <h2>6. Handling Errors</h2>
+    <ul>
+        <li><b>response.ok:</b> Checks whether the HTTP status indicates success.</li>
+        <li><b>response.status:</b> Gives the HTTP status code, such as 404 or 500.</li>
+        <li><b>response.json():</b> Reads the response body as JSON and returns a Promise.</li>
+        <li><b>try...catch:</b> Handles network errors and errors raised while processing a response.</li>
+    </ul>
+    <p>
+        A Fetch request normally does not reject just because the server
+        returned an HTTP error status such as 404 or 500. Check
+        <code>response.ok</code> and handle unsuccessful statuses yourself.
+    </p>
+
+    <hr>
+
+    <h2>7. What is CORS?</h2>
+    <p>
+        CORS stands for <b>Cross-Origin Resource Sharing</b>. A webpage can
+        usually request resources from its own origin. If an API is hosted
+        on a different origin, the server must allow the webpage to read
+        the response through the correct CORS headers.
+    </p>
+    <p>
+        Using <code>mode: "no-cors"</code> is not a general solution because
+        it produces an opaque response that JavaScript cannot normally read.
+    </p>
+
+    <hr>
+
+    <h2>8. Important Points</h2>
+    <ul>
+        <li>AJAX updates part of a webpage without loading a new document.</li>
+        <li>JSON is a common response format, even though AJAX includes XML in its name.</li>
+        <li>Fetch is a modern API for making HTTP requests.</li>
+        <li>Fetch works asynchronously and returns a Promise.</li>
+        <li>Use async and await to write asynchronous code clearly.</li>
+        <li>Check response.ok because HTTP error statuses do not normally reject the Fetch Promise.</li>
+        <li>CORS controls whether a page can read responses from a different origin.</li>
+    </ul>
+
+
+    <hr>
+    <center>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a> | <a href="5th.html">&larr; Previous: Events and Buttons</a> | <a href="7th.html">Next: Introduction to jQuery &rarr;</a> | <a href="../main.html">Main Menu</a></p>
+    </center>
+
+</body>
+</html>
