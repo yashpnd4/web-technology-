@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WWW Questions and Answers</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>WWW Questions and Answers</h1>
+        <p><a href="www.html">&larr; Back to WWW Overview</a></p>
+    </center>
+
+    <hr>
+
+    <h2>Basic WWW and Internet Questions</h2>
+    <p>
+        These questions cover the World Wide Web, its history, HTTP, URLs,
+        DNS, IP addresses, networking comparisons, and web designing concepts.
+    </p>
+
+    <hr>
+
+    <h3>1. What is the World Wide Web (WWW)?</h3>
+    <p>
+        <b>Answer:</b> WWW stands for <b>World Wide Web</b>. It is a system
+        of interconnected web pages and information that can be accessed
+        using the Internet. Users move between pages through hyperlinks.
+    </p>
+    <p><b>Key features:</b></p>
+    <ul>
+        <li>Global interaction and information sharing.</li>
+        <li>Navigation through hyperlinks.</li>
+        <li>Support for text, pictures, audio, and video.</li>
+        <li>Access to websites and online services.</li>
+    </ul>
+
+    <h3>2. What is the difference between the Internet and WWW?</h3>
+    <p><b>Answer:</b></p>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Internet</th>
+            <th>World Wide Web</th>
+        </tr>
+        <tr>
+            <td>A global network of interconnected computer networks.</td>
+            <td>A collection of interlinked web pages and multimedia documents accessed through the Internet.</td>
+        </tr>
+        <tr>
+            <td>It is the underlying network infrastructure.</td>
+            <td>It is a service that runs on top of the Internet.</td>
+        </tr>
+        <tr>
+            <td>Uses protocols such as TCP, IP, UDP, FTP, SMTP, and DNS.</td>
+            <td>Uses HTTP, HTTPS, and HTML for web communication and content.</td>
+        </tr>
+    </table>
+
+    <h3>3. Who invented the World Wide Web and how did it develop?</h3>
+    <p>
+        <b>Answer:</b> The WWW was created at the CERN laboratory in Geneva,
+        Switzerland, in 1989. It was invented by Tim Berners-Lee and his team
+        to share information. The first web page, web browser, and web server
+        were created in 1990.
+    </p>
+    <p><b>Evolution of the Web:</b></p>
+    <ul>
+        <li><b>Web 1.0:</b> Mainly static websites and read-only information.</li>
+        <li><b>Web 2.0:</b> Interactive websites, social platforms, and user-generated content.</li>
+        <li><b>Web 3.0:</b> Semantic web concepts, personalization, and decentralization.</li>
+        <li><b>Web 4.0:</b> Described in the notes as an expected intelligent and connected web.</li>
+    </ul>
+
+    <h3>4. What is a web browser and what is a web server?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><b>Web Browser:</b> Software used by a user to request and display web pages. Examples include Chrome, Firefox, Safari, and Edge.</li>
+        <li><b>Web Server:</b> Software or hardware that stores, processes, and supplies web pages in response to requests. Examples include Apache, Nginx, and Microsoft IIS.</li>
+    </ul>
+    <p>
+        In the client-server model, the browser acts as the client and the
+        server provides the requested resource.
+    </p>
+
+    <hr>
+
+    <h2>HTTP and URL Questions</h2>
+
+    <h3>5. What is HTTP? Explain common HTTP request methods.</h3>
+    <p>
+        <b>Answer:</b> HTTP stands for <b>Hypertext Transfer Protocol</b>.
+        It is an application layer protocol used by web browsers and web
+        servers to communicate and transfer data.
+    </p>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Method</th>
+            <th>Purpose</th>
+        </tr>
+        <tr><td>GET</td><td>Retrieves data from the server.</td></tr>
+        <tr><td>POST</td><td>Sends data to the server.</td></tr>
+        <tr><td>PUT</td><td>Updates existing data on the server.</td></tr>
+        <tr><td>DELETE</td><td>Deletes data from the server.</td></tr>
+    </table>
+
+    <h3>6. What are the parts of an HTTP response?</h3>
+    <p><b>Answer:</b> An HTTP response has three main parts:</p>
+    <ol>
+        <li><b>Status Line:</b> Contains the HTTP status code, such as 200 (OK), 404 (Not Found), or 500 (Server Error).</li>
+        <li><b>Headers:</b> Contain additional information such as Content-Type, Set-Cookie, and Cache-Control.</li>
+        <li><b>Body:</b> Contains the requested content, such as HTML, CSS, images, or JSON data.</li>
+    </ol>
+
+    <h3>7. Explain the HTTP request-response cycle.</h3>
+    <p><b>Answer:</b> The basic request-response cycle has these steps:</p>
+    <ol>
+        <li><b>DNS Resolution:</b> The browser finds the IP address for the domain name.</li>
+        <li><b>TCP Handshake:</b> The client and server establish a connection using SYN, SYN-ACK, and ACK.</li>
+        <li><b>HTTP Request:</b> The browser sends a request to the server.</li>
+        <li><b>HTTP Response:</b> The server processes the request and sends a response.</li>
+        <li><b>Connection:</b> The connection may close or remain open for later requests using Keep-Alive.</li>
+    </ol>
+
+    <h3>8. What is a URL? Explain its parts.</h3>
+    <p>
+        <b>Answer:</b> URL stands for <b>Uniform Resource Locator</b>.
+        It is the address of a resource on the web. It identifies the location
+        of a resource and the protocol used to access it.
+    </p>
+    <p><b>Example:</b> <code>https://www.bing.com</code></p>
+    <ul>
+        <li><b>https://</b> - Secure protocol used to transfer data.</li>
+        <li><b>www</b> - Subdomain.</li>
+        <li><b>bing</b> - Domain name.</li>
+        <li><b>.com</b> - Top-Level Domain (TLD).</li>
+    </ul>
+    <p>
+        A URI identifies a resource by name or location. A URL is a type
+        of URI that also gives the way or location to access the resource.
+        Every URL is a URI, but not every URI is a URL.
+    </p>
+
+    <hr>
+
+    <h2>DNS and IP Address Questions</h2>
+
+    <h3>9. What is DNS and why is it needed?</h3>
+    <p>
+        <b>Answer:</b> DNS stands for <b>Domain Name System</b>. It works
+        like an Internet phonebook by translating human-readable domain
+        names, such as <code>www.bing.com</code>, into numerical IP addresses
+        that computers use to locate one another.
+    </p>
+
+    <h3>10. What are TLD, SLD, and DNS labels?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><b>TLD:</b> Top-Level Domain. It is the last part of a domain name, such as .com, .org, .net, or .in.</li>
+        <li><b>gTLD:</b> Generic Top-Level Domain, used for general purposes, such as .com, .org, and .net.</li>
+        <li><b>ccTLD:</b> Country Code Top-Level Domain, such as .in for India and .uk for the United Kingdom.</li>
+        <li><b>SLD:</b> Second-Level Domain. It is the domain directly below the TLD.</li>
+        <li><b>DNS Label:</b> An individual part of a domain name separated by dots.</li>
+    </ul>
+
+    <h3>11. What is an IP address? Explain its types.</h3>
+    <p>
+        <b>Answer:</b> An IP address stands for Internet Protocol address.
+        It is a numerical label assigned to a device on a network so that
+        devices can communicate and data can reach the correct destination.
+    </p>
+    <ul>
+        <li><b>Public IP:</b> Used to identify a device or network on the global Internet.</li>
+        <li><b>Private IP:</b> Used inside a local network, such as home Wi-Fi.</li>
+        <li><b>Static IP:</b> A fixed address that normally does not change.</li>
+        <li><b>Dynamic IP:</b> An address assigned automatically by a DHCP server and may change over time.</li>
+    </ul>
+
+    <h3>12. What is the difference between IPv4 and IPv6?</h3>
+    <p><b>Answer:</b></p>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>IPv4</th>
+            <th>IPv6</th>
+        </tr>
+        <tr><td>32-bit address.</td><td>128-bit address.</td></tr>
+        <tr><td>Uses dotted-decimal format.</td><td>Uses hexadecimal values separated by colons.</td></tr>
+        <tr><td>Example: 192.168.1.1</td><td>Example: 2001:0db8::7334</td></tr>
+        <tr><td>Provides about 4.3 billion addresses.</td><td>Provides a much larger address space.</td></tr>
+        <tr><td>Supports broadcast.</td><td>Does not use broadcast; it supports multicast and anycast.</td></tr>
+    </table>
+
+    <h3>13. What are reserved IP addresses and IPv4 address classes?</h3>
+    <p><b>Answer:</b> Some IP addresses have special purposes:</p>
+    <ul>
+        <li><code>0.0.0.0</code> - Default route or non-routable meta-address.</li>
+        <li><code>127.0.0.1</code> - Loopback address, also called localhost.</li>
+        <li><code>169.254.0.1 - 169.254.0.254</code> - APIPA range used when DHCP fails, as listed in the notes.</li>
+        <li><code>255.255.255.255</code> - Broadcast address for the local subnet.</li>
+    </ul>
+    <p><b>IPv4 address classes:</b> Class A is for very large networks, Class B for medium to large networks, Class C for small networks, Class D for multicast, and Class E for experimental or research use.</p>
+
+    <h3>14. What are common IP security threats and how can an IP address be protected?</h3>
+    <p><b>Answer:</b> Common threats mentioned in the notes include:</p>
+    <ul>
+        <li>DDoS (Distributed Denial of Service) attacks.</li>
+        <li>Location tracking and IP spoofing.</li>
+        <li>Unauthorized remote access attempts.</li>
+    </ul>
+    <p><b>Protection methods:</b></p>
+    <ul>
+        <li>Use a VPN to mask the real IP address.</li>
+        <li>Use HTTPS websites.</li>
+        <li>Enable a NAT firewall on the router.</li>
+        <li>Use strong and unique passwords for network hardware.</li>
+        <li>Keep the operating system and router firmware updated.</li>
+    </ul>
+
+    <h3>15. What are the basic principles of good web design?</h3>
+    <p><b>Answer:</b> Important web design principles include:</p>
+    <ul>
+        <li><b>Visual Hierarchy:</b> Use size, typography, color, and spacing to guide the user's attention.</li>
+        <li><b>Navigation:</b> Keep menus clear and important information easy to reach.</li>
+        <li><b>Accessibility:</b> Use image alt text, sufficient text contrast, and keyboard navigation.</li>
+        <li><b>Responsive Design:</b> Make the layout adjust to different screen sizes using tools such as media queries, Flexbox, and Grid.</li>
+        <li><b>Performance:</b> Optimize images, reduce unnecessary code, and use caching.</li>
+        <li><b>Cross-Browser Compatibility:</b> Check that pages work in different browsers.</li>
+    </ul>
+    <p>
+        The WWW notes also mention Linux web server setup using Apache or
+        Nginx, the web root directory <code>/var/www/html</code>, virtual
+        hosts, firewall rules, and SSL with Let's Encrypt and Certbot.
+    </p>
+
+    <hr>
+
+    <h2>Quick Revision</h2>
+    <p>
+        Revise WWW history, Internet vs WWW, browsers and servers, HTTP,
+        URL, DNS, IP addresses, IPv4 and IPv6, security, and web design
+        principles before your examination.
+    </p>
+
+    <hr>
+    <center>
+        <p>
+            <a href="www.html">&larr; Back to WWW Overview</a> |
+            <a href="1st.html">WWW Notes</a> |
+            <a href="../main.html">Main Menu</a>
+        </p>
+    </center>
+
+</body>
+</html>
