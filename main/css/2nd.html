@@ -127,6 +127,10 @@ input[type="text"] {
     <hr>
 
     <h2>3. CSS Units</h2>
+    <p>
+        CSS values may be keywords, colors, numbers, lengths, percentages, or functions.
+        A length value usually needs a unit, such as 16px or 1rem.
+    </p>
     <p>CSS units are used to define sizes, spacing, and dimensions.</p>
     <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
         <tr bgcolor="#e0e0e0">
@@ -165,8 +169,9 @@ h1 {
     <h2>5. Cascade and Inheritance</h2>
     <p>
         <b>Cascade:</b> When more than one CSS rule applies to the same element,
-        the browser decides which rule should be used. Importance, selector
-        specificity, and source order are considered.
+        the browser decides which rule should be used. It considers the rule's
+        origin and importance first, then selector specificity, and finally
+        source order. A later rule wins only when the earlier comparisons are tied.
     </p>
     <p>
         <b>Inheritance:</b> Some properties, such as color and font-family,
@@ -174,14 +179,20 @@ h1 {
         as margin, padding, and border do not normally inherit.
     </p>
     <pre>
-body {
+p {
     color: black;
 }
 
-p {
+.notice {
     color: blue;
 }
+
+/* The class selector is more specific than the element selector. */
 </pre>
+    <p>
+        <b>Debugging Tip:</b> If a CSS rule does not work, check the selector,
+        spelling of the property, value, braces, and semicolons.
+    </p>
 
 
     <hr>
