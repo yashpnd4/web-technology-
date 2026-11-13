@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Introduction to XML</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>Introduction to XML</h1>
+    </center>
+
+    <hr>
+
+
+    <h2>1. What is XML?</h2>
+    <p>
+        XML stands for <b>Extensible Markup Language</b>. It is a text-based
+        markup language used for representing, storing, and transporting
+        structured data. XML allows authors to create descriptive tags that
+        match their data.
+    </p>
+    <p>
+        XML describes the meaning of information rather than how it should
+        look on a screen. Another program or stylesheet can decide how the
+        information is used or displayed.
+    </p>
+
+    <hr>
+
+    <h2>2. Example of an XML Document</h2>
+    <p>The following XML represents a course record:</p>
+    <pre>
+&lt;course code="WT205"&gt;
+    &lt;title&gt;Web Technologies&lt;/title&gt;
+    &lt;credits&gt;4&lt;/credits&gt;
+    &lt;instructor&gt;Dr. Mehta&lt;/instructor&gt;
+&lt;/course&gt;
+</pre>
+    <p>
+        The element names course, title, credits, and instructor describe
+        the information stored in the document. The code value is an attribute.
+    </p>
+
+    <hr>
+
+    <h2>3. Features of XML</h2>
+    <ul>
+        <li><b>Extensible:</b> Authors can choose meaningful element and attribute names. XML does not prescribe one fixed set of tags.</li>
+        <li><b>Structured:</b> Elements are nested in a tree and can contain related child records.</li>
+        <li><b>Portable:</b> XML is text that can be read by people and processed by software on different platforms.</li>
+        <li><b>Flexible:</b> XML can represent many kinds of structured information.</li>
+        <li><b>Data format:</b> XML is a markup and data format, not a programming language.</li>
+    </ul>
+
+    <hr>
+
+    <h2>4. Difference Between XML and HTML</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="90%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>HTML</th>
+            <th>XML</th>
+        </tr>
+        <tr>
+            <td>Uses predefined tags.</td>
+            <td>Allows users to define their own tags.</td>
+        </tr>
+        <tr>
+            <td>Used to structure and display webpage content.</td>
+            <td>Used to describe, store, and transport structured data.</td>
+        </tr>
+        <tr>
+            <td>Browsers have built-in meanings for standard HTML elements.</td>
+            <td>Element names describe the data and do not automatically create a styled user interface.</td>
+        </tr>
+        <tr>
+            <td>HTML tag names are generally not case-sensitive in HTML syntax.</td>
+            <td>XML element names are case-sensitive.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>5. Well-Formed XML and Valid XML</h2>
+    <p>
+        A <b>well-formed XML document</b> follows the basic XML syntax rules.
+        It has one root element, properly nested and closed tags, and quoted
+        attribute values.
+    </p>
+    <p>
+        A <b>valid XML document</b> is well-formed and also follows a declared
+        grammar, such as a DTD or XML Schema (XSD).
+    </p>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Well-Formed</th>
+            <th>Valid</th>
+        </tr>
+        <tr>
+            <td>Follows XML syntax rules.</td>
+            <td>Follows XML syntax rules and a declared DTD or XSD.</td>
+        </tr>
+        <tr>
+            <td>Does not require a DTD or XSD.</td>
+            <td>Must conform to the declared grammar.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>6. Where XML is Used</h2>
+    <ul>
+        <li>Exchanging structured data between applications and services.</li>
+        <li>Configuration files and document formats.</li>
+        <li>Feeds such as RSS.</li>
+        <li>Representing information where explicit structure and readability are important.</li>
+    </ul>
+
+    <hr>
+
+    <h2>7. Important Points</h2>
+    <ul>
+        <li>XML stands for Extensible Markup Language.</li>
+        <li>XML is used to store and transport structured data.</li>
+        <li>XML allows custom tags.</li>
+        <li>XML is not a programming language and is not the same as HTML.</li>
+        <li>A valid XML document must also be well-formed.</li>
+    </ul>
+
+
+    <hr>
+    <p style="height: 60px;"></p>
+    <a href="2nd.html" aria-label="Go to next page" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; background-color: #075e54; color: white; padding: 12px 22px; border: 1px solid #064b44; border-radius: 6px; text-decoration: none; font-weight: bold;">Next &rarr;</a>
+
+</body>
+</html>
