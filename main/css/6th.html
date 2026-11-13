@@ -12,12 +12,12 @@
 
     <hr>
 
-
     <h2>1. Introduction to CSS3</h2>
     <p>
-        CSS3 is a commonly used name for newer CSS features. Modern CSS is
-        developed in different modules such as colors, selectors, grid,
-        and media queries.
+        CSS3 is a commonly used classroom name for newer CSS features.
+        Modern CSS is developed as a collection of modules, such as Color,
+        Selectors, Grid, and Media Queries. There is no single complete
+        CSS3 or CSS4 release. Individual CSS modules continue to develop.
     </p>
 
     <hr>
@@ -25,7 +25,7 @@
     <h2>2. Rounded Corners</h2>
     <p>
         The <code>border-radius</code> property is used to make the corners
-        of an element rounded.
+        of an HTML element rounded.
     </p>
     <pre>
 div {
@@ -39,7 +39,7 @@ div {
     <h2>3. Box Shadow</h2>
     <p>
         The <code>box-shadow</code> property is used to add a shadow around
-        an HTML element.
+        an HTML element. It gives a depth effect.
     </p>
     <pre>
 div {
@@ -52,7 +52,7 @@ div {
     <h2>4. CSS Gradients</h2>
     <p>
         A gradient is a smooth change from one color to another. The
-        <code>linear-gradient()</code> function is used to create a linear gradient.
+        <code>linear-gradient()</code> function creates a gradient background.
     </p>
     <pre>
 div {
@@ -74,26 +74,46 @@ div {
     transition: 0.5s;
 }
 </pre>
-
-    <hr>
-
-    <h2>6. Flexbox</h2>
-    <p>
-        Flexbox is a CSS layout method used to arrange elements in one direction,
-        either in a row or a column.
-    </p>
+    <p>Example of a box moving slightly when the mouse pointer is over it:</p>
     <pre>
-.container {
-    display: flex;
-    gap: 10px;
+.box {
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-5px);
 }
 </pre>
 
     <hr>
 
-    <h2>7. CSS Grid</h2>
+    <h2>6. Choosing a Layout Method</h2>
     <p>
-        CSS Grid is a layout method used to arrange elements in rows and columns.
+        CSS provides different ways to arrange elements on a webpage.
+    </p>
+    <ul>
+        <li><b>Normal Document Flow:</b> Used for most text and block content.</li>
+        <li><b>Flexbox:</b> Used to arrange items in one main direction, such as a row or a column.</li>
+        <li><b>CSS Grid:</b> Used to arrange items in rows and columns.</li>
+    </ul>
+
+    <h3>A. Flexbox</h3>
+    <p>
+        Flexbox is a layout method used to arrange elements in one direction,
+        either in a row or a column.
+    </p>
+    <pre>
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+</pre>
+
+    <h3>B. CSS Grid</h3>
+    <p>
+        CSS Grid is a layout method used to arrange elements in rows and
+        columns. It is useful when a page needs a two-dimensional layout.
     </p>
     <pre>
 .container {
@@ -102,33 +122,52 @@ div {
     gap: 10px;
 }
 </pre>
-
-    <hr>
-
-    <h2>8. Media Queries</h2>
     <p>
-        Media queries are used to apply CSS rules depending on screen size or
-        other device conditions. They help create responsive webpages.
+        The <code>repeat()</code>, <code>auto-fit</code>, and
+        <code>minmax()</code> functions can be used to make grid columns
+        adjust to the available space.
     </p>
     <pre>
-@media (max-width: 600px) {
-    body {
-        background-color: lightblue;
-    }
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
 }
 </pre>
 
     <hr>
 
-    <h2>9. Reduced Motion</h2>
+    <h2>7. Media Queries</h2>
+    <p>
+        Media queries are used to apply CSS rules depending on screen size
+        or other device conditions. They help create responsive webpages.
+        For example, a page can use two columns on a wide screen and one
+        column on a narrow screen.
+    </p>
+    <pre>
+@media (max-width: 600px) {
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+}
+</pre>
+    <p>
+        Choose breakpoints when the content needs them rather than selecting
+        a breakpoint only for one particular phone model.
+    </p>
+
+    <hr>
+
+    <h2>8. Reduced Motion</h2>
     <p>
         Some users prefer fewer animations. CSS provides the
         <code>prefers-reduced-motion</code> media feature to reduce or remove
-        motion effects for those users.
+        motion effects for users who have selected this setting on their device.
     </p>
     <pre>
 @media (prefers-reduced-motion: reduce) {
-    * {
+    .motion-demo,
+    .motion-demo:hover {
         transition: none;
         transform: none;
     }
@@ -137,36 +176,45 @@ div {
 
     <hr>
 
-    <h2>10. Important Points</h2>
+    <h2>9. Important Points</h2>
     <ul>
         <li><code>border-radius</code> creates rounded corners.</li>
         <li><code>box-shadow</code> adds a shadow.</li>
-        <li><code>linear-gradient()</code> creates a color gradient.</li>
+        <li><code>linear-gradient()</code> creates a smooth color gradient.</li>
         <li><code>transform</code> changes the position, size, or rotation of an element.</li>
         <li><code>transition</code> makes property changes smooth.</li>
         <li>Flexbox arranges items in one direction.</li>
         <li>Grid arranges items in rows and columns.</li>
         <li>Media queries help webpages adjust to screen sizes.</li>
+        <li>Reduced-motion settings help avoid unnecessary animation for some users.</li>
+        <li>Modern CSS is developed through individual modules.</li>
     </ul>
 
     <hr>
 
-    <h2>11. Unit 3 Review Questions</h2>
+    <h2>10. Unit 3 Review Questions</h2>
     <ol>
         <li>What is CSS? Why is it needed?</li>
         <li>Explain inline, internal, and external CSS.</li>
         <li>What is CSS syntax? Explain different types of selectors.</li>
+        <li>Explain CSS units and custom properties.</li>
+        <li>What is the difference between cascade and inheritance?</li>
         <li>Explain RGB, RGBA, HSL, and HSLA colors.</li>
+        <li>Explain the different CSS background properties.</li>
+        <li>Explain font properties and text properties.</li>
         <li>Explain the CSS box model.</li>
         <li>Explain the five types of CSS positioning.</li>
         <li>What is the difference between Flexbox and Grid?</li>
         <li>What is a media query?</li>
     </ol>
 
-
     <hr>
     <center>
-        <p><a href="css.html">&larr; Back to CSS Overview</a> | <a href="5th.html">&larr; Previous: CSS Positioning</a> | <a href="../main.html">Main Menu</a></p>
+        <p>
+            <a href="css.html">&larr; Back to CSS Overview</a> |
+            <a href="5th.html">&larr; Previous: CSS Positioning</a> |
+            <a href="../main.html">Main Menu</a>
+        </p>
     </center>
 
 </body>
