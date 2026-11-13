@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DHTML: HTML, CSS, and JavaScript Together</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>DHTML: HTML, CSS, and JavaScript Together</h1>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a></p>
+    </center>
+
+    <hr>
+
+
+    <h2>1. What is DHTML?</h2>
+    <p>
+        DHTML stands for <b>Dynamic HTML</b>. It describes the use of HTML,
+        CSS, and JavaScript together to make a webpage respond to changes
+        and user actions.
+    </p>
+    <p>
+        DHTML is not a separate programming language. HTML provides the
+        structure, CSS controls the appearance, and JavaScript updates
+        the page using the DOM and browser events.
+    </p>
+
+    <hr>
+
+    <h2>2. Three Technologies Used in DHTML</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Technology</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td><b>HTML</b></td>
+            <td>Creates elements and content such as headings, cards, forms, and buttons.</td>
+        </tr>
+        <tr>
+            <td><b>CSS</b></td>
+            <td>Defines layout, colors, spacing, and visual states.</td>
+        </tr>
+        <tr>
+            <td><b>JavaScript</b></td>
+            <td>Listens for events, makes decisions, and updates DOM content, attributes, or classes.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>3. How a DHTML Interaction Works</h2>
+    <ol>
+        <li>The browser reads HTML and creates a DOM tree of elements.</li>
+        <li>The browser applies CSS rules to decide how the elements look.</li>
+        <li>JavaScript finds the required elements and registers an event listener.</li>
+        <li>When an event occurs, JavaScript updates the DOM or changes a class.</li>
+        <li>The browser applies the changed styles and displays the updated result.</li>
+    </ol>
+
+    <hr>
+
+    <h2>4. Example: HTML Creates the Elements</h2>
+    <pre>
+&lt;div class="dhtml-card" id="dhtml-card"&gt;
+    &lt;h3&gt;Interactive Course Card&lt;/h3&gt;
+    &lt;p&gt;Press the button to highlight this card.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;button type="button" id="dhtml-toggle"&gt;
+    Toggle Highlight
+&lt;/button&gt;
+</pre>
+
+    <hr>
+
+    <h2>5. CSS Defines the Visual State</h2>
+    <pre>
+.dhtml-card {
+    padding: 16px;
+    background: #f1f5f5;
+}
+
+.dhtml-card.is-active {
+    color: white;
+    background: #087e78;
+}
+</pre>
+
+    <hr>
+
+    <h2>6. JavaScript Changes the State</h2>
+    <pre>
+const card = document.querySelector("#dhtml-card");
+const toggleButton = document.querySelector("#dhtml-toggle");
+
+toggleButton.addEventListener("click", () => {
+    card.classList.toggle("is-active");
+});
+</pre>
+    <p>
+        When the button is clicked, JavaScript adds or removes the
+        <code>is-active</code> class. CSS then applies the matching visual
+        rules to the card.
+    </p>
+
+    <hr>
+
+    <h2>7. Important Points</h2>
+    <ul>
+        <li>DHTML means Dynamic HTML.</li>
+        <li>DHTML is not a separate programming language.</li>
+        <li>HTML provides structure, CSS provides presentation, and JavaScript provides behavior.</li>
+        <li>The DOM allows JavaScript to update webpage elements.</li>
+        <li>Using classList keeps visual styling separate from JavaScript logic.</li>
+        <li>Use semantic HTML controls such as a real button for keyboard accessibility.</li>
+    </ul>
+
+
+    <hr>
+    <center>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a> | <a href="3rd.html">&larr; Previous: Forms and Validation</a> | <a href="5th.html">Next: Events and Buttons &rarr;</a> | <a href="../main.html">Main Menu</a></p>
+    </center>
+
+</body>
+</html>
