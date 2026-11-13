@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Processing and Regular Expressions</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>String Processing and Regular Expressions</h1>
+    </center>
+
+    <hr>
+
+
+    <h2>1. What is a String?</h2>
+    <p>
+        A string is a sequence of text characters. PHP provides functions
+        to inspect, trim, split, search, replace, and format strings.
+    </p>
+
+    <hr>
+
+    <h2>2. Common PHP String Functions</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="90%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Task</th>
+            <th>PHP Function</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>Remove whitespace at the ends</td>
+            <td><code>trim()</code></td>
+            <td>Removes whitespace from the beginning and end of a string.</td>
+        </tr>
+        <tr>
+            <td>Count characters</td>
+            <td><code>strlen()</code> / <code>mb_strlen()</code></td>
+            <td>Counts string length. Use mb_strlen() for Unicode text when the mbstring extension is enabled.</td>
+        </tr>
+        <tr>
+            <td>Replace literal text</td>
+            <td><code>str_replace()</code></td>
+            <td>Replaces matching text with another value.</td>
+        </tr>
+        <tr>
+            <td>Find a regular-expression match</td>
+            <td><code>preg_match()</code></td>
+            <td>Checks whether a pattern matches a string.</td>
+        </tr>
+        <tr>
+            <td>Replace a regular-expression match</td>
+            <td><code>preg_replace()</code></td>
+            <td>Replaces text that matches a pattern.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>3. Using trim() and str_replace()</h2>
+    <p>
+        The trim() function removes whitespace at the beginning and end
+        of a string. The str_replace() function replaces literal text.
+    </p>
+    <pre>
+&lt;?php
+$raw = '      Contact: learner@example.edu       ';
+
+$clean = trim($raw);
+
+$normalized = str_replace('Contact:', 'Email:', $clean);
+
+echo $normalized . PHP_EOL;
+?&gt;
+</pre>
+    <p>Output:</p>
+    <pre>
+Email: learner@example.edu
+</pre>
+
+    <hr>
+
+    <h2>4. What is a Regular Expression?</h2>
+    <p>
+        A regular expression (regex) describes a pattern in text. PHP's
+        preg_* functions use PCRE, which stands for Perl Compatible Regular
+        Expressions. Regular expressions can find patterns, extract matches,
+        or replace matched text.
+    </p>
+
+    <hr>
+
+    <h2>5. Common Regex Symbols</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="90%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Symbol</th>
+            <th>Meaning</th>
+        </tr>
+        <tr><td><code>/.../</code></td><td>Slash delimiters used around a regular-expression pattern.</td></tr>
+        <tr><td><code>i</code></td><td>Case-insensitive matching modifier.</td></tr>
+        <tr><td><code>^</code></td><td>Anchors a match to the start of the string.</td></tr>
+        <tr><td><code>$</code></td><td>Anchors a match to the end of the string.</td></tr>
+        <tr><td><code>[A-Z]</code></td><td>Matches an uppercase letter from A to Z.</td></tr>
+        <tr><td><code>+</code></td><td>Matches one or more of the preceding item.</td></tr>
+        <tr><td><code>\.</code></td><td>Matches a literal dot.</td></tr>
+        <tr><td><code>\D</code></td><td>Matches any non-digit character.</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>6. Using preg_match()</h2>
+    <p>
+        The preg_match() function searches a string for a regular-expression
+        pattern. It returns 1 for a match, 0 when there is no match, or false
+        if an error occurs.
+    </p>
+    <pre>
+&lt;?php
+$email = 'learner@example.edu';
+
+$pattern = '/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i';
+
+$match = preg_match($pattern, $email);
+
+if ($match === false) {
+    throw new RuntimeException('The regular expression could not be processed.');
+}
+
+echo ($match === 1)
+    ? 'Email-like format found'
+    : 'No email-like format found';
+?&gt;
+</pre>
+    <p>
+        This pattern checks a common email-like shape. It does not prove
+        that the address exists or can receive email.
+    </p>
+
+    <hr>
+
+    <h2>7. Using preg_replace()</h2>
+    <p>
+        The preg_replace() function replaces text that matches a regular
+        expression. It can be used to remove unwanted characters from a string.
+    </p>
+    <pre>
+&lt;?php
+$phone = '(555) 123-4567';
+
+$digits = preg_replace('/\D+/', '', $phone);
+
+if ($digits === null) {
+    throw new RuntimeException('The replacement pattern could not be processed.');
+}
+
+echo "Digits only: $digits";
+?&gt;
+</pre>
+    <p>Output:</p>
+    <pre>
+Digits only: 5551234567
+</pre>
+
+    <hr>
+
+    <h2>8. Complete String and Regex Example</h2>
+    <pre>
+&lt;?php
+$raw = '      Contact: learner@example.edu       ';
+$clean = trim($raw);
+$normalized = str_replace('Contact:', 'Email:', $clean);
+
+echo $normalized . PHP_EOL;
+
+$email = 'learner@example.edu';
+$pattern = '/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i';
+$match = preg_match($pattern, $email);
+
+if ($match === false) {
+    throw new RuntimeException('Regex error');
+}
+
+echo ($match === 1 ? 'Email-like format found' : 'No match') . PHP_EOL;
+
+$phone = '(555) 123-4567';
+$digits = preg_replace('/\D+/', '', $phone);
+
+if ($digits === null) {
+    throw new RuntimeException('Regex replacement error');
+}
+
+echo "Digits only: $digits" . PHP_EOL;
+?&gt;
+</pre>
+
+    <hr>
+
+    <h2>9. Choosing the Right Tool</h2>
+    <ul>
+        <li>Prefer simple string functions for literal replacements and searches.</li>
+        <li>Use regular expressions when the pattern itself varies.</li>
+        <li>Use filter_var($email, FILTER_VALIDATE_EMAIL) for PHP email-format validation.</li>
+        <li>Confirm email ownership when needed.</li>
+        <li>Regex checks do not replace server-side validation, output encoding, or security controls.</li>
+    </ul>
+
+    <hr>
+
+    <h2>10. Important Points</h2>
+    <ul>
+        <li>trim() removes whitespace at the start and end of a string.</li>
+        <li>strlen() and mb_strlen() can count string length.</li>
+        <li>str_replace() replaces literal text.</li>
+        <li>preg_match() checks whether a pattern matches.</li>
+        <li>preg_replace() replaces text that matches a pattern.</li>
+        <li>Regex uses delimiters, anchors, character classes, and modifiers.</li>
+    </ul>
+
+
+    <hr>
+    <p style="height: 60px;"></p>
+    <a href="4th.html" aria-label="Go to next page" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; background-color: #075e54; color: white; padding: 12px 22px; border: 1px solid #064b44; border-radius: 6px; text-decoration: none; font-weight: bold;">Next &rarr;</a>
+
+</body>
+</html>
