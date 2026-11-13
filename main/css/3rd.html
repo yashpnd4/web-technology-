@@ -12,38 +12,44 @@
 
     <hr>
 
-
-    <h2>1. CSS Colors</h2>
+    <h2>1. CSS Color Values</h2>
     <p>
         CSS colors are used to change the text color and background color of
         HTML elements. Colors can be written using color names, HEX, RGB,
         RGBA, HSL, and HSLA values.
     </p>
 
-    <h3>A. Color Name</h3>
-    <p>We can use standard color names such as red, blue, green, black, and white.</p>
+    <h3>A. Color Names</h3>
+    <p>CSS supports common color names such as red, blue, green, black, white, and tomato.</p>
     <pre>
 h1 {
     color: red;
 }
 </pre>
 
-    <h3>B. HEX Color</h3>
-    <p>HEX colors use hexadecimal values. They normally contain a hash sign followed by six digits or letters.</p>
+    <h3>B. HEX Colors</h3>
+    <p>
+        HEX colors use hexadecimal values. A common HEX color has a hash sign
+        followed by six digits or letters. The six values represent red,
+        green, and blue components.
+    </p>
     <pre>
 p {
     color: #0000FF;
 }
 </pre>
 
-    <h3>C. RGB Color</h3>
-    <p>RGB stands for Red, Green, and Blue. Each value normally ranges from 0 to 255.</p>
+    <h3>C. RGB Colors</h3>
+    <p>
+        RGB stands for Red, Green, and Blue. Each color value normally ranges
+        from 0 to 255. Different combinations create different colors.
+    </p>
     <pre>
 h1 {
     color: rgb(255, 0, 0);
 }
 </pre>
-    <p>Examples:</p>
+    <p><b>Examples of RGB colors:</b></p>
     <ul>
         <li><code>rgb(255, 0, 0)</code> - Red</li>
         <li><code>rgb(0, 255, 0)</code> - Green</li>
@@ -51,23 +57,43 @@ h1 {
         <li><code>rgb(0, 0, 0)</code> - Black</li>
         <li><code>rgb(255, 255, 255)</code> - White</li>
     </ul>
+    <p>
+        When all three RGB values are equal, the result is a shade of gray.
+        Values near 0 create darker gray, while values near 255 create lighter gray.
+    </p>
+    <pre>
+color: rgb(60, 60, 60);
+color: rgb(140, 140, 140);
+color: rgb(240, 240, 240);
+</pre>
 
-    <h3>D. RGBA Color</h3>
+    <h3>D. RGBA Colors</h3>
     <p>
         RGBA stands for Red, Green, Blue, and Alpha. The alpha value controls
-        transparency. It ranges from 0 (transparent) to 1 (fully opaque).
+        the transparency of the color. It ranges from 0 (fully transparent)
+        to 1 (fully opaque).
     </p>
     <pre>
 p {
     color: rgba(255, 0, 0, 0.5);
 }
 </pre>
+    <p>
+        The alpha value changes the color itself. It does not automatically
+        make the text or other child elements transparent.
+    </p>
 
     <h3>E. HSL and HSLA Colors</h3>
     <p>
-        HSL stands for Hue, Saturation, and Lightness. HSLA also includes
-        an alpha value for transparency.
+        HSL stands for Hue, Saturation, and Lightness. HSLA also includes an
+        alpha value for transparency.
     </p>
+    <ul>
+        <li><b>Hue:</b> The color angle, commonly from 0 to 360 degrees.</li>
+        <li><b>Saturation:</b> The intensity of the color, written as a percentage.</li>
+        <li><b>Lightness:</b> How light or dark the color is, written as a percentage.</li>
+        <li><b>Alpha:</b> Controls transparency in HSLA.</li>
+    </ul>
     <pre>
 h1 {
     color: hsl(9, 100%, 64%);
@@ -80,26 +106,36 @@ p {
 
     <hr>
 
-    <h2>2. Background Color</h2>
+    <h2>2. Text Color and Background Color</h2>
     <p>
-        The <code>background-color</code> property is used to set the background
-        color of an HTML element.
+        The <code>color</code> property changes the text color of an element.
+        The <code>background-color</code> property changes the background color.
     </p>
     <pre>
+h1 {
+    color: tomato;
+}
+
 body {
     background-color: lightblue;
 }
 </pre>
+    <p>
+        Choose text and background colors with enough contrast so the content
+        remains easy to read.
+    </p>
 
     <hr>
 
     <h2>3. Background Image</h2>
     <p>
-        The <code>background-image</code> property is used to set an image
-        as the background of an element.
+        The <code>background-image</code> property is used to set an image as
+        the background of an element. A background color can be kept as a
+        fallback in case the image does not load.
     </p>
     <pre>
 body {
+    background-color: lightblue;
     background-image: url("image.jpg");
 }
 </pre>
@@ -112,13 +148,39 @@ body {
             <th>Property</th>
             <th>Use</th>
         </tr>
-        <tr><td>background-color</td><td>Sets the background color.</td></tr>
-        <tr><td>background-image</td><td>Sets a background image or gradient.</td></tr>
-        <tr><td>background-repeat</td><td>Controls whether the background image repeats.</td></tr>
-        <tr><td>background-position</td><td>Sets the starting position of the background image.</td></tr>
-        <tr><td>background-size</td><td>Controls the size of the background image.</td></tr>
-        <tr><td>background-attachment</td><td>Controls how the background moves when the page is scrolled.</td></tr>
+        <tr>
+            <td>background-color</td>
+            <td>Sets the background color of an element.</td>
+        </tr>
+        <tr>
+            <td>background-image</td>
+            <td>Sets a background image or gradient.</td>
+        </tr>
+        <tr>
+            <td>background-repeat</td>
+            <td>Controls image tiling: repeat, repeat-x, repeat-y, or no-repeat.</td>
+        </tr>
+        <tr>
+            <td>background-position</td>
+            <td>Sets where the image begins, such as center or right top.</td>
+        </tr>
+        <tr>
+            <td>background-size</td>
+            <td>Controls image size. Cover fills the box; contain shows the whole image.</td>
+        </tr>
+        <tr>
+            <td>background-attachment</td>
+            <td>Controls whether the background scrolls with the element or stays fixed.</td>
+        </tr>
     </table>
+
+    <h3>Background Repeat Values</h3>
+    <ul>
+        <li><b>repeat:</b> Repeats the image horizontally and vertically.</li>
+        <li><b>repeat-x:</b> Repeats the image horizontally.</li>
+        <li><b>repeat-y:</b> Repeats the image vertically.</li>
+        <li><b>no-repeat:</b> Displays the image only once.</li>
+    </ul>
 
     <h3>Example of Background Properties</h3>
     <pre>
@@ -134,19 +196,44 @@ body {
 
     <hr>
 
-    <h2>5. Important Points</h2>
+    <h2>5. CSS Gradient</h2>
+    <p>
+        A gradient is a smooth change from one color to another. A linear
+        gradient is created with the <code>linear-gradient()</code> function.
+        It is treated as a background image created by CSS.
+    </p>
+    <pre>
+.banner {
+    background-color: #174f78;
+    background-image: linear-gradient(120deg, #174f78, #31765e);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+</pre>
+
+    <hr>
+
+    <h2>6. Important Points</h2>
     <ul>
         <li>Use <code>color</code> to change text color.</li>
         <li>Use <code>background-color</code> to change background color.</li>
+        <li>CSS supports named, HEX, RGB, RGBA, HSL, and HSLA colors.</li>
         <li>RGB uses red, green, and blue values.</li>
-        <li>RGBA adds transparency to RGB.</li>
+        <li>RGBA adds an alpha value for transparency.</li>
         <li>HSL uses hue, saturation, and lightness.</li>
+        <li>Background properties control images, repeating, position, size, and attachment.</li>
+        <li>Gradients create a smooth change between colors.</li>
     </ul>
-
 
     <hr>
     <center>
-        <p><a href="css.html">&larr; Back to CSS Overview</a> | <a href="2nd.html">&larr; Previous: CSS Syntax and Selectors</a> | <a href="4th.html">Next: Text, Borders and Box Model &rarr;</a> | <a href="../main.html">Main Menu</a></p>
+        <p>
+            <a href="css.html">&larr; Back to CSS Overview</a> |
+            <a href="2nd.html">&larr; Previous: CSS Syntax and Selectors</a> |
+            <a href="4th.html">Next: Text, Borders and Box Model &rarr;</a> |
+            <a href="../main.html">Main Menu</a>
+        </p>
     </center>
 
 </body>
