@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Questions and Answers</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>CSS Questions and Answers</h1>
+        <p><a href="css.html">&larr; Back to CSS Overview</a></p>
+    </center>
+
+    <hr>
+
+    <h2>Basic CSS Questions and Answers</h2>
+    <p>
+        These questions cover the basic concepts of CSS Unit 3, including
+        CSS syntax, selectors, colors, backgrounds, text, borders, the box
+        model, positioning, and modern CSS features.
+    </p>
+
+    <hr>
+
+    <h3>1. What is CSS?</h3>
+    <p>
+        <b>Answer:</b> CSS stands for <b>Cascading Style Sheets</b>. It is used
+        to control the appearance and layout of HTML webpages. CSS can change
+        colors, fonts, text size, spacing, borders, backgrounds, and the
+        position of HTML elements.
+    </p>
+
+    <h3>2. Why is CSS needed?</h3>
+    <p><b>Answer:</b> CSS is needed for the following reasons:</p>
+    <ul>
+        <li>It separates webpage content from its design.</li>
+        <li>It allows the same design to be reused on multiple pages.</li>
+        <li>It makes website design easier to maintain and update.</li>
+        <li>It helps webpages adjust to different screen sizes.</li>
+        <li>It reduces repeated styling code.</li>
+    </ul>
+
+    <h3>3. What are the three ways to add CSS to HTML?</h3>
+    <p><b>Answer:</b> There are three ways to add CSS:</p>
+    <ol>
+        <li><b>Inline CSS:</b> Written inside the style attribute of an HTML element.</li>
+        <li><b>Internal CSS:</b> Written inside the style tag in the head section.</li>
+        <li><b>External CSS:</b> Written in a separate .css file and connected using the link tag.</li>
+    </ol>
+    <p><b>Example of inline CSS:</b></p>
+    <pre>
+&lt;p style="color: red;"&gt;This is a red paragraph.&lt;/p&gt;
+</pre>
+
+    <h3>4. What is CSS syntax?</h3>
+    <p>
+        <b>Answer:</b> CSS syntax is the structure used to write CSS rules.
+        A CSS rule contains a selector and a declaration block. The declaration
+        block contains properties and values.
+    </p>
+    <pre>
+selector {
+    property: value;
+}
+</pre>
+    <p>Example:</p>
+    <pre>
+p {
+    color: blue;
+    font-size: 20px;
+}
+</pre>
+
+    <h3>5. What are CSS selectors? Name some common types.</h3>
+    <p>
+        <b>Answer:</b> CSS selectors are used to select HTML elements that
+        we want to style. Common types include:
+    </p>
+    <ul>
+        <li><b>Element selector:</b> Selects elements by tag name, such as <code>p</code>.</li>
+        <li><b>Class selector:</b> Selects elements by class name and starts with a dot, such as <code>.notice</code>.</li>
+        <li><b>ID selector:</b> Selects an element by ID and starts with a hash, such as <code>#heading</code>.</li>
+        <li><b>Universal selector:</b> Selects all elements and uses <code>*</code>.</li>
+        <li><b>Group selector:</b> Applies the same rule to multiple selectors, such as <code>h1, h2</code>.</li>
+        <li><b>Pseudo-class selector:</b> Selects an element in a state, such as <code>a:hover</code>.</li>
+    </ul>
+
+    <h3>6. What are CSS units? Give examples.</h3>
+    <p>
+        <b>Answer:</b> CSS units are used to set sizes, spacing, and dimensions.
+        Common units are:
+    </p>
+    <ul>
+        <li><b>px:</b> CSS pixel.</li>
+        <li><b>em:</b> Relative to the element's font size, with font-size based on the parent.</li>
+        <li><b>rem:</b> Relative to the root element's font size.</li>
+        <li><b>%:</b> A percentage based on the property and its context.</li>
+        <li><b>vw:</b> One percent of the viewport width.</li>
+        <li><b>vh:</b> One percent of the viewport height.</li>
+    </ul>
+
+    <h3>7. What is the difference between cascade and inheritance?</h3>
+    <p>
+        <b>Answer:</b> The <b>cascade</b> decides which CSS rule is used when
+        more than one rule applies to an element. It considers importance and
+        origin, selector specificity, and source order.
+    </p>
+    <p>
+        <b>Inheritance</b> means some properties, such as color and font-family,
+        can pass from a parent element to its child elements. Properties such
+        as margin, padding, and border do not normally inherit.
+    </p>
+
+    <h3>8. What are RGB, RGBA, HSL, and HSLA colors?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><b>RGB:</b> Uses Red, Green, and Blue values. Each value normally ranges from 0 to 255.</li>
+        <li><b>RGBA:</b> RGB with an additional Alpha value to control transparency.</li>
+        <li><b>HSL:</b> Uses Hue, Saturation, and Lightness.</li>
+        <li><b>HSLA:</b> HSL with an additional Alpha value for transparency.</li>
+    </ul>
+    <p>Examples:</p>
+    <pre>
+color: rgb(255, 0, 0);
+color: rgba(255, 0, 0, 0.5);
+color: hsl(9, 100%, 64%);
+color: hsla(9, 100%, 64%, 0.5);
+</pre>
+
+    <h3>9. What are CSS background properties?</h3>
+    <p><b>Answer:</b> Background properties are used to control the background of an HTML element.</p>
+    <ul>
+        <li><code>background-color</code> - Sets the background color.</li>
+        <li><code>background-image</code> - Sets a background image or gradient.</li>
+        <li><code>background-repeat</code> - Controls image repeating.</li>
+        <li><code>background-position</code> - Sets the image position.</li>
+        <li><code>background-size</code> - Controls the image size.</li>
+        <li><code>background-attachment</code> - Controls how the background moves while scrolling.</li>
+    </ul>
+
+    <h3>10. Name some CSS font and text properties.</h3>
+    <p><b>Answer:</b> Common CSS font and text properties are:</p>
+    <ul>
+        <li><code>font-family</code> - Changes the type of font.</li>
+        <li><code>font-size</code> - Changes the size of text.</li>
+        <li><code>font-weight</code> - Changes the thickness of text.</li>
+        <li><code>text-align</code> - Aligns text.</li>
+        <li><code>line-height</code> - Sets space between lines.</li>
+        <li><code>text-decoration</code> - Adds underline, overline, or line-through.</li>
+        <li><code>text-transform</code> - Changes the visual letter case.</li>
+    </ul>
+
+    <h3>11. What is the CSS border property?</h3>
+    <p>
+        <b>Answer:</b> The border property is used to create a line around
+        an HTML element. It can set border width, style, and color together.
+    </p>
+    <pre>
+p {
+    border: 2px solid red;
+}
+</pre>
+    <p>Common border styles include solid, dotted, dashed, double, and none.</p>
+
+    <h3>12. What is the CSS box model?</h3>
+    <p>
+        <b>Answer:</b> The CSS box model describes the space around an HTML
+        element. It contains four parts:
+    </p>
+    <ol>
+        <li><b>Content:</b> The text, image, or other content inside the element.</li>
+        <li><b>Padding:</b> The space between content and border.</li>
+        <li><b>Border:</b> The line around the padding and content.</li>
+        <li><b>Margin:</b> The space outside the border.</li>
+    </ol>
+
+    <h3>13. What is the difference between content-box and border-box?</h3>
+    <p>
+        <b>Answer:</b> In <code>content-box</code>, the declared width applies
+        only to the content. Padding and border are added to the total width.
+        In <code>border-box</code>, the declared width includes content,
+        padding, and border.
+    </p>
+
+    <h3>14. What are the five types of CSS positioning?</h3>
+    <p><b>Answer:</b> The five common position values are:</p>
+    <ul>
+        <li><b>Static:</b> The default position in normal document flow.</li>
+        <li><b>Relative:</b> Moves from its normal position while keeping its original space.</li>
+        <li><b>Absolute:</b> Is removed from normal flow and positioned relative to its nearest positioned ancestor.</li>
+        <li><b>Fixed:</b> Is positioned relative to the viewport.</li>
+        <li><b>Sticky:</b> Behaves like relative positioning until it reaches a scroll position, then sticks within its container.</li>
+    </ul>
+
+    <h3>15. What are Flexbox, CSS Grid, and Media Queries?</h3>
+    <p>
+        <b>Answer:</b>
+    </p>
+    <ul>
+        <li><b>Flexbox:</b> A layout method used to arrange elements in one direction, in a row or a column.</li>
+        <li><b>CSS Grid:</b> A layout method used to arrange elements in rows and columns.</li>
+        <li><b>Media Queries:</b> Apply CSS rules when a condition is true, such as when the screen width is below a certain size. They help create responsive webpages.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Quick Revision</h2>
+    <p>
+        Revise the definitions, differences, selector types, color formats,
+        background properties, box model, positioning values, Flexbox, Grid,
+        and media queries before your examination.
+    </p>
+
+    <hr>
+    <center>
+        <p>
+            <a href="css.html">&larr; Back to CSS Overview</a> |
+            <a href="6th.html">&larr; CSS Unit 3 Notes</a> |
+            <a href="../main.html">Main Menu</a>
+        </p>
+    </center>
+
+</body>
+</html>
