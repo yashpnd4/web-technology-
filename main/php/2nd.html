@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Introduction and Basic Syntax of PHP</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>Introduction and Basic Syntax of PHP</h1>
+    </center>
+
+    <hr>
+
+
+    <h2>1. Basic PHP Syntax</h2>
+    <p>
+        PHP statements are commonly written between
+        <code>&lt;?php</code> and <code>?&gt;</code> tags. A semicolon ends
+        most PHP statements.
+    </p>
+    <pre>
+&lt;?php
+echo "Hello, World!";
+?&gt;
+</pre>
+    <ul>
+        <li><code>&lt;?php</code> starts a PHP code block.</li>
+        <li><code>?&gt;</code> closes a PHP code block when needed.</li>
+        <li><code>echo</code> outputs text or values.</li>
+        <li>A semicolon ends most statements.</li>
+    </ul>
+
+    <hr>
+
+    <h2>2. PHP Comments</h2>
+    <p>Comments explain code and are not executed as PHP statements.</p>
+    <pre>
+// This is a single-line comment
+
+# This is also a single-line comment
+
+/*
+This is a
+multi-line comment.
+*/
+</pre>
+
+    <hr>
+
+    <h2>3. PHP Variables and Data Types</h2>
+    <p>
+        PHP variable names begin with a dollar sign ($). Variable names are
+        case-sensitive. PHP is dynamically typed, so a variable can hold
+        values of different types.
+    </p>
+    <pre>
+<?php
+$student = 'Mira';
+$unit = 6;
+$passed = true;
+$price = 45.50;
+$nothing = null;
+?>
+</pre>
+    <p><b>Common PHP data types include:</b></p>
+    <ul>
+        <li><b>String:</b> Text.</li>
+        <li><b>Integer:</b> Whole number.</li>
+        <li><b>Float:</b> Decimal number.</li>
+        <li><b>Boolean:</b> true or false.</li>
+        <li><b>Array:</b> Stores multiple values.</li>
+        <li><b>Object:</b> Stores data and related behavior.</li>
+        <li><b>NULL:</b> Represents no value.</li>
+    </ul>
+
+    <hr>
+
+    <h2>4. PHP Output and Strings</h2>
+    <p>
+        The <code>echo</code> statement displays output. Single-quoted
+        strings are mostly literal. Double-quoted strings can interpolate
+        variables and interpret sequences such as <code>\n</code>.
+        The dot (.) operator joins strings.
+    </p>
+    <pre>
+&lt;?php
+$student = 'Mira';
+$unit = 6;
+
+echo "Student: $student\n";
+echo 'Unit: ' . $unit . "\n";
+?&gt;
+</pre>
+    <p>
+        In this example, the dot operator joins the text with the value
+        stored in the variable.
+    </p>
+
+    <hr>
+
+    <h2>5. PHP Arrays</h2>
+    <p>Arrays store multiple values. Two common array types are:</p>
+    <ul>
+        <li><b>Indexed Array:</b> Stores ordered values using numeric indexes.</li>
+        <li><b>Associative Array:</b> Stores values using named keys.</li>
+    </ul>
+    <pre>
+&lt;?php
+$topics = ['PHP syntax', 'Strings', 'Frameworks'];
+
+$marks = [
+    'Mira' =&gt; 88,
+    'Dev' =&gt; 76
+];
+
+echo $topics[0];
+echo $marks['Mira'];
+?&gt;
+</pre>
+
+    <hr>
+
+    <h2>6. Conditions and Loops</h2>
+    <p>
+        Conditions make decisions based on values. PHP uses if, elseif,
+        and else statements. Loops repeat instructions. The foreach loop
+        is commonly used to visit each item in an array.
+    </p>
+    <pre>
+&lt;?php
+$marks = 88;
+
+if ($marks &gt;= 40) {
+    echo 'Pass';
+} else {
+    echo 'Needs more practice';
+}
+
+$topics = ['PHP syntax', 'Strings', 'Frameworks'];
+
+foreach ($topics as $topic) {
+    echo $topic . PHP_EOL;
+}
+?&gt;
+</pre>
+
+    <hr>
+
+    <h2>7. PHP Functions</h2>
+    <p>
+        A function groups reusable behavior. It can receive parameters and
+        return a result. Parameter and return types can make intended inputs
+        and outputs clear.
+    </p>
+    <pre>
+&lt;?php
+function resultLabel(int $marks): string
+{
+    if ($marks &gt;= 40) {
+        return 'Pass';
+    }
+
+    return 'Needs more practice';
+}
+
+echo resultLabel(88);
+?&gt;
+</pre>
+
+    <hr>
+
+    <h2>8. Complete Example: Variables, Arrays, and Loops</h2>
+    <pre>
+&lt;?php
+declare(strict_types=1);
+
+$student = 'Mira';
+$unit = 6;
+$passed = true;
+$topics = ['PHP syntax', 'Strings', 'Frameworks'];
+$marks = ['Mira' =&gt; 88, 'Dev' =&gt; 76];
+
+echo "Student: $student\n";
+echo 'Unit: ' . $unit . "\n";
+echo 'Passed: ' . ($passed ? 'yes' : 'no') . "\n";
+
+foreach ($topics as $index =&gt; $topic) {
+    echo ($index + 1) . ". $topic\n";
+}
+
+foreach ($marks as $name =&gt; $score) {
+    echo "$name scored $score\n";
+}
+?&gt;
+</pre>
+
+    <hr>
+
+    <h2>9. Important Points</h2>
+    <ul>
+        <li>PHP code is written between PHP tags.</li>
+        <li>Variable names begin with $ and are case-sensitive.</li>
+        <li>A semicolon ends most statements.</li>
+        <li>Use echo to display output.</li>
+        <li>Indexed arrays use numeric indexes; associative arrays use keys.</li>
+        <li>Conditions, loops, and functions control program logic.</li>
+    </ul>
+
+
+    <hr>
+    <p style="height: 60px;"></p>
+    <a href="3rd.html" aria-label="Go to next page" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; background-color: #075e54; color: white; padding: 12px 22px; border: 1px solid #064b44; border-radius: 6px; text-decoration: none; font-weight: bold;">Next &rarr;</a>
+
+</body>
+</html>
