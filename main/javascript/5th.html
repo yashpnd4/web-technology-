@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Events and Buttons</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>JavaScript Events and Buttons</h1>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a></p>
+    </center>
+
+    <hr>
+
+
+    <h2>1. What is an Event?</h2>
+    <p>
+        An event is something that happens in the browser, such as a click,
+        key press, input change, form submission, or page load. JavaScript
+        can listen for events and run a function when they occur.
+    </p>
+
+    <hr>
+
+    <h2>2. Common JavaScript Events</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Event</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>click</td>
+            <td>Occurs when an element, such as a button, is activated.</td>
+        </tr>
+        <tr>
+            <td>input</td>
+            <td>Occurs when a user edits an input value.</td>
+        </tr>
+        <tr>
+            <td>submit</td>
+            <td>Occurs when a form is submitted.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>3. Event Listener</h2>
+    <p>
+        An event listener connects an event to a function. The
+        <code>addEventListener()</code> method is commonly used to listen
+        for events. It keeps JavaScript behavior separate from HTML markup.
+    </p>
+    <p><b>Syntax:</b></p>
+    <pre>
+element.addEventListener("event", function);
+</pre>
+    <p><b>Example:</b></p>
+    <pre>
+const button = document.querySelector("#myButton");
+
+button.addEventListener("click", (event) => {
+    console.log("Button activated");
+});
+</pre>
+
+    <hr>
+
+    <h2>4. The Event Object</h2>
+    <p>
+        When an event occurs, the browser provides an event object. It
+        contains details about the event and the element that received it.
+    </p>
+    <p>
+        The <code>event.currentTarget</code> property refers to the element
+        on which the event listener is registered.
+    </p>
+    <pre>
+button.addEventListener("click", (event) => {
+    console.log("Activated:", event.currentTarget);
+});
+</pre>
+
+    <hr>
+
+    <h2>5. Example: Button Counter</h2>
+    <p>
+        A button can be used to increase a counter. JavaScript listens for
+        each click and updates the displayed number.
+    </p>
+    <pre>
+let count = 0;
+
+const button = document.querySelector("#addButton");
+const output = document.querySelector("#count");
+
+button.addEventListener("click", () => {
+    count = count + 1;
+    output.textContent = count;
+});
+</pre>
+
+    <hr>
+
+    <h2>6. Why Use addEventListener()?</h2>
+    <ul>
+        <li>Keeps JavaScript behavior separate from HTML structure.</li>
+        <li>Allows multiple listeners to be attached to an element.</li>
+        <li>Provides access to the event object.</li>
+        <li>Makes code easier to read and maintain.</li>
+    </ul>
+
+    <hr>
+
+    <h2>7. Important Points</h2>
+    <ul>
+        <li>An event is an action or occurrence in the browser.</li>
+        <li>click, input, and submit are common events.</li>
+        <li>addEventListener() connects an event to a function.</li>
+        <li>The event object contains information about the event.</li>
+        <li>Native buttons can be activated using a mouse or keyboard.</li>
+    </ul>
+
+
+    <hr>
+    <center>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a> | <a href="4th.html">&larr; Previous: DHTML</a> | <a href="6th.html">Next: AJAX and Asynchronous Web Applications &rarr;</a> | <a href="../main.html">Main Menu</a></p>
+    </center>
+
+</body>
+</html>
