@@ -89,6 +89,26 @@ p {
     border: 2px solid green;
 }
 </pre>
+    <p>
+        The border shorthand can also use one to four values. When four values
+        are given, they are applied in this order: top, right, bottom, and left.
+    </p>
+    <pre>
+div {
+    border-width: 2px 4px 6px 8px;
+    border-style: solid;
+    border-color: black;
+}
+</pre>
+    <p>
+        The <code>border-radius</code> property can make the corners rounded.
+    </p>
+    <pre>
+div {
+    border: 2px solid blue;
+    border-radius: 10px;
+}
+</pre>
 
     <hr>
 
@@ -137,6 +157,11 @@ div {
         of 20px each, and a 5px border on both sides, its total width with
         content-box is 350px (300 + 40 + 10). Margin is added outside this width.
     </p>
+    <p>
+        In normal block layout, vertical margins of two neighboring block
+        elements can sometimes collapse into one margin instead of being added
+        together.
+    </p>
 
     <hr>
 
@@ -147,6 +172,7 @@ div {
         <li>The box model contains content, padding, border, and margin.</li>
         <li>Padding is inside the border, while margin is outside the border.</li>
         <li>Border-box makes width calculations easier.</li>
+        <li>Vertical margins of neighboring block elements may collapse.</li>
     </ul>
 
 
