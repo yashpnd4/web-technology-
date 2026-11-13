@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transforming XML using XSL, XPath and XSLT</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>Transforming XML using XSL, XPath and XSLT</h1>
+    </center>
+
+    <hr>
+
+
+    <h2>1. What is XSL?</h2>
+    <p>
+        XSL stands for <b>Extensible Stylesheet Language</b>. It is a family
+        of technologies used for working with XML documents.
+    </p>
+    <p>Its main parts are:</p>
+    <ul>
+        <li><b>XSLT:</b> Rules and instructions for transforming XML documents.</li>
+        <li><b>XPath:</b> Expressions used to select nodes and values from an XML document.</li>
+        <li><b>XSL-FO:</b> Formatting objects commonly used for paginated output.</li>
+    </ul>
+    <p>
+        In introductory materials, the term XSL is sometimes used informally
+        to mean an XSLT stylesheet.
+    </p>
+
+    <hr>
+
+    <h2>2. What is XSLT?</h2>
+    <p>
+        XSLT stands for <b>Extensible Stylesheet Language Transformations</b>.
+        It reads a source XML tree, selects nodes using XPath, and applies
+        template rules to create a result.
+    </p>
+    <p>XSLT can transform XML into:</p>
+    <ul>
+        <li>HTML for displaying information on a webpage.</li>
+        <li>Another XML document.</li>
+        <li>Plain text.</li>
+    </ul>
+    <p>
+        XSLT changes the representation of the data; it does not change
+        the source XML document.
+    </p>
+
+    <hr>
+
+    <h2>3. Example Source XML</h2>
+    <pre>
+&lt;catalog&gt;
+    &lt;book id="b101"&gt;
+        &lt;title&gt;Learning XML&lt;/title&gt;
+        &lt;author&gt;Asha Rao&lt;/author&gt;
+        &lt;price&gt;450&lt;/price&gt;
+    &lt;/book&gt;
+    &lt;book id="b102"&gt;
+        &lt;title&gt;Data on the Web&lt;/title&gt;
+        &lt;author&gt;Neil Patel&lt;/author&gt;
+        &lt;price&gt;525&lt;/price&gt;
+    &lt;/book&gt;
+&lt;/catalog&gt;
+</pre>
+
+    <hr>
+
+    <h2>4. Example XSLT 1.0 Stylesheet</h2>
+    <p>
+        The following stylesheet selects each book and creates an HTML table.
+    </p>
+    <pre>
+&lt;xsl:stylesheet version="1.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+    &lt;xsl:output method="html" indent="yes"/&gt;
+
+    &lt;xsl:template match="/"&gt;
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;th&gt;ID&lt;/th&gt;
+                &lt;th&gt;Title&lt;/th&gt;
+                &lt;th&gt;Author&lt;/th&gt;
+                &lt;th&gt;Price&lt;/th&gt;
+            &lt;/tr&gt;
+
+            &lt;xsl:for-each select="catalog/book"&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;&lt;xsl:value-of select="@id"/&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;xsl:value-of select="title"/&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;xsl:value-of select="author"/&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;xsl:value-of select="price"/&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/xsl:for-each&gt;
+        &lt;/table&gt;
+    &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</pre>
+
+    <hr>
+
+    <h2>5. Important XSLT Elements</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="90%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Element</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td><code>&lt;xsl:template match="/"&gt;</code></td>
+            <td>Starts a template at the document root.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;xsl:for-each&gt;</code></td>
+            <td>Selects nodes with an XPath expression and repeats the enclosed output for each selected node.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;xsl:value-of&gt;</code></td>
+            <td>Reads the value of a selected element or attribute.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;xsl:output&gt;</code></td>
+            <td>Specifies the output method, such as HTML.</td>
+        </tr>
+    </table>
+    <p>
+        In the example, <code>@id</code> selects the id attribute of each book,
+        while title, author, and price select child elements.
+    </p>
+
+    <hr>
+
+    <h2>6. Connecting XML to an XSLT File</h2>
+    <p>
+        A standalone XML file can be connected to an XSLT stylesheet using
+        the <code>xml-stylesheet</code> processing instruction.
+    </p>
+    <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="catalog.xsl"?&gt;
+&lt;catalog&gt;
+    &lt;book id="b101"&gt;
+        &lt;title&gt;Learning XML&lt;/title&gt;
+        &lt;author&gt;Asha Rao&lt;/author&gt;
+        &lt;price&gt;450&lt;/price&gt;
+    &lt;/book&gt;
+&lt;/catalog&gt;
+</pre>
+
+    <hr>
+
+    <h2>7. Running an XSLT Transformation</h2>
+    <p>
+        The study guide shows the <code>xsltproc</code> command for a local
+        command-line demonstration. Save the source XML as catalog.xml and
+        the stylesheet as catalog.xsl.
+    </p>
+    <pre>
+xsltproc catalog.xsl catalog.xml
+</pre>
+    <p>
+        The transformed HTML is written to standard output. xsltproc is
+        available with libxslt.
+    </p>
+    <p>
+        The guide also describes a browser example using DOMParser and
+        XSLTProcessor with XSLT 1.0. It notes that Chromium warns that browser
+        XSLT support is deprecated and may be removed. For a durable local
+        demonstration, the guide recommends using xsltproc.
+    </p>
+
+    <hr>
+
+    <h2>8. Important Points</h2>
+    <ul>
+        <li>XSL is a family of XML technologies.</li>
+        <li>XPath selects nodes and values from XML documents.</li>
+        <li>XSLT transforms XML into HTML, XML, or text.</li>
+        <li>xsl:template defines a transformation rule.</li>
+        <li>xsl:for-each repeats output for selected nodes.</li>
+        <li>xsl:value-of reads element or attribute values.</li>
+        <li>XML can be connected to an XSLT stylesheet using xml-stylesheet.</li>
+    </ul>
+
+
+    <hr>
+    <p style="height: 60px;"></p>
+    <a href="questions.html" aria-label="Go to next page" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; background-color: #075e54; color: white; padding: 12px 22px; border: 1px solid #064b44; border-radius: 6px; text-decoration: none; font-weight: bold;">Next &rarr;</a>
+
+</body>
+</html>
