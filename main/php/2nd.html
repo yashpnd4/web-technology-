@@ -196,7 +196,66 @@ foreach ($marks as $name =&gt; $score) {
 
     <hr>
 
-    <h2>9. Important Points</h2>
+    <h2>9. Handling a Form Safely</h2>
+    <p>
+        PHP can read form data after a browser submits a form. The
+        <code>$_SERVER['REQUEST_METHOD']</code> value can be checked to
+        determine whether the request uses POST. Submitted values can be
+        read from the <code>$_POST</code> array.
+    </p>
+    <p>
+        Input should be trimmed and validated before it is used. Output
+        should be escaped for the HTML context using
+        <code>htmlspecialchars()</code>.
+    </p>
+    <pre>
+&lt;?php
+$name = '';
+$message = '';
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = trim($_POST['name'] ?? '');
+
+    if ($name === '') {
+        $error = 'Please enter your name.';
+    } elseif (preg_match('/\A[^\r\n]{1,60}\z/u', $name) !== 1) {
+        $error = 'Name must be 60 characters or fewer and fit on one line.';
+    } else {
+        $message = 'Welcome, ' . $name . '!';
+    }
+}
+
+function e(string $value): string
+{
+    return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+}
+?&gt;
+
+&lt;form method="post"&gt;
+    &lt;label for="name"&gt;Your name&lt;/label&gt;
+    &lt;input id="name" name="name" maxlength="60" required
+           value="&lt;?= e($name) ?&gt;"&gt;
+    &lt;button type="submit"&gt;Greet me&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;p role="status"&gt;&lt;?= e($message !== '' ? $message : $error) ?&gt;&lt;/p&gt;
+</pre>
+    <p>
+        The example checks for an empty name and limits its length to
+        60 characters on one line. The helper function e() escapes values
+        before they are inserted into HTML.
+    </p>
+    <p>
+        <b>Security:</b> User input is untrusted. Do not build SQL strings
+        by joining user input. Use prepared statements when connecting to
+        a database. Validation and output encoding have different purposes
+        and both are important.
+    </p>
+
+    <hr>
+
+    <h2>10. Important Points</h2>
     <ul>
         <li>PHP code is written between PHP tags.</li>
         <li>Variable names begin with $ and are case-sensitive.</li>
