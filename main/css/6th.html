@@ -1,297 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS3 and Modern CSS Features | CSS Unit 3</title>
-  <style>
-
-:root {
-  --ink: #183247;
-  --muted: #536777;
-  --navy: #12364d;
-  --blue: #1c6388;
-  --pale: #edf4f8;
-  --line: #d5e0e7;
-  --gold: #e4b34f;
-  --green: #2c7864;
-  --white: #ffffff;
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: #edf2f5;
-  color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.65;
-}
-a { color: #155e85; }
-a:hover { color: #0b3e5a; }
-.site-header {
-  background: var(--navy);
-  color: var(--white);
-  border-bottom: 5px solid var(--gold);
-}
-.header-inner, main, .site-footer {
-  width: min(1040px, calc(100% - 32px));
-  margin: 0 auto;
-}
-.header-inner { padding: 22px 0 20px; }
-.eyebrow {
-  margin: 0 0 6px;
-  color: #f4d58e;
-  font-size: 0.76rem;
-  font-weight: bold;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-h1 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.65rem); line-height: 1.15; }
-.subtitle { max-width: 760px; color: #dbe8ef; margin: 10px 0 0; }
-.top-links { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 16px; }
-.top-links a { color: #fff; font-weight: bold; font-size: 0.92rem; }
-main { padding: 26px 0 38px; }
-section, .panel {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 22px;
-  margin: 0 0 18px;
-  box-shadow: 0 3px 12px rgba(18, 54, 77, 0.045);
-}
-h2 { color: var(--navy); margin: 0 0 12px; font-size: 1.45rem; }
-h3 { color: #205b78; margin: 20px 0 8px; font-size: 1.08rem; }
-p { margin: 8px 0 12px; }
-.lead { color: var(--muted); font-size: 1.06rem; }
-.callout {
-  border-left: 5px solid var(--gold);
-  background: #fff8e8;
-  padding: 12px 15px;
-  margin: 14px 0;
-}
-.tip {
-  border-left: 5px solid var(--green);
-  background: #eef8f4;
-  padding: 12px 15px;
-  margin: 14px 0;
-}
-pre {
-  background: #17242e;
-  color: #f2f6f8;
-  border-radius: 8px;
-  padding: 16px;
-  overflow-x: auto;
-  line-height: 1.55;
-  font-size: 0.9rem;
-  border-left: 4px solid var(--gold);
-}
-code { font-family: Consolas, "Courier New", monospace; }
-:not(pre) > code {
-  background: #edf2f5;
-  color: #174d6a;
-  padding: 2px 5px;
-  border-radius: 4px;
-  overflow-wrap: anywhere;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 12px 0 18px;
-  font-size: 0.94rem;
-}
-th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
-th { background: var(--navy); color: white; }
-tr:nth-child(even) td { background: #f6f9fb; }
-.demo {
-  border: 1px dashed #9cb3c2;
-  background: #f7fafc;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 12px 0;
-}
-.demo-label {
-  display: block;
-  color: var(--muted);
-  font-weight: bold;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.grid-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-.topic-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.topic-link {
-  display: block;
-  background: #f6f9fb;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 14px;
-  text-decoration: none;
-}
-.topic-link strong { display: block; color: var(--navy); }
-.topic-link span { color: var(--muted); font-size: 0.9rem; }
-.lesson-number { color: #9a6b12; font-weight: bold; font-size: 0.78rem; letter-spacing: 0.1em; }
-.lesson-nav {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
-}
-.lesson-nav a {
-  display: inline-block;
-  padding: 10px 14px;
-  border: 1px solid var(--line);
-  background: white;
-  border-radius: 7px;
-  text-decoration: none;
-  font-weight: bold;
-}
-.site-footer {
-  color: var(--muted);
-  padding: 0 0 28px;
-  font-size: 0.9rem;
-}
-.small { color: var(--muted); font-size: 0.9rem; }
-@media (max-width: 680px) {
-  .grid-two, .topic-list { grid-template-columns: 1fr; }
-  section, .panel { padding: 16px; }
-  th, td { padding: 8px; }
-}
-
-  </style>
+    <title>CSS3 and Modern CSS Features</title>
 </head>
-<body>
-  <header class="site-header">
-    <div class="header-inner">
-      <p class="eyebrow">Web Technologies | Unit 3 | CSS</p>
-      <h1>CSS3 and Modern CSS Features</h1>
-      <p class="subtitle">Explore modern CSS modules, Flexbox, Grid, visual effects, transitions, transforms, and responsive media queries.</p>
-      <nav class="top-links" aria-label="Main navigation">
-        <a href="css.html">CSS Overview</a>
-        <a href="../main.html">Main Menu</a>
-        <a href="../html/html.html">HTML Unit</a>
-        <a href="../www/www.html">WWW Unit</a>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <p class="lesson-number">LESSON 06</p>
+<body bgcolor="#f9f9f9">
 
-    <section>
-      <h2>1. CSS3 and Modern CSS</h2>
-      <p>CSS is developed as a collection of modules, such as Color, Selectors, Grid, and Media Queries. "CSS3" is still commonly used as a classroom label for newer features, but there is no single all-encompassing CSS3 or CSS4 release. Individual modules evolve on their own timelines.</p>
-    </section>
-    <section>
-      <h2>2. Choosing a Layout Method</h2>
-      <ul>
-        <li><strong>Normal document flow:</strong> suitable for most text and block content.</li>
-        <li><strong>Flexbox:</strong> useful for arranging items along one main direction, such as a row of navigation links.</li>
-        <li><strong>Grid:</strong> useful when a layout needs rows and columns together, such as a group of cards.</li>
-      </ul>
-      <p>Flexbox and Grid can be combined. Neither requires fixed pixel widths for every item.</p>
-      <h3>Flexbox example</h3>
-      <pre><code>.flex-row {
-    display: flex;
-    gap: 12px;
-    justify-content: space-between;
-    align-items: center;
-}</code></pre>
-      <div class="demo">
-        <span class="demo-label">Rendered flexible row</span>
-        <div style="display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;">
-          <span style="background:#2c7864;color:white;padding:10px 16px;border-radius:5px;">Item A</span>
-          <span style="background:#2c7864;color:white;padding:10px 16px;border-radius:5px;">Item B</span>
-          <span style="background:#2c7864;color:white;padding:10px 16px;border-radius:5px;">Item C</span>
-        </div>
-      </div>
-      <h3>Grid example</h3>
-      <pre><code>.feature-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 14px;
-}</code></pre>
-      <div class="demo">
-        <span class="demo-label">Rendered grid</span>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;">
-          <div style="background:#e7f0f6;padding:18px;text-align:center;border-radius:5px;">Feature A</div>
-          <div style="background:#e7f0f6;padding:18px;text-align:center;border-radius:5px;">Feature B</div>
-          <div style="background:#e7f0f6;padding:18px;text-align:center;border-radius:5px;">Feature C</div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h2>3. Common Modern Visual Features</h2>
-      <table>
-        <tr><th>Feature</th><th>CSS property or function</th><th>Purpose</th></tr>
-        <tr><td>Rounded corners</td><td><code>border-radius</code></td><td>Rounds the corners of a box.</td></tr>
-        <tr><td>Depth / shadow</td><td><code>box-shadow</code></td><td>Adds a shadow around an element.</td></tr>
-        <tr><td>Gradient</td><td><code>linear-gradient()</code></td><td>Generates a gradual transition between colors.</td></tr>
-        <tr><td>Hover motion</td><td><code>transform</code> and <code>transition</code></td><td>Changes an element's visual position or appearance smoothly.</td></tr>
-      </table>
-      <pre><code>.feature-card {
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(18, 54, 77, .15);
-    background: linear-gradient(120deg, #174f78, #31765e);
-    transition: transform .2s ease;
+    <center>
+        <h1>CSS3 and Modern CSS Features</h1>
+        <p><a href="css.html">&larr; Back to CSS Overview</a></p>
+    </center>
+
+    <hr>
+
+
+    <h2>1. Introduction to CSS3</h2>
+    <p>
+        CSS3 is a commonly used name for newer CSS features. Modern CSS is
+        developed in different modules such as colors, selectors, grid,
+        and media queries.
+    </p>
+
+    <hr>
+
+    <h2>2. Rounded Corners</h2>
+    <p>
+        The <code>border-radius</code> property is used to make the corners
+        of an element rounded.
+    </p>
+    <pre>
+div {
+    border: 2px solid blue;
+    border-radius: 10px;
 }
+</pre>
 
-.feature-card:hover {
-    transform: translateY(-4px);
-}</code></pre>
-      <div class="demo">
-        <span class="demo-label">Rendered visual example</span>
-        <div style="background:linear-gradient(120deg,#174f78,#31765e);color:white;border-radius:12px;box-shadow:0 4px 14px #12364d33;padding:22px;text-align:center;">Rounded corners, shadow, and gradient</div>
-      </div>
-    </section>
-    <section>
-      <h2>4. Responsive Layout with Media Queries</h2>
-      <p>A media query applies rules only when a condition is true, such as a narrow viewport or a request to reduce motion. Choose breakpoints when the content needs them rather than targeting a particular phone model.</p>
-      <pre><code>@media (max-width: 600px) {
-    .feature-list {
-        grid-template-columns: 1fr;
+    <hr>
+
+    <h2>3. Box Shadow</h2>
+    <p>
+        The <code>box-shadow</code> property is used to add a shadow around
+        an HTML element.
+    </p>
+    <pre>
+div {
+    box-shadow: 5px 5px 10px gray;
+}
+</pre>
+
+    <hr>
+
+    <h2>4. CSS Gradients</h2>
+    <p>
+        A gradient is a smooth change from one color to another. The
+        <code>linear-gradient()</code> function is used to create a linear gradient.
+    </p>
+    <pre>
+div {
+    background: linear-gradient(red, yellow);
+}
+</pre>
+
+    <hr>
+
+    <h2>5. Transform and Transition</h2>
+    <p>
+        The <code>transform</code> property is used to move, rotate, or scale
+        an element. The <code>transition</code> property makes a change happen
+        smoothly over a period of time.
+    </p>
+    <pre>
+div {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+</pre>
+
+    <hr>
+
+    <h2>6. Flexbox</h2>
+    <p>
+        Flexbox is a CSS layout method used to arrange elements in one direction,
+        either in a row or a column.
+    </p>
+    <pre>
+.container {
+    display: flex;
+    gap: 10px;
+}
+</pre>
+
+    <hr>
+
+    <h2>7. CSS Grid</h2>
+    <p>
+        CSS Grid is a layout method used to arrange elements in rows and columns.
+    </p>
+    <pre>
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+</pre>
+
+    <hr>
+
+    <h2>8. Media Queries</h2>
+    <p>
+        Media queries are used to apply CSS rules depending on screen size or
+        other device conditions. They help create responsive webpages.
+    </p>
+    <pre>
+@media (max-width: 600px) {
+    body {
+        background-color: lightblue;
     }
-}</code></pre>
-      <p>Flexible tracks such as <code>minmax()</code> and <code>auto-fit</code> can adapt between breakpoints.</p>
-    </section>
-    <section>
-      <h2>5. Respect Reduced-Motion Preferences</h2>
-      <p>Some users prefer less animation. The <code>prefers-reduced-motion</code> media feature allows a page to reduce or remove motion effects for users who have enabled that preference.</p>
-      <pre><code>@media (prefers-reduced-motion: reduce) {
-    .motion-demo,
-    .motion-demo:hover {
+}
+</pre>
+
+    <hr>
+
+    <h2>9. Reduced Motion</h2>
+    <p>
+        Some users prefer fewer animations. CSS provides the
+        <code>prefers-reduced-motion</code> media feature to reduce or remove
+        motion effects for those users.
+    </p>
+    <pre>
+@media (prefers-reduced-motion: reduce) {
+    * {
         transition: none;
         transform: none;
     }
-}</code></pre>
-    </section>
-    <section>
-      <h2>6. Unit 3 Recap</h2>
-      <ol>
-        <li>HTML supplies the structure; CSS controls its presentation.</li>
-        <li>Selectors choose elements, declarations set values, and the cascade resolves competing rules.</li>
-        <li>Inheritance, units, colors, text, borders, and the box model shape how content is displayed.</li>
-        <li>Positioning, Flexbox, Grid, and media queries help arrange content across screen sizes.</li>
-        <li>Modern CSS is modular and continues to evolve through individual specifications.</li>
-      </ol>
-      <h3>Review Questions</h3>
-      <ol>
-        <li>Why is CSS needed, and what are the three ways to add CSS?</li>
-        <li>Explain element, class, ID, descendant, and pseudo-class selectors with examples.</li>
-        <li>Differentiate between RGB, RGBA, HSL, and HSLA colors.</li>
-        <li>Explain the CSS box model and calculate the rendered width of a content-box element.</li>
-        <li>Differentiate between relative and absolute positioning.</li>
-        <li>When would you choose Flexbox instead of Grid?</li>
-        <li>What is the purpose of a media query?</li>
-      </ol>
-    </section>
-  
-    <nav class="lesson-nav" aria-label="Lesson navigation">
-      <a href="5th.html">&larr; Lesson 05: CSS Positioning</a>
-      <a href="../main.html">Main Menu &rarr;</a>
-    </nav>
-  </main>
-  <footer class="site-footer">
-    <p>Web Technologies - Unit 3: Cascading Style Sheets. Study notes and examples are based on the supplied CSS Complete Study Guide.</p>
-  </footer>
+}
+</pre>
+
+    <hr>
+
+    <h2>10. Important Points</h2>
+    <ul>
+        <li><code>border-radius</code> creates rounded corners.</li>
+        <li><code>box-shadow</code> adds a shadow.</li>
+        <li><code>linear-gradient()</code> creates a color gradient.</li>
+        <li><code>transform</code> changes the position, size, or rotation of an element.</li>
+        <li><code>transition</code> makes property changes smooth.</li>
+        <li>Flexbox arranges items in one direction.</li>
+        <li>Grid arranges items in rows and columns.</li>
+        <li>Media queries help webpages adjust to screen sizes.</li>
+    </ul>
+
+    <hr>
+
+    <h2>11. Unit 3 Review Questions</h2>
+    <ol>
+        <li>What is CSS? Why is it needed?</li>
+        <li>Explain inline, internal, and external CSS.</li>
+        <li>What is CSS syntax? Explain different types of selectors.</li>
+        <li>Explain RGB, RGBA, HSL, and HSLA colors.</li>
+        <li>Explain the CSS box model.</li>
+        <li>Explain the five types of CSS positioning.</li>
+        <li>What is the difference between Flexbox and Grid?</li>
+        <li>What is a media query?</li>
+    </ol>
+
+
+    <hr>
+    <center>
+        <p><a href="css.html">&larr; Back to CSS Overview</a> | <a href="5th.html">&larr; Previous: CSS Positioning</a> | <a href="../main.html">Main Menu</a></p>
+    </center>
+
 </body>
 </html>
