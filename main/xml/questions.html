@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XML Questions and Answers</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>XML Questions and Answers</h1>
+    </center>
+
+    <hr>
+
+    <h2>Basic XML Questions and Answers</h2>
+    <p>
+        These 15 questions cover Unit 5: XML purpose, syntax, components,
+        namespaces, DTD, XML Schema, XPath, XSL, and XSLT.
+    </p>
+
+    <hr>
+
+    <h3>1. What is XML?</h3>
+    <p>
+        <b>Answer:</b> XML stands for Extensible Markup Language. It is a
+        text-based markup language used to represent, store, and transport
+        structured data. XML allows users to create their own descriptive tags.
+    </p>
+
+    <h3>2. What are the main features and uses of XML?</h3>
+    <p><b>Answer:</b> XML is extensible, structured, and portable. It is used for:</p>
+    <ul>
+        <li>Exchanging structured data between applications and services.</li>
+        <li>Configuration files and document formats.</li>
+        <li>Feeds such as RSS.</li>
+        <li>Representing information where readability and explicit structure matter.</li>
+    </ul>
+
+    <h3>3. What is the difference between XML and HTML?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><b>HTML:</b> Uses predefined tags to structure and display webpage content.</li>
+        <li><b>XML:</b> Allows custom tags and is used to describe, store, and transport structured data.</li>
+        <li>HTML elements have browser-defined meaning and presentation. XML tags describe the data and do not automatically create a styled interface.</li>
+    </ul>
+
+    <h3>4. What is the difference between well-formed XML and valid XML?</h3>
+    <p>
+        <b>Answer:</b> Well-formed XML follows XML syntax rules, such as one
+        root element, correct nesting, closed tags, and quoted attributes.
+        Valid XML is well-formed and also follows a declared grammar such as
+        DTD or XSD.
+    </p>
+
+    <h3>5. What is the basic structure of an XML document?</h3>
+    <p><b>Answer:</b> An XML document can contain an XML declaration, one root element, nested child elements, attributes, text, and comments.</p>
+    <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;student id="s101"&gt;
+    &lt;name&gt;Mira&lt;/name&gt;
+    &lt;marks&gt;88&lt;/marks&gt;
+&lt;/student&gt;
+</pre>
+
+    <h3>6. What are XML elements and attributes?</h3>
+    <p>
+        <b>Answer:</b> An element is a named unit of data, normally written
+        with a start tag and an end tag. An attribute gives extra information
+        in the start tag as a name and value pair.
+    </p>
+    <pre>
+&lt;student id="s101"&gt;
+    &lt;name&gt;Mira&lt;/name&gt;
+&lt;/student&gt;
+</pre>
+    <p>Here, student and name are elements, while id is an attribute.</p>
+
+    <h3>7. State the important syntax rules of XML.</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li>Element names are case-sensitive.</li>
+        <li>Every opened element must be closed or use empty-element syntax.</li>
+        <li>Elements must be properly nested.</li>
+        <li>There must be exactly one root element.</li>
+        <li>Attribute values must be quoted.</li>
+    </ul>
+
+    <h3>8. What are XML comments and reserved characters?</h3>
+    <p><b>Answer:</b> Comments provide notes for readers and are not part of the XML data content. Comments use this syntax:</p>
+    <pre>
+&lt;!-- This is an XML comment --&gt;
+</pre>
+    <p>Reserved characters are represented using entity references when needed:</p>
+    <ul>
+        <li><code>&amp;amp;</code> represents &amp;.</li>
+        <li><code>&amp;lt;</code> represents &lt;.</li>
+        <li><code>&amp;gt;</code> represents &gt;.</li>
+    </ul>
+
+    <h3>9. What are XML namespaces?</h3>
+    <p>
+        <b>Answer:</b> XML namespaces prevent naming collisions when elements
+        from different vocabularies are combined. A prefix is connected to
+        a namespace URI using the xmlns attribute.
+    </p>
+    <pre>
+&lt;course xmlns:lib="https://example.edu/library"&gt;
+    &lt;title&gt;Web Technologies&lt;/title&gt;
+    &lt;lib:title&gt;XML for Libraries&lt;/lib:title&gt;
+&lt;/course&gt;
+</pre>
+
+    <h3>10. What is DTD?</h3>
+    <p>
+        <b>Answer:</b> DTD stands for Document Type Definition. It defines
+        the allowed elements, attributes, entities, and content models of
+        an XML document. It can be internal or stored in an external .dtd file.
+    </p>
+
+    <h3>11. What are DTD element and attribute declarations?</h3>
+    <p><b>Answer:</b> DTD uses declarations to define the content of elements and their attributes.</p>
+    <pre>
+&lt;!ELEMENT catalog (product+)&gt;
+&lt;!ELEMENT product (name, price)&gt;
+&lt;!ATTLIST product id ID #REQUIRED&gt;
+&lt;!ELEMENT name (#PCDATA)&gt;
+&lt;!ELEMENT price (#PCDATA)&gt;
+</pre>
+    <p>This example requires one or more product elements with a name, price, and required id attribute.</p>
+
+    <h3>12. What is XML Schema (XSD)?</h3>
+    <p>
+        <b>Answer:</b> XSD stands for XML Schema Definition. It is an XML-based
+        language used to define the structure and data types of an XML
+        document. It supports built-in types such as decimal and date,
+        constraints, namespaces, and reusable type definitions.
+    </p>
+
+    <h3>13. What is the difference between DTD and XSD?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li>DTD uses specialized DTD syntax; XSD is written in XML.</li>
+        <li>DTD has limited data types; XSD supports built-in and custom types.</li>
+        <li>DTD has limited namespace support; XSD is designed for namespaces.</li>
+        <li>XSD is more expressive and strongly typed than DTD.</li>
+    </ul>
+
+    <h3>14. What are XSL, XPath, and XSLT?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><b>XSL:</b> Extensible Stylesheet Language, a family of technologies for working with XML.</li>
+        <li><b>XPath:</b> Expressions used to select nodes and values in XML.</li>
+        <li><b>XSLT:</b> Extensible Stylesheet Language Transformations, used to transform XML into HTML, XML, or text.</li>
+        <li><b>XSL-FO:</b> Formatting objects commonly used for paginated output.</li>
+    </ul>
+
+    <h3>15. What are xsl:template, xsl:for-each, and xsl:value-of?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><code>xsl:template</code> defines a transformation rule for selected nodes.</li>
+        <li><code>xsl:for-each</code> selects nodes using XPath and repeats the enclosed output.</li>
+        <li><code>xsl:value-of</code> reads the value of a selected element or attribute.</li>
+    </ul>
+    <p>
+        An XML file can be connected to an XSLT file using the
+        <code>xml-stylesheet</code> processing instruction. The study guide
+        also shows running a transformation with <code>xsltproc catalog.xsl catalog.xml</code>.
+    </p>
+
+    <hr>
+
+    <h2>Quick Revision</h2>
+    <p>
+        Revise XML purpose, syntax, components, namespaces, DTD, XSD,
+        validation, XPath, XSL, and XSLT before your examination.
+    </p>
+
+    <hr>
+    <p style="height: 60px;"></p>
+    <a href="../main.html" aria-label="Go to main menu" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; background-color: #075e54; color: white; padding: 12px 22px; border: 1px solid #064b44; border-radius: 6px; text-decoration: none; font-weight: bold;">Next &rarr;</a>
+
+</body>
+</html>
