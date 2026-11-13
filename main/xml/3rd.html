@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DTD and XML Schema (XSD)</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>DTD and XML Schema (XSD)</h1>
+    </center>
+
+    <hr>
+
+
+    <h2>1. What is XML Validation?</h2>
+    <p>
+        Well-formedness checks XML syntax, but it does not define which
+        elements an application expects. A grammar defines the allowed
+        elements, attributes, their order, and how often they may appear.
+        An XML processor can use this grammar to validate a document.
+    </p>
+
+    <hr>
+
+    <h2>2. What is DTD?</h2>
+    <p>
+        DTD stands for <b>Document Type Definition</b>. It is a compact
+        grammar used to declare XML elements, attributes, entities, and
+        content models. A DTD can be embedded inside an XML document or
+        stored in an external <code>.dtd</code> file.
+    </p>
+    <p>
+        DTD syntax is not itself XML and it has limited data typing.
+    </p>
+
+    <h3>Example of catalog.dtd</h3>
+    <pre>
+&lt;!ELEMENT catalog (product+)&gt;
+&lt;!ELEMENT product (name, price)&gt;
+&lt;!ATTLIST product id ID #REQUIRED&gt;
+&lt;!ELEMENT name (#PCDATA)&gt;
+&lt;!ELEMENT price (#PCDATA)&gt;
+</pre>
+    <p>
+        This DTD requires one or more product elements. Each product must
+        contain name followed by price, and every product must have an id
+        attribute.
+    </p>
+
+    <h3>Matching catalog.xml</h3>
+    <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE catalog SYSTEM "catalog.dtd"&gt;
+&lt;catalog&gt;
+    &lt;product id="p101"&gt;
+        &lt;name&gt;Notebook&lt;/name&gt;
+        &lt;price&gt;45.50&lt;/price&gt;
+    &lt;/product&gt;
+    &lt;product id="p102"&gt;
+        &lt;name&gt;Pen set&lt;/name&gt;
+        &lt;price&gt;30.00&lt;/price&gt;
+    &lt;/product&gt;
+&lt;/catalog&gt;
+</pre>
+
+    <hr>
+
+    <h2>3. What is XML Schema (XSD)?</h2>
+    <p>
+        XSD stands for <b>XML Schema Definition</b>. It is an XML-based
+        grammar used to describe the structure and data types of an XML
+        document. It supports built-in types such as decimal and date,
+        constraints, namespaces, and reusable type definitions.
+    </p>
+    <p>
+        XSD is more expressive and strongly typed than DTD.
+    </p>
+
+    <h3>Example of catalog.xsd</h3>
+    <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+    &lt;xs:element name="catalog"&gt;
+        &lt;xs:complexType&gt;
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="product" maxOccurs="unbounded"&gt;
+                    &lt;xs:complexType&gt;
+                        &lt;xs:sequence&gt;
+                            &lt;xs:element name="name" type="xs:string"/&gt;
+                            &lt;xs:element name="price" type="xs:decimal"/&gt;
+                        &lt;/xs:sequence&gt;
+                        &lt;xs:attribute name="id" type="xs:ID"
+                                      use="required"/&gt;
+                    &lt;/xs:complexType&gt;
+                &lt;/xs:element&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+&lt;/xs:schema&gt;
+</pre>
+
+    <p>
+        This schema requires a product name, a decimal price, and an id
+        attribute. It also specifies the order of child elements.
+    </p>
+
+    <hr>
+
+    <h2>4. Connecting XML to an XSD File</h2>
+    <p>
+        To use an XSD schema, the XML root element can include the
+        XML Schema instance namespace and the schema location.
+    </p>
+    <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;catalog
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="catalog.xsd"&gt;
+    ...
+&lt;/catalog&gt;
+</pre>
+
+    <hr>
+
+    <h2>5. Difference Between DTD and XSD</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="90%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Feature</th>
+            <th>DTD</th>
+            <th>XSD</th>
+        </tr>
+        <tr>
+            <td>Grammar Format</td>
+            <td>Uses specialized DTD syntax.</td>
+            <td>Written using XML syntax.</td>
+        </tr>
+        <tr>
+            <td>Data Types</td>
+            <td>Limited types, such as text and ID.</td>
+            <td>Rich built-in and custom types, such as decimal and date.</td>
+        </tr>
+        <tr>
+            <td>Namespaces</td>
+            <td>Limited support.</td>
+            <td>Designed to support XML namespaces.</td>
+        </tr>
+        <tr>
+            <td>Typical Use</td>
+            <td>Simple or legacy document formats.</td>
+            <td>Detailed constraints and typed values.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>6. Validating XML Files</h2>
+    <p>
+        The study guide uses the <code>xmllint</code> utility provided
+        by libxml2 for validation.
+    </p>
+    <p><b>Validate using DTD:</b></p>
+    <pre>
+xmllint --noout --valid catalog.xml
+</pre>
+    <p><b>Validate using XSD:</b></p>
+    <pre>
+xmllint --noout --schema catalog.xsd catalog.xml
+</pre>
+    <p>
+        Save the XML and DTD files in the same directory. For XSD validation,
+        use the schema location header and the matching XSD file.
+    </p>
+
+    <hr>
+
+    <h2>7. Important Points</h2>
+    <ul>
+        <li>DTD and XSD define the permitted XML document structure.</li>
+        <li>DTD uses its own syntax and has limited data types.</li>
+        <li>XSD is written in XML and supports rich data types and constraints.</li>
+        <li>A valid XML document must also be well-formed.</li>
+        <li>xmllint can validate XML using DTD or XSD.</li>
+    </ul>
+
+
+    <hr>
+    <p style="height: 60px;"></p>
+    <a href="4th.html" aria-label="Go to next page" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; background-color: #075e54; color: white; padding: 12px 22px; border: 1px solid #064b44; border-radius: 6px; text-decoration: none; font-weight: bold;">Next &rarr;</a>
+
+</body>
+</html>
