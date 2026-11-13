@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client-Side Scripting with JavaScript</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>Client-Side Scripting with JavaScript</h1>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a></p>
+    </center>
+
+    <hr>
+
+
+    <h2>1. What is JavaScript?</h2>
+    <p>
+        JavaScript is a high-level, dynamic scripting language used to control
+        the behavior of a webpage. It runs in the browser and responds to user
+        actions such as clicks, form submissions, and input changes.
+    </p>
+    <p>
+        JavaScript can calculate values, make decisions, repeat tasks, change
+        page content, validate forms, and fetch data from a server.
+    </p>
+
+    <hr>
+
+    <h2>2. JavaScript Building Blocks</h2>
+    <ul>
+        <li><b>Values:</b> Data used by a program.</li>
+        <li><b>Variables:</b> Store values for later use.</li>
+        <li><b>Operators:</b> Perform calculations and comparisons.</li>
+        <li><b>Conditions:</b> Make decisions.</li>
+        <li><b>Loops:</b> Repeat instructions.</li>
+        <li><b>Functions:</b> Store reusable blocks of code.</li>
+        <li><b>Objects and Arrays:</b> Organize related data and lists of values.</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. JavaScript Data Types</h2>
+    <p>
+        A data type describes the kind of value stored in a variable.
+        JavaScript is dynamically typed, so a variable can hold different
+        types of values at different times.
+    </p>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Type</th>
+            <th>Example</th>
+            <th>Meaning</th>
+        </tr>
+        <tr><td>String</td><td>"Hello"</td><td>Text.</td></tr>
+        <tr><td>Number</td><td>42, 3.14</td><td>Integer or decimal value.</td></tr>
+        <tr><td>BigInt</td><td>9007199254740993n</td><td>Very large integer.</td></tr>
+        <tr><td>Boolean</td><td>true, false</td><td>Logical value.</td></tr>
+        <tr><td>Undefined</td><td>undefined</td><td>A variable without an assigned value.</td></tr>
+        <tr><td>Null</td><td>null</td><td>Intentional absence of a value.</td></tr>
+        <tr><td>Symbol</td><td>Symbol("id")</td><td>Unique value, often used as an object property key.</td></tr>
+        <tr><td>Object</td><td>{ name: "Asha" }</td><td>Collection of related properties. Arrays and functions are also objects.</td></tr>
+    </table>
+
+    <h3>Example:</h3>
+    <pre>
+const studentName = "Asha";
+const score = 85;
+const isEnrolled = true;
+let selectedCourse;
+const missingValue = null;
+const subjects = ["HTML", "CSS"];
+const student = { name: "Asha", score: 85 };
+
+console.log(typeof studentName);
+console.log(typeof score);
+console.log(typeof isEnrolled);
+console.log(typeof selectedCourse);
+console.log(typeof subjects);
+</pre>
+    <p>
+        <b>Note:</b> <code>typeof null</code> returns "object" for historical
+        reasons. Arrays also return "object" with typeof. Use
+        <code>Array.isArray(value)</code> to check whether a value is an array.
+        Functions have the typeof result "function".
+    </p>
+
+    <hr>
+
+    <h2>4. Variables: let and const</h2>
+    <p>
+        A variable stores data so a program can use it later. Use
+        <code>const</code> when the variable should not be reassigned, and
+        <code>let</code> when reassignment is required.
+    </p>
+    <pre>
+const studentName = "Asha";
+let marks = 78;
+let isPass = marks >= 40;
+
+console.log(studentName);
+console.log(marks);
+console.log(isPass);
+
+marks = marks + 7;
+console.log(marks);
+</pre>
+
+    <hr>
+
+    <h2>5. Operators and Conditions</h2>
+    <p>
+        Operators perform operations on values. Arithmetic operators include
+        +, -, *, and /. Comparison operators compare values. Logical operators
+        combine conditions.
+    </p>
+    <ul>
+        <li><code>&amp;&amp;</code> - AND: true when both conditions are true.</li>
+        <li><code>||</code> - OR: true when at least one condition is true.</li>
+        <li><code>!</code> - NOT: reverses a Boolean value.</li>
+    </ul>
+    <p>
+        The <code>if</code>, <code>else if</code>, and <code>else</code>
+        statements are used to make decisions. The ternary operator is a
+        shorter way to choose between two values.
+    </p>
+    <pre>
+const age = 20;
+const feesPaid = true;
+
+if (age >= 18 && feesPaid) {
+    console.log("Student can register");
+} else if (age >= 18 && !feesPaid) {
+    console.log("Please pay the fees");
+} else {
+    console.log("Student is not eligible");
+}
+
+const result = (age >= 18) ? "Adult" : "Minor";
+console.log(result);
+</pre>
+
+    <hr>
+
+    <h2>6. Loops</h2>
+    <p>
+        Loops repeat a block of instructions until a condition is met.
+        They are useful for processing lists and repeating tasks.
+    </p>
+    <ul>
+        <li><b>for:</b> Repeats code using an initialization, condition, and update.</li>
+        <li><b>while:</b> Repeats code while a condition is true.</li>
+        <li><b>for...of:</b> Visits each value in an iterable such as an array.</li>
+    </ul>
+    <pre>
+const subjects = ["HTML", "CSS", "JavaScript"];
+
+for (let i = 0; i < subjects.length; i++) {
+    console.log(subjects[i]);
+}
+
+for (const subject of subjects) {
+    console.log(subject);
+}
+
+let count = 1;
+while (count <= 3) {
+    console.log(count);
+    count++;
+}
+</pre>
+
+    <hr>
+
+    <h2>7. Functions</h2>
+    <p>
+        A function is a reusable block of code. It can receive values through
+        parameters and return a result. Functions reduce repeated code and
+        make programs easier to maintain.
+    </p>
+    <pre>
+function calculateTotal(price, quantity) {
+    return price * quantity;
+}
+
+const bill = calculateTotal(120, 3);
+console.log(bill);
+
+function greet(student) {
+    return "Welcome, " + student + "!";
+}
+
+console.log(greet("Asha"));
+</pre>
+
+    <hr>
+
+    <h2>8. Popup Boxes</h2>
+    <p>Browsers provide three common popup functions:</p>
+    <ul>
+        <li><b>alert():</b> Shows a message to the user.</li>
+        <li><b>confirm():</b> Asks for an OK or Cancel decision and returns true or false.</li>
+        <li><b>prompt():</b> Asks the user to enter a short text value.</li>
+    </ul>
+    <pre>
+alert("Welcome to the Web Technologies lab!");
+
+const proceed = confirm("Do you want to continue?");
+
+if (proceed) {
+    console.log("User clicked OK");
+} else {
+    console.log("User clicked Cancel");
+}
+
+const name = prompt("Enter your name:");
+console.log("Hello, " + name);
+</pre>
+    <p>
+        Popup boxes are useful for simple demonstrations. In real applications,
+        developers often use custom page elements instead of relying on browser
+        dialogs.
+    </p>
+
+    <hr>
+
+    <h2>9. Important Points</h2>
+    <ul>
+        <li>JavaScript adds behavior to a webpage.</li>
+        <li>Use let for values that may be reassigned and const for bindings that should not be reassigned.</li>
+        <li>JavaScript includes primitive data types and objects.</li>
+        <li>Conditions make decisions and loops repeat tasks.</li>
+        <li>Functions make code reusable.</li>
+        <li>alert(), confirm(), and prompt() are browser popup functions.</li>
+    </ul>
+
+
+    <hr>
+    <center>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a> | <a href="2nd.html">Next: JavaScript Objects and the DOM &rarr;</a> | <a href="../main.html">Main Menu</a></p>
+    </center>
+
+</body>
+</html>
