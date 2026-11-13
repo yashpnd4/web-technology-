@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PHP Questions and Answers</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>PHP Questions and Answers</h1>
+    </center>
+
+    <hr>
+
+    <h2>Basic PHP Questions and Answers</h2>
+    <p>
+        These 15 questions cover Unit 6: server-side scripting, PHP syntax,
+        variables, data types, arrays, conditions, loops, functions,
+        form handling, strings, regular expressions, frameworks, and MVC.
+    </p>
+
+    <hr>
+
+    <h3>1. What is server-side scripting?</h3>
+    <p>
+        <b>Answer:</b> Server-side scripting is a process in which a script
+        runs on a web server instead of the visitor's browser. The server
+        can process requests, read or update data, apply application rules,
+        and send a response such as HTML or JSON.
+    </p>
+
+    <h3>2. What is PHP? What does PHP stand for?</h3>
+    <p>
+        <b>Answer:</b> PHP originally meant Personal Home Page and is now
+        commonly expanded as PHP: Hypertext Preprocessor. It is an open-source
+        scripting language widely used for web development. PHP code can
+        be embedded in HTML and is executed by a PHP runtime on the server.
+    </p>
+
+    <h3>3. Explain the PHP request and response flow.</h3>
+    <p><b>Answer:</b></p>
+    <ol>
+        <li>A browser requests a PHP route or file.</li>
+        <li>The web server passes the request to the PHP interpreter.</li>
+        <li>The PHP script runs on the server and may combine data with an HTML template.</li>
+        <li>The server sends the generated response to the browser.</li>
+    </ol>
+    <p>The browser receives the generated response, not the PHP source code.</p>
+
+    <h3>4. What are the basic PHP syntax rules?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li>PHP code is commonly written between <code>&lt;?php</code> and <code>?&gt;</code>.</li>
+        <li>A semicolon ends most statements.</li>
+        <li>Variable names begin with the dollar sign ($).</li>
+        <li>Variable names are case-sensitive.</li>
+        <li>Comments can be written using // or /* ... */.</li>
+    </ul>
+    <pre>
+&lt;?php
+echo "Hello, World!";
+?&gt;
+</pre>
+
+    <h3>5. What are PHP variables and data types?</h3>
+    <p>
+        <b>Answer:</b> A variable stores data. PHP variable names begin
+        with $. Common data types include string, integer, float, Boolean,
+        array, object, and NULL.
+    </p>
+    <pre>
+&lt;?php
+$student = 'Mira';
+$unit = 6;
+$passed = true;
+$price = 45.50;
+?&gt;
+</pre>
+
+    <h3>6. What is the difference between single-quoted and double-quoted strings in PHP?</h3>
+    <p>
+        <b>Answer:</b> Single-quoted strings are mostly literal. Double-quoted
+        strings can interpolate variables and interpret sequences such as
+        the newline sequence \n.
+    </p>
+    <pre>
+&lt;?php
+$name = 'Mira';
+
+echo 'Student: ' . $name;
+echo "Student: $name";
+?&gt;
+</pre>
+
+    <h3>7. What are indexed and associative arrays?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><b>Indexed Array:</b> Stores ordered values using numeric indexes.</li>
+        <li><b>Associative Array:</b> Stores values using named keys.</li>
+    </ul>
+    <pre>
+&lt;?php
+$topics = ['PHP syntax', 'Strings', 'Frameworks'];
+
+$marks = [
+    'Mira' => 88,
+    'Dev' => 76
+];
+
+echo $topics[0];
+echo $marks['Mira'];
+?&gt;
+</pre>
+
+    <h3>8. What are conditions and loops in PHP?</h3>
+    <p>
+        <b>Answer:</b> Conditions make decisions based on values. PHP uses
+        if, elseif, and else. Loops repeat instructions. Common loops include
+        for, while, and foreach.
+    </p>
+    <pre>
+&lt;?php
+$marks = 88;
+
+if ($marks >= 40) {
+    echo 'Pass';
+} else {
+    echo 'Needs more practice';
+}
+
+$topics = ['PHP', 'Strings'];
+
+foreach ($topics as $topic) {
+    echo $topic;
+}
+?&gt;
+</pre>
+
+    <h3>9. What is a function in PHP?</h3>
+    <p>
+        <b>Answer:</b> A function is a reusable block of code that performs
+        a task. It can receive parameters and return a value. PHP also
+        supports parameter and return types.
+    </p>
+    <pre>
+&lt;?php
+function resultLabel(int $marks): string
+{
+    if ($marks >= 40) {
+        return 'Pass';
+    }
+
+    return 'Needs more practice';
+}
+
+echo resultLabel(88);
+?&gt;
+</pre>
+
+    <h3>10. How is form data handled safely in PHP?</h3>
+    <p><b>Answer:</b> PHP can check the request method and read submitted values from the $_POST array. The application should trim and validate input, then encode output before inserting it into HTML.</p>
+    <ul>
+        <li><code>$_SERVER['REQUEST_METHOD']</code> checks the request method.</li>
+        <li><code>$_POST</code> reads values submitted using POST.</li>
+        <li><code>trim()</code> removes whitespace at the beginning and end.</li>
+        <li><code>htmlspecialchars()</code> encodes text for safe HTML output.</li>
+    </ul>
+    <p>Client input is untrusted and must be validated.</p>
+
+    <h3>11. What are common PHP string functions?</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><code>trim()</code> - Removes whitespace at the beginning and end.</li>
+        <li><code>strlen()</code> - Counts string length in bytes.</li>
+        <li><code>mb_strlen()</code> - Counts characters in Unicode text when mbstring is enabled.</li>
+        <li><code>str_replace()</code> - Replaces literal text.</li>
+    </ul>
+
+    <h3>12. What is a regular expression? What is PCRE?</h3>
+    <p>
+        <b>Answer:</b> A regular expression (regex) describes a pattern
+        in text. PHP's preg_* functions use PCRE, which stands for Perl
+        Compatible Regular Expressions. It can find, extract, or replace
+        matching text.
+    </p>
+
+    <h3>13. Explain preg_match() and preg_replace().</h3>
+    <p><b>Answer:</b></p>
+    <ul>
+        <li><code>preg_match()</code> checks whether a pattern matches a string. It returns 1 for a match, 0 for no match, or false on error.</li>
+        <li><code>preg_replace()</code> replaces text that matches a pattern. It returns modified text or null on error.</li>
+    </ul>
+    <pre>
+&lt;?php
+$email = 'learner@example.edu';
+$pattern = '/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i';
+
+$match = preg_match($pattern, $email);
+?&gt;
+</pre>
+
+    <h3>14. What is a PHP framework? Name some common PHP frameworks.</h3>
+    <p>
+        <b>Answer:</b> A PHP framework is a reusable foundation for building
+        web applications. It provides structure and components for routing,
+        validation, templates, database access, sessions, and testing.
+    </p>
+    <ul>
+        <li><b>Laravel:</b> Full-featured framework with routing, Blade templates, ORM, migrations, and a broad ecosystem.</li>
+        <li><b>Symfony:</b> Modular framework with reusable components and flexible configuration.</li>
+        <li><b>CodeIgniter:</b> Lightweight framework with a relatively small footprint and straightforward setup.</li>
+    </ul>
+
+    <h3>15. What is MVC? Explain Model, View, and Controller.</h3>
+    <p><b>Answer:</b> MVC stands for Model, View, and Controller. It is a common way to separate application responsibilities.</p>
+    <ul>
+        <li><b>Model:</b> Represents or accesses application data and domain rules.</li>
+        <li><b>View:</b> Formats the response for the user, commonly using an HTML template.</li>
+        <li><b>Controller:</b> Receives a request, coordinates the work, and selects the response.</li>
+    </ul>
+    <p>MVC can make an application easier to test and maintain.</p>
+
+    <hr>
+
+    <h2>Quick Revision</h2>
+    <p>
+        Revise server-side scripting, PHP syntax, variables, data types,
+        arrays, conditions, loops, functions, form handling, string functions,
+        regular expressions, input validation, output encoding, frameworks,
+        and MVC before your examination.
+    </p>
+
+    <hr>
+    <p style="height: 60px;"></p>
+    <a href="../main.html" aria-label="Go to main menu" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; background-color: #075e54; color: white; padding: 12px 22px; border: 1px solid #064b44; border-radius: 6px; text-decoration: none; font-weight: bold;">Next &rarr;</a>
+
+</body>
+</html>
