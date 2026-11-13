@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forms and Validation</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>Forms and Validation</h1>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a></p>
+    </center>
+
+    <hr>
+
+
+    <h2>1. What is Form Validation?</h2>
+    <p>
+        Form validation checks the information entered by a user before an
+        application accepts or sends it. It helps find empty fields, invalid
+        email addresses, short passwords, and other incorrect values.
+    </p>
+    <p>
+        Validation guides the user, reduces input mistakes, and helps prevent
+        invalid data from being submitted.
+    </p>
+
+    <hr>
+
+    <h2>2. HTML Validation Attributes</h2>
+    <p>
+        HTML provides built-in validation attributes. These rules can be
+        checked by the browser when a form is submitted.
+    </p>
+    <table border="1" cellpadding="8" cellspacing="0" width="85%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Attribute</th>
+            <th>Example</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>required</td>
+            <td><code>&lt;input required&gt;</code></td>
+            <td>A value must be entered or selected.</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td><code>&lt;input type="email"&gt;</code></td>
+            <td>Uses an input type suited to the data and checks basic formats.</td>
+        </tr>
+        <tr>
+            <td>minlength / maxlength</td>
+            <td><code>minlength="2" maxlength="40"</code></td>
+            <td>Sets minimum and maximum text length.</td>
+        </tr>
+        <tr>
+            <td>min / max / step</td>
+            <td><code>min="1" max="10" step="1"</code></td>
+            <td>Limits numeric or date values and permitted increments.</td>
+        </tr>
+        <tr>
+            <td>pattern</td>
+            <td><code>pattern="[A-Z]{2}[0-9]{4}"</code></td>
+            <td>Requires text to match a regular-expression pattern.</td>
+        </tr>
+    </table>
+
+    <h3>Example of HTML Form Validation:</h3>
+    <pre>
+&lt;form&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" required&gt;
+
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password"
+           minlength="8" required&gt;
+
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+</pre>
+
+    <hr>
+
+    <h2>3. JavaScript Validation</h2>
+    <p>
+        JavaScript can add checks that are specific to an application.
+        It can display custom error messages, check values, and guide users
+        to correct mistakes.
+    </p>
+    <p>Common browser validation methods are:</p>
+    <ul>
+        <li><b>checkValidity():</b> Returns true when the element or form passes its validation rules.</li>
+        <li><b>reportValidity():</b> Asks the browser to display its validation feedback.</li>
+        <li><b>validity:</b> Provides details about the validation state.</li>
+        <li><b>setCustomValidity(message):</b> Sets a custom error message. Use an empty string to clear the error.</li>
+    </ul>
+
+    <h3>Example:</h3>
+    <pre>
+const form = document.querySelector("#myForm");
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    console.log("Form is ready to submit.");
+});
+</pre>
+    <p>
+        <code>event.preventDefault()</code> prevents the browser's default
+        form submission so JavaScript can check the values first.
+    </p>
+
+    <hr>
+
+    <h2>4. Validation Process</h2>
+    <ol>
+        <li>Collect the values when the user submits the form.</li>
+        <li>Check basic constraints such as required fields and input types.</li>
+        <li>Apply additional application-specific rules.</li>
+        <li>Show clear feedback so the user can correct errors.</li>
+        <li>Continue with submission only after validation passes.</li>
+        <li>Validate the submitted data again on the server.</li>
+    </ol>
+
+    <hr>
+
+    <h2>5. Important Security Point</h2>
+    <p>
+        Client-side validation improves user experience, but it is not a
+        security boundary. A user can disable JavaScript or send data directly
+        to a server. Therefore, the server must validate submitted data too.
+    </p>
+
+    <hr>
+
+    <h2>6. Important Points</h2>
+    <ul>
+        <li>Form validation checks user input before accepting or sending it.</li>
+        <li>HTML attributes provide basic validation rules.</li>
+        <li>JavaScript can add custom checks and messages.</li>
+        <li>checkValidity() checks whether constraints pass.</li>
+        <li>reportValidity() displays browser validation feedback.</li>
+        <li>Always validate submitted data on the server.</li>
+    </ul>
+
+
+    <hr>
+    <center>
+        <p><a href="javascript.html">&larr; Back to JavaScript Overview</a> | <a href="2nd.html">&larr; Previous: JavaScript Objects and the DOM</a> | <a href="4th.html">Next: DHTML &rarr;</a> | <a href="../main.html">Main Menu</a></p>
+    </center>
+
+</body>
+</html>
