@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XML Key Components and Namespaces</title>
+</head>
+<body bgcolor="#f9f9f9">
+
+    <center>
+        <h1>XML Key Components and Namespaces</h1>
+    </center>
+
+    <hr>
+
+
+    <h2>1. XML Document Structure</h2>
+    <p>
+        An XML document is represented as a tree of nodes. It can contain
+        an XML declaration, one root element, nested elements, attributes,
+        text values, and comments.
+    </p>
+    <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;student id="s-204" status="active"&gt;
+    &lt;name&gt;Mira Shah&lt;/name&gt;
+    &lt;programme&gt;B.Tech CSE&lt;/programme&gt;
+    &lt;marks subject="XML"&gt;88&lt;/marks&gt;
+    &lt;!-- A student record --&gt;
+&lt;/student&gt;
+</pre>
+
+    <hr>
+
+    <h2>2. Main Components of XML</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="90%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Component</th>
+            <th>Meaning</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>XML Declaration</td>
+            <td>Optional first line that identifies the XML version and character encoding.</td>
+            <td><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code></td>
+        </tr>
+        <tr>
+            <td>Element</td>
+            <td>A named unit of data. It can contain text, attributes, or other elements.</td>
+            <td><code>&lt;name&gt;Mira&lt;/name&gt;</code></td>
+        </tr>
+        <tr>
+            <td>Root Element</td>
+            <td>The single outermost element containing all other elements.</td>
+            <td><code>&lt;student&gt;...&lt;/student&gt;</code></td>
+        </tr>
+        <tr>
+            <td>Attribute</td>
+            <td>Metadata written in a start tag as a name and value pair.</td>
+            <td><code>id="s-204"</code></td>
+        </tr>
+        <tr>
+            <td>Text Node</td>
+            <td>Character data between a start tag and its matching end tag.</td>
+            <td><code>88</code></td>
+        </tr>
+        <tr>
+            <td>Comment</td>
+            <td>A note for readers. It is not part of the document's data content.</td>
+            <td><code>&lt;!-- Student record --&gt;</code></td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>3. XML Syntax Rules</h2>
+    <ol>
+        <li>XML element names are case-sensitive. For example, Name and name are different.</li>
+        <li>Every opened element must be closed, or use empty-element syntax such as <code>&lt;image/&gt;</code>.</li>
+        <li>Elements must be properly nested. Incorrect nesting makes the document not well-formed.</li>
+        <li>There must be exactly one root element in an XML document.</li>
+        <li>Attribute values must be written inside quotes.</li>
+        <li>Reserved characters in text must be escaped when required.</li>
+    </ol>
+
+    <h3>Correct Nesting Example</h3>
+    <pre>
+&lt;student&gt;
+    &lt;name&gt;Mira&lt;/name&gt;
+&lt;/student&gt;
+</pre>
+
+    <h3>Incorrect Nesting Example</h3>
+    <pre>
+&lt;b&gt;&lt;i&gt;Text&lt;/b&gt;&lt;/i&gt;
+</pre>
+
+    <hr>
+
+    <h2>4. Reserved XML Characters</h2>
+    <p>
+        Some characters have special meaning in XML. Use the following
+        entity references when these characters need to appear as text.
+    </p>
+    <table border="1" cellpadding="8" cellspacing="0" width="80%" align="center">
+        <tr bgcolor="#e0e0e0">
+            <th>Character</th>
+            <th>XML Entity</th>
+        </tr>
+        <tr><td>&amp;</td><td><code>&amp;amp;</code></td></tr>
+        <tr><td>&lt;</td><td><code>&amp;lt;</code></td></tr>
+        <tr><td>&gt;</td><td><code>&amp;gt;</code></td></tr>
+    </table>
+
+    <hr>
+
+    <h2>5. XML Namespaces</h2>
+    <p>
+        XML namespaces prevent naming collisions when XML elements from
+        different vocabularies are combined. A namespace prefix is connected
+        to a URI using the <code>xmlns</code> attribute. The URI identifies
+        the vocabulary; it does not have to be a working webpage.
+    </p>
+    <pre>
+&lt;course xmlns:lib="https://example.edu/library"&gt;
+    &lt;title&gt;Web Technologies&lt;/title&gt;
+    &lt;lib:title&gt;XML for Libraries&lt;/lib:title&gt;
+&lt;/course&gt;
+</pre>
+    <p>
+        In this example, title and lib:title are different names because
+        lib:title belongs to the library namespace.
+    </p>
+
+    <hr>
+
+    <h2>6. Important Points</h2>
+    <ul>
+        <li>An XML document has one root element.</li>
+        <li>XML names are case-sensitive.</li>
+        <li>Every element must be properly closed and nested.</li>
+        <li>Attribute values must be quoted.</li>
+        <li>Namespaces prevent naming conflicts.</li>
+    </ul>
+
+
+    <hr>
+    <p style="height: 60px;"></p>
+    <a href="3rd.html" aria-label="Go to next page" style="position: fixed; right: 20px; bottom: 20px; z-index: 1000; background-color: #075e54; color: white; padding: 12px 22px; border: 1px solid #064b44; border-radius: 6px; text-decoration: none; font-weight: bold;">Next &rarr;</a>
+
+</body>
+</html>
